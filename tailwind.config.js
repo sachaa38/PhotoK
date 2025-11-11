@@ -7,11 +7,17 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        poppins: ["var(--font-poppins)", "sans-serif"],      // texte courant
-        prata: ["var(--font-prata)", "serif"],              // h1
-        spartan: ["var(--font-spartan)", "sans-serif"],     // h2/h3
+        poppins: ["var(--font-poppins)", "sans-serif"],
+        prata: ["var(--font-prata)", "serif"],
+        spartan: ["var(--font-spartan)", "sans-serif"],
       },
     },
   },
   plugins: [],
+  safelist: [
+    "font-poppins",
+    "font-prata",
+    "font-spartan",
+    "animate-scroll"
+  ],
 };

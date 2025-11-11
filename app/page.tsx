@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import imagesCaroussel, {imagesGalerie} from "./data"
 import Header from "./header";
+import texte from "./texte"
 
 export default function Home() {
 
@@ -13,6 +14,9 @@ export default function Home() {
   const visibleCount = 3;
   const totalSteps = imagesCaroussel.length - visibleCount;
   const [scrolled, setScrolled] = useState(false);
+  const [lang, setLang] = useState("fr")
+  const offres = texte[lang].offres;
+  const t = texte[lang].contactSection;
 
   // TITRE
 
@@ -46,7 +50,7 @@ export default function Home() {
   // Galerie
 
   const [visibleCountGalerie, setVisibleCountGalerie] = useState(6); // affiche 6 photos au départ
-  const [modalGalerie, setModalGalerie] = useState(false)
+  const [modalGalerie, setModalGalerie] = useState(true)
   const handleShowMore = () => {
     if(modalGalerie){
       setVisibleCountGalerie(imagesGalerie.length); // affiche toutes les photos
@@ -58,6 +62,15 @@ export default function Home() {
     
     setModalGalerie(!modalGalerie)
   };
+
+  const changeLang = () => {
+    if(lang === 'fr') {
+      setLang('en')
+    } else if (lang === 'en'){
+      setLang('fr')
+    }
+    
+  }
 
 
   return (
@@ -72,22 +85,30 @@ export default function Home() {
       //   transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
       // }}
     >
-      <h1
-        className="font-poppins text-black transition-all"
-        style={{
-          fontSize: scrolled ? "1.5rem" : "3rem",
-        //   transition: "font-size 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
-        }}
-      >
-        Katia Photo
-      </h1>
+    <div className="flex flex-col items-center justify-center">
+  <h1
+    className="font-poppins text-black transition-all"
+    style={{
+      fontSize: scrolled ? "1.5rem" : "3rem",
+    }}
+  >
+    Katia Photo
+  </h1>
+  <button
+    onClick={changeLang}
+    className="text-black hover:cursor-pointer"
+  >
+    FR | EN
+  </button>
+</div>
+
       <div
         // style={{
         //   marginTop: scrolled ? "0" : "1rem",
         //   transition: "margin 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
         // }}
       >
-        <Header />
+        <Header lang={lang}/>
       </div>
     </div>
 
@@ -120,28 +141,26 @@ export default function Home() {
 
   <div className="py-20 px-6 md:px-20 flex flex-col items-center justify-center text-center mt-20">
           <h1 className="text-5xl text-black font-thin md:text-7xl font-poppins tracking-wide uppercase">
-            Photographe de Mariage
+            {texte[lang].titre1}
           </h1>
           <p className="font-spartan mt-4 text-lg md:text-xl text-black">
-            Immortalisez vos plus beaux souvenirs, ici nous pouvons mettre une déscription générale de ton métier
+            {texte[lang].desc_titre1}
           </p>
         </div>
       {/* ======== A PROPOS ======== */}
       <section id="about" className="py-20 px-6 md:px-20 text-center bg-gray-50 text-black">
         <h2 className="text-4xl font-semibold mb-6 uppercase tracking-wide font-prata">
-          À propos
+          {texte[lang].apropos}
         </h2>
         <p className="font-spartan max-w-3xl mx-auto text-lg leading-relaxed text-gray-700">
-          Passionné par la photographie depuis plus de dix ans, je capture les
-          instants les plus précieux de votre vie. Chaque regard, chaque sourire
-          et chaque émotion sont figés dans le temps avec élégance et authenticité.
+          {texte[lang].desc_apropos}
         </p>
       </section>
 
       {/* ======== GALERIE ======== */}
         <section id="gallery" className="py-20 px-6 md:px-20 bg-white text-black">
       <h2 className="text-4xl font-semibold mb-10 text-center uppercase tracking-wide font-prata">
-        Galerie
+        {texte[lang].galerie}
       </h2>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
@@ -164,17 +183,13 @@ export default function Home() {
 
       {visibleCount < imagesGalerie.length && (
         <div className="mt-8 text-center">
-          {modalGalerie ? (<button
+          <button
             onClick={handleShowMore}
             className="bg-black text-white px-6 py-3 rounded-full uppercase tracking-wide hover:bg-gray-800 transition-colors"
           >
-            Afficher plus
-          </button>):(<button
-            onClick={handleShowMore}
-            className="bg-black text-white px-6 py-3 rounded-full uppercase tracking-wide hover:bg-gray-800 transition-colors"
-          >
-            Afficher Moins
-          </button>)}
+            {modalGalerie ? texte[lang].afficherPlus : texte[lang].afficherMoins}
+          </button>
+      
         </div>
       )}
     </section>
@@ -183,122 +198,93 @@ export default function Home() {
 
     <section id="price" className="py-20 px-6 md:px-20 bg-gray-50 text-black text-center">
   <h2 className="text-4xl font-semibold mb-12 uppercase tracking-wide font-prata">
-    Tarifs
+    {texte[lang].tarif}
   </h2>
 
   <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
     {/* Tarif Basique */}
-    <div className="border border-gray-200 rounded-lg p-8 shadow hover:shadow-lg transition-shadow">
-      <h3 className="text-2xl font-semibold mb-4 font-poppins">Basique</h3>
-      <p className="text-gray-600 mb-6 font-spartan">Séance courte, 1 lieu, 2 heures</p>
-      <p className="text-3xl font-bold mb-6 font-poppins">250€</p>
-      <ul className="text-left mb-6 space-y-2 font-spartan">
-        <li>✅ 50 photos retouchées</li>
-        <li>✅ Galerie en ligne</li>
-        <li>✅ Déplacement inclus (Grenoble)</li>
-      </ul>
-      {/* <button className="bg-black text-white px-6 py-3 rounded-full uppercase tracking-wide hover:bg-gray-800 transition-colors">
-        Réserver
-      </button> */}
-    </div>
-
-    {/* Tarif Standard */}
-    <div className="border border-gray-200 rounded-lg p-8 shadow hover:shadow-lg transition-shadow">
-      <h3 className="text-2xl font-semibold mb-4 font-poppins">Standard</h3>
-      <p className="text-gray-600 mb-6 font-spartan">Séance moyenne, 2 lieux, 4 heures</p>
-      <p className="text-3xl font-bold mb-6 font-poppins">450€</p>
-      <ul className="text-left mb-6 space-y-2 font-spartan">
-        <li>✅ 100 photos retouchées</li>
-        <li>✅ Galerie en ligne</li>
-        <li>✅ Déplacement inclus</li>
-        <li>✅ Album numérique</li>
-      </ul>
-      {/* <button className="bg-black text-white px-6 py-3 rounded-full uppercase tracking-wide hover:bg-gray-800 transition-colors">
-        Réserver
-      </button> */}
-    </div>
-
-    {/* Tarif Premium */}
-    <div className="border border-gray-200 rounded-lg p-8 shadow hover:shadow-lg transition-shadow">
-      <h3 className="text-2xl font-semibold mb-4 font-poppins">Premium</h3>
-      <p className="text-gray-600 mb-6 font-spartan">Séance complète, journée entière</p>
-      <p className="text-3xl font-bold mb-6 font-poppins">800€</p>
-      <ul className="text-left mb-6 space-y-2 font-spartan">
-        <li>✅ Toutes les photos retouchées</li>
-        <li>✅ Galerie en ligne</li>
-        <li>✅ Déplacement partout en France</li>
-        <li>✅ Album physique inclus</li>
-      </ul>
-      {/* <button className="bg-black text-white px-6 py-3 rounded-full uppercase tracking-wide hover:bg-gray-800 transition-colors">
-        Réserver
-      </button> */}
-    </div>
+     {offres.map((offre, index) => (
+          <div
+            key={index}
+            className="border border-gray-200 rounded-lg p-8 shadow hover:shadow-lg transition-shadow"
+          >
+            <h3 className="text-2xl font-semibold mb-4 font-poppins">{offre.titre}</h3>
+            <p className="text-gray-600 mb-6 font-spartan">{offre.description}</p>
+            <p className="text-3xl font-bold mb-6 font-poppins">{offre.prix}</p>
+            <ul className="text-left mb-6 space-y-2 font-spartan">
+              {offre.details.map((detail, i) => (
+                <li key={i}>✅ {detail}</li>
+              ))}
+            </ul>
+          </div>
+        ))}
   </div>
 </section>
 
 
       {/* ======== CONTACT ======== */}
- <section id="contact" className="py-20 px-6 md:px-20 bg-white text-black text-center">
-  <h2 className="text-4xl font-semibold mb-6 uppercase tracking-wide font-prata">
-    Contact
-  </h2>
-  <p className="font-spartan mb-8 text-gray-700 text-lg">
-    Pour toute demande de reportage ou de séance photo, n’hésitez pas à me
-    contacter.
-  </p>
+<section id="contact" className="py-20 px-6 md:px-20 bg-white text-black text-center">
+      <h2 className="text-4xl font-semibold mb-6 uppercase tracking-wide font-prata">
+        {t.titre}
+      </h2>
+      <p className="font-spartan mb-8 text-gray-700 text-lg">{t.texteIntro}</p>
 
-  {/* Coordonnées */}
-  <div className="mb-12 space-y-2">
-    <p className="font-spartan text-lg">
-      📧 Email : <a href="mailto:contact@photographe-mariage.com" className="text-blue-600 underline">contact@photographe-mariage.com</a>
-    </p>
-    <p className="font-spartan text-lg">
-      📞 Téléphone : <a href="tel:+33612345678" className="text-blue-600 underline">06 12 34 56 78</a>
-    </p>
-    <p className="font-spartan text-lg">
-      📍 Adresse : 12 Rue des Fleurs, 38000 Grenoble, France
-    </p>
-  </div>
+      <div className="mb-12 space-y-2">
+        <p className="font-spartan text-lg">
+          📧 {t.email.label} :{" "}
+          <a href={`mailto:${t.email.valeur}`} className="text-blue-600 underline">
+            {t.email.valeur}
+          </a>
+        </p>
+        <p className="font-spartan text-lg">
+          📞 {t.telephone.label} :{" "}
+          <a href={`tel:${t.telephone.valeur}`} className="text-blue-600 underline">
+            {t.telephone.valeur}
+          </a>
+        </p>
+        <p className="font-spartan text-lg">
+          📍 {t.adresse.label} : {t.adresse.valeur}
+        </p>
+      </div>
 
-  {/* Formulaire de contact */}
-  <form className="max-w-2xl mx-auto space-y-4 text-left">
-    <div>
-      <label className="block mb-1 font-semibold" htmlFor="name">Nom</label>
-      <input
-        type="text"
-        id="name"
-        placeholder="Votre nom"
-        className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
-      />
-    </div>
-    <div>
-      <label className="block mb-1 font-semibold" htmlFor="email">Email</label>
-      <input
-        type="email"
-        id="email"
-        placeholder="Votre email"
-        className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
-      />
-    </div>
-    <div>
-      <label className="block mb-1 font-semibold" htmlFor="message">Message</label>
-      <textarea
-        id="message"
-        rows={5}
-        placeholder="Votre message"
-        className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
-      ></textarea>
-    </div>
-    <div className="text-center">
-      <button
-        type="submit"
-        className="bg-black text-white px-8 py-3 rounded-full text-lg uppercase tracking-wide hover:bg-gray-800 transition-colors"
-      >
-        Envoyer
-      </button>
-    </div>
-  </form>
-</section>
+      {/* <form className="max-w-2xl mx-auto space-y-4 text-left">
+        <div>
+          <label className="block mb-1 font-semibold" htmlFor="name">{t.form.nom}</label>
+          <input
+            type="text"
+            id="name"
+            placeholder={t.form.placeholderNom}
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+          />
+        </div>
+        <div>
+          <label className="block mb-1 font-semibold" htmlFor="email">{t.form.email}</label>
+          <input
+            type="email"
+            id="email"
+            placeholder={t.form.placeholderEmail}
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+          />
+        </div>
+        <div>
+          <label className="block mb-1 font-semibold" htmlFor="message">{t.form.message}</label>
+          <textarea
+            id="message"
+            rows={5}
+            placeholder={t.form.placeholderMessage}
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
+          ></textarea>
+        </div>
+        <div className="text-center">
+          <button
+            type="submit"
+            className="bg-black text-white px-8 py-3 rounded-full text-lg uppercase tracking-wide hover:bg-gray-800 transition-colors"
+          >
+            {t.form.bouton}
+          </button>
+        </div>
+      </form> */}
+    </section>
 
 
       {/* ======== FOOTER ======== */}
