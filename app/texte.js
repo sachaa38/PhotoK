@@ -165,5 +165,4 @@ const texte = {
     }
   }
 };
-
 export default texte;
