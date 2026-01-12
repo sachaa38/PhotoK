@@ -9,7 +9,7 @@ const FaqItem = ({ question, answer }) => {
     <div className="w-full pb-12"> {/* py-6 augmente l'espace entre les blocs de questions */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-center text-center focus:outline-none group"
+        className="flex w-full items-center justify-center text-center cursor-pointer focus:outline-none group"
       >
         <div className="flex items-center">
           {/* Le triangle à gauche de la question */}

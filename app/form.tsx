@@ -1,22 +1,37 @@
 import React, { useState } from 'react';
 import Image from "next/image";
+import emailjs from '@emailjs/browser';
+import { useRef } from 'react';
 
 const FormulaireContact = ({ lang, texte, image }) => {
   const [submitted, setSubmitted] = useState(false);
 
-  // Fonction pour gérer la soumission
-  const handleSubmit = (e) => {
-    setSubmitted(true);
-    const form = e.currentTarget;
-    
-    if (!form.checkValidity()) {
-      e.preventDefault();
-      e.stopPropagation();
-    } else {
-      // Logique d'envoi ici
-      console.log("Formulaire valide !");
-    }
-  };
+const formRef = useRef<HTMLFormElement>(null);
+
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+  setSubmitted(true);
+
+  // Vérification de la validité du formulaire HTML5
+  if (!formRef.current?.checkValidity()) {
+    return;
+  }
+
+  // Envoi de l'e-mail
+  emailjs.sendForm(
+    'service_6hs0nto', 
+    'template_p3lkxus', 
+    formRef.current, 
+    'zE9bIRzXYvWQriraN'
+  )
+  .then((result) => {
+      alert(lang === 'fr' ? "Message envoyé avec succès !" : "Message sent successfully!");
+      formRef.current?.reset(); // Réinitialise le formulaire
+      setSubmitted(false);
+  }, (error) => {
+      alert(lang === 'fr' ? "Erreur lors de l'envoi." : "Error during sending.");
+  });
+};
 
   // Classe de base pour les inputs
   const baseInputClass = "peer w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-black text-black font-assistant bg-white/80 backdrop-blur-sm transition-all";
@@ -61,7 +76,7 @@ const FormulaireContact = ({ lang, texte, image }) => {
     ))}
   
 
-      <form noValidate onSubmit={handleSubmit} className="relative z-20 max-w-2xl mx-auto space-y-4 text-left px-20 mt-15">
+      <form ref={formRef} noValidate onSubmit={handleSubmit} className="relative z-20 max-w-2xl mx-auto space-y-4 text-left px-20 mt-15">
    
         {/* Nom et Prénom */}
         <div className="relative">

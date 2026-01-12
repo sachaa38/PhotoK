@@ -33,15 +33,7 @@ export default function PageMariage() {
     ))}
   </div>
 </div>
-            {/* <div className="absolute top-350 left-0 z-[0] pointer-events-none">
-            <Image
-              src="/images/design/Vector.png" 
-              alt="Image abstraite 1"
-              width={600}
-              height={600}
-              style={{ objectFit: 'contain' }}
-            />
-          </div> */}
+          
          
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
@@ -49,7 +41,7 @@ export default function PageMariage() {
             <div key={i} className="text-center group">
               {/* AJOUT DE RELATIVE ET BLOCK ICI */}
 <Link 
-  href={`/pageFamille?lang=${lang}`} 
+  href={`${texte["fr"].urlMariage[i]}`} 
   className="relative block w-full aspect-[3/4] overflow-hidden group bg-white"
 >
   {/* L'image qui scale et devient grise */}

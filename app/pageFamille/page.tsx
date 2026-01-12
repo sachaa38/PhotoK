@@ -49,7 +49,7 @@ export default function PageFamille() {
             <div key={i} className="text-center group">
               {/* AJOUT DE RELATIVE ET BLOCK ICI */}
 <Link 
-  href={`/pageFamille?lang=${lang}`} 
+  href={`${texte["fr"].urlFamille[i]}`}
   className="relative block w-full aspect-[3/4] overflow-hidden group bg-white"
 >
   {/* L'image qui scale et devient grise */}
