@@ -1,23 +1,29 @@
 "use client";
 
+import "../app/globals.css"
 
 import Image from "next/image";
+
+import { useLang } from "./LanguageContext";
 import { useState, useEffect } from "react";
 import imagesCaroussel, {imagesGalerie} from "./data"
-import Header from "./header";
 import texte from "./texte"
+import FormulaireContact from "./form";
+import FooterSite from "./footer"
+import Link from "next/link";
+
+
 
 export default function Home() {
+
+  const { lang } = useLang("fr");
 
    const [startIndex, setStartIndex] = useState(0);
   const [direction, setDirection] = useState(1); // 1 = droite, -1 = gauche
   const visibleCount = 3;
   const totalSteps = imagesCaroussel.length - visibleCount;
-  const [scrolled, setScrolled] = useState(false);
-  const [lang, setLang] = useState("fr")
-  const offres = texte[lang].offres;
-  const t = texte[lang].contactSection;
 
+  
   // TITRE
 
   useEffect(() => {
@@ -47,250 +53,119 @@ export default function Home() {
     return () => clearInterval(interval);
   }, [totalSteps, direction]);
 
-  // Galerie
-
-  const [visibleCountGalerie, setVisibleCountGalerie] = useState(6); // affiche 6 photos au départ
-  const [modalGalerie, setModalGalerie] = useState(true)
-  const handleShowMore = () => {
-    if(modalGalerie){
-      setVisibleCountGalerie(imagesGalerie.length); // affiche toutes les photos
-      
-    }
-    else {
-      setVisibleCountGalerie(6)
-    }
-    
-    setModalGalerie(!modalGalerie)
-  };
-
-  const changeLang = () => {
-    if(lang === 'fr') {
-      setLang('en')
-    } else if (lang === 'en'){
-      setLang('fr')
-    }
-    
-  }
-
-
   return (
-    <div className="min-h-screen bg-white text-white font-sans">
-    <div
-      className={`w-full z-50 bg-white ${
-        scrolled
-          ? "fixed top-0 flex flex-row items-center justify-between shadow-md px-8 py-2"
-          : "flex flex-col items-center justify-center px-8 py-6 mb-0"
-      }`}
-      // style={{
-      //   transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
-      // }}
-    >
-    <div className="flex flex-col items-center justify-center">
-  <h1
-    className="font-poppins text-black transition-all"
-    style={{
-      fontSize: scrolled ? "1.5rem" : "3rem",
-    }}
-  >
-    Katia Photo
-  </h1>
-  <button
-    onClick={changeLang}
-    className="text-black hover:cursor-pointer"
-  >
-    FR | EN
-  </button>
-</div>
-
-      <div
-        // style={{
-        //   marginTop: scrolled ? "0" : "1rem",
-        //   transition: "margin 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
-        // }}
+    <div className="relative min-h-screen bg-white text-white font-sans">
+     <div className="absolute top-350 left-0 z-[0] pointer-events-none">
+    <Image
+      src="/images/design/Vector.png" 
+      alt="Image abstraite 1"
+      width={600}
+      height={600}
+      style={{ objectFit: 'contain' }}
+    />
+  </div>
+   
+    {/* ======== HERO CAROUSEL ======== */}
+   
+ <section className="w-full bg-white px-4 pb-20">
+  {/* Grille de 3 colonnes avec un espacement de 16px (gap-4) */}
+  <div className="grid grid-cols-3 gap-4">
+    
+    {imagesCaroussel.slice(0, 3).map((img, idx) => (
+      <div 
+        key={idx} 
+        className="relative w-full aspect-[2/3] overflow-hidden"
       >
-        <Header lang={lang}/>
+        <Image
+          src={`/images/caroussel/${img}.png`}
+          alt={`Photo ${idx}`}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 33vw, 30vw"
+        />
+      </div>
+    ))}
+
+  </div>
+</section>
+
+      {/* ======== A PROPOS ======== */}
+<section id="about" className="py-20 px-6 md:px-20 bg-white text-black flex flex-col items-center">
+  {/* Titre Centré */}
+  <h2 className="text-2xl md:text-3xl font-light mb-12 uppercase tracking-[0.2em] font-bodoni">
+    {texte[lang].apropos}
+  </h2>
+
+  {/* Conteneur principal */}
+  <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl gap-12 md:gap-20">
+    
+    {/* Colonne IMAGE (Maintenant à GAUCHE) : 40% */}
+    <div className="w-full md:w-[40%] flex justify-center md:justify-end">
+      <div className="relative w-full aspect-[3/4] max-w-[400px]">
+        <Image 
+          src="/images/katia/Rectangle 1.png" 
+          alt="Ekaterina Cheliadinova"
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 40vw"
+        />
       </div>
     </div>
 
-{scrolled && (<div className="h-38">test</div>)}
-    {/* ======== HERO CAROUSEL ======== */}
-   
-   <section className={`w-full h-[90vh] overflow-hidden bg-white flex items-center`}>
-        <div
-          className="flex h-full transition-transform duration-700 ease-in-out"
-          style={{
-            transform: `translateX(-${(startIndex * 100) / visibleCount}%)`,
-            width: `${(imagesCaroussel.length * 100) / visibleCount}%`,
-          }}
-        >
-          {imagesCaroussel.map((img, idx) => (
-            <div
-              key={idx}
-              className="relative flex-[0_0_33.3333%] h-full px-1"
-            >
-              <Image
-                src={`/images/caroussel/${img}.jpg`}
-                alt={`Photo ${idx}`}
-                fill
-                className="object-cover"
-              />
-            </div>
-          ))}
-        </div>
-      </section>
-
-  <div className="py-20 px-6 md:px-20 flex flex-col items-center justify-center text-center mt-20">
-          <h1 className="text-5xl text-black font-thin md:text-7xl font-poppins tracking-wide uppercase">
-            {texte[lang].titre1}
-          </h1>
-          <p className="font-spartan mt-4 text-lg md:text-xl text-black">
-            {texte[lang].desc_titre1}
-          </p>
-        </div>
-      {/* ======== A PROPOS ======== */}
-      <section id="about" className="py-20 px-6 md:px-20 text-center bg-gray-50 text-black">
-        <h2 className="text-4xl font-semibold mb-6 uppercase tracking-wide font-prata">
-          {texte[lang].apropos}
-        </h2>
-        <p className="font-spartan max-w-3xl mx-auto text-lg leading-relaxed text-gray-700">
-          {texte[lang].desc_apropos}
-        </p>
-      </section>
-
-      {/* ======== GALERIE ======== */}
-        <section id="gallery" className="py-20 px-6 md:px-20 bg-white text-black">
-      <h2 className="text-4xl font-semibold mb-10 text-center uppercase tracking-wide font-prata">
-        {texte[lang].galerie}
-      </h2>
-
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-  {imagesGalerie.slice(0, visibleCountGalerie).map((image, i) => (
-    <div
-      key={i}
-      className="relative w-full h-120 overflow-hidden shadow-lg"
-    >
-      <Image
-        src={`/images/galerie/${image}.jpg`}
-        alt={`Photo ${i + 1}`}
-        fill
-        className="object-cover transform transition-transform duration-700 ease-in-out hover:scale-115"
-        priority={i === 0}
-      />
+    {/* Colonne TEXTE (Maintenant à DROITE) : 60% */}
+    <div className="w-full md:w-[60%] text-left">
+      <p className="relative z-10 font-assistant text-lg leading-relaxed text-gray-800 whitespace-pre-line text-justify md:text-left">
+        {texte[lang].desc_apropos}
+      </p>
     </div>
-  ))}
-</div>
 
+  </div>
+</section>
 
-      {visibleCount < imagesGalerie.length && (
-        <div className="mt-8 text-center">
-          <button
-            onClick={handleShowMore}
-            className="bg-black text-white px-6 py-3 rounded-full uppercase tracking-wide hover:bg-gray-800 transition-colors"
-          >
-            {modalGalerie ? texte[lang].afficherPlus : texte[lang].afficherMoins}
-          </button>
-      
-        </div>
-      )}
-    </section>
-
-    {/* ======== TARIF ======== */}
-
-    <section id="price" className="py-20 px-6 md:px-20 bg-gray-50 text-black text-center">
-  <h2 className="text-4xl font-semibold mb-12 uppercase tracking-wide font-prata">
-    {texte[lang].tarif}
+    {/* ======== Portfolio ======== */}
+<section id="portfolio" className="py-20 px-6 md:px-20 bg-white text-black flex flex-col items-center">
+  <h2 className="relative z-10 text-2xl md:text-3xl font-light mb-12 uppercase tracking-[0.2em] font-bodoni">
+    {texte[lang].portfolio}
   </h2>
 
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-    {/* Tarif Basique */}
-     {offres.map((offre, index) => (
-          <div
-            key={index}
-            className="border border-gray-200 rounded-lg p-8 shadow hover:shadow-lg transition-shadow"
-          >
-            <h3 className="text-2xl font-semibold mb-4 font-poppins">{offre.titre}</h3>
-            <p className="text-gray-600 mb-6 font-spartan">{offre.description}</p>
-            <p className="text-3xl font-bold mb-6 font-poppins">{offre.prix}</p>
-            <ul className="text-left mb-6 space-y-2 font-spartan">
-              {offre.details.map((detail, i) => (
-                <li key={i}>✅ {detail}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
+  {/* Grille de 3 colonnes fixes pour correspondre à vos 3 images */}
+  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
+    {imagesGalerie.map((image, i) => (
+      <Link 
+      href={`/${texte[lang].page[i]}?lang=${lang}`} 
+      key={i} 
+      className="text-center group cursor-pointer block"
+    >
+      <div
+        
+        className="relative w-full aspect-[3/4] overflow-hidden group shadow-sm bg-gray-100"
+      >
+        <Image
+          /* On utilise encodeURIComponent pour gérer l'espace entre 'Frame' et le chiffre */
+          src={`/images/galerie/${image}.png`}
+          alt={`Galerie photo ${i + 1}`}
+          fill
+          className="object-cover transition-transform duration-1000 ease-in-out group-hover:scale-105"
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
+        
+        
+        {/* Effet de survol élégant (voile blanc très léger) */}
+        <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-colors duration-500" />
+       
+      </div>
+    <span className="mt-4 block font-assistant text-[20px] text-[#8C7E7E]">
+  {texte[lang].titrePf[i]}
+</span>
+      </Link>
+    ))}
   </div>
 </section>
 
 
-      {/* ======== CONTACT ======== */}
-<section id="contact" className="py-20 px-6 md:px-20 bg-white text-black text-center">
-      <h2 className="text-4xl font-semibold mb-6 uppercase tracking-wide font-prata">
-        {t.titre}
-      </h2>
-      <p className="font-spartan mb-8 text-gray-700 text-lg">{t.texteIntro}</p>
+      {/* CONTACT */}
+      <FormulaireContact lang={lang} texte={texte} image={false}/>
 
-      <div className="mb-12 space-y-2">
-        <p className="font-spartan text-lg">
-          📧 {t.email.label} :{" "}
-          <a href={`mailto:${t.email.valeur}`} className="text-blue-600 underline">
-            {t.email.valeur}
-          </a>
-        </p>
-        <p className="font-spartan text-lg">
-          📞 {t.telephone.label} :{" "}
-          <a href={`tel:${t.telephone.valeur}`} className="text-blue-600 underline">
-            {t.telephone.valeur}
-          </a>
-        </p>
-        <p className="font-spartan text-lg">
-          📍 {t.adresse.label} : {t.adresse.valeur}
-        </p>
-      </div>
-
-      {/* <form className="max-w-2xl mx-auto space-y-4 text-left">
-        <div>
-          <label className="block mb-1 font-semibold" htmlFor="name">{t.form.nom}</label>
-          <input
-            type="text"
-            id="name"
-            placeholder={t.form.placeholderNom}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
-          />
-        </div>
-        <div>
-          <label className="block mb-1 font-semibold" htmlFor="email">{t.form.email}</label>
-          <input
-            type="email"
-            id="email"
-            placeholder={t.form.placeholderEmail}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
-          />
-        </div>
-        <div>
-          <label className="block mb-1 font-semibold" htmlFor="message">{t.form.message}</label>
-          <textarea
-            id="message"
-            rows={5}
-            placeholder={t.form.placeholderMessage}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-black"
-          ></textarea>
-        </div>
-        <div className="text-center">
-          <button
-            type="submit"
-            className="bg-black text-white px-8 py-3 rounded-full text-lg uppercase tracking-wide hover:bg-gray-800 transition-colors"
-          >
-            {t.form.bouton}
-          </button>
-        </div>
-      </form> */}
-    </section>
-
-
-      {/* ======== FOOTER ======== */}
-      <footer className="bg-black text-gray-500 text-center py-6 text-sm">
-        © {new Date().getFullYear()} Photographe de Mariage – Tous droits réservés.
-      </footer>
     </div>
   );
 }
