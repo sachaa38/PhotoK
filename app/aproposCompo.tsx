@@ -12,6 +12,7 @@ function APropos() {
      <section id="about" className="my-6 md:pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center z-1">
        {/* Titre Centré */}
        <h2 className="mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
+        {/* @ts-ignore */}
          {texte[lang].apropos}
        </h2>
      
@@ -36,6 +37,7 @@ function APropos() {
   <div className="w-full md:w-[60%] text-center md:text-left">
     {/* 2. On s'assure que le premier paragraphe n'a pas de marge supérieure parasite */}
     <div className="pt-0"> 
+      {/* @ts-ignore */}
       {texte[lang].descApropos.map((p, i) => (
         <p 
           key={i} 

@@ -1,3 +1,5 @@
+/** @type {Object.<string, any>} */
+
 const texte = {
   fr: {
     accueil: "Accueil",
