@@ -1,18 +1,26 @@
 "use client";
+import { useState } from 'react';
 import texte from "./texte";
 import Image from "next/image";
 import Link from "next/link";
-// 1. On importe le Hook qu'on a créé
+
 import { useLang } from "./LanguageContext"; 
 
 function Header() {
-  // 2. On récupère lang et switchLang depuis le Context global
+
   const { lang, switchLang } = useLang();
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const handleCloseWithDelay = () => {
+  setTimeout(() => {
+    setShowDropdown(false);
+  }, 300); 
+};
 
   return (
    <div className="w-full z-50 bg-white flex flex-col items-center justify-center px-4 md:px-8 py-4 md:py-6 mb-0 pb-0 md:pb-12">
   <div className="flex flex-col items-center justify-center mb-4">
-    {/* Nom : Ajusté de 22px sur mobile à 30px sur ordi */}
+ 
     <h1 className="font-bodoni text-black text-[22px] md:text-[30px] text-center whitespace-nowrap">
       Ekaterina Cheliadinova
     </h1>
@@ -39,30 +47,65 @@ function Header() {
     </button>
   </div>
 
-  {/* Conteneur Navigation : 
-      Mobile : px-4, bordure plus fine
-      Ordi : md:px-20
-  */}
-  <div className="w-full md:w-auto border-b-[0.5px] border-black/50 px-4 md:px-20 pb-3 shadow-[0_4px_6px_-4px_rgba(0,0,0,0.15)]">
-    <nav className="font-assistant font-light text-black flex flex-wrap justify-center gap-x-4 gap-y-2 md:space-x-8 text-base md:text-xl drop-shadow-[0_2px_1px_rgba(0,0,0,0.15)]">
-      
-      <Link href={`/?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
-        {texte[lang].accueil}
-      </Link>
-      <Link href={`/pageApropos?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
-        {texte[lang].apropos}
-      </Link>
-      <Link href={`/?lang=${lang}#portfolio`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
-        {texte[lang].portfolio}
-      </Link>
-      <Link href={`/pageContact?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
-        {texte[lang].contact}
-      </Link>
-      <Link href={`/pageFaq?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
-        {texte[lang].infos}
-      </Link>
 
-    </nav>
+  <div className="w-full md:w-auto border-b-[0.5px] border-black/50 px-4 md:px-20 pb-3 shadow-[0_4px_6px_-4px_rgba(0,0,0,0.15)]">
+   <nav className="font-assistant font-light text-black flex flex-wrap justify-center gap-x-4 gap-y-2 md:space-x-8 text-base md:text-xl drop-shadow-[0_2px_1px_rgba(0,0,0,0.15)] w-full">
+  
+  <Link href={`/?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
+    {texte[lang].accueil}
+  </Link>
+
+  <Link href={`/pageApropos?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
+    {texte[lang].apropos}
+  </Link>
+
+  {/* BLOC PORTFOLIO EN COLONNE */}
+  <div className="flex flex-col items-center">
+    <button 
+      onClick={() => setShowDropdown(!showDropdown)}
+      className="hover:text-gray-400 transition-colors text-center whitespace-nowrap flex items-center gap-1 focus:outline-none"
+    >
+      {texte[lang].portfolio}
+      <span className={`text-[10px] transition-transform duration-300 ${showDropdown ? 'rotate-180' : ''}`}>▼</span>
+    </button>
+
+    {/* SOUS-MENU EN COLONNE - Décale le contenu du dessous */}
+    {showDropdown && (
+      <div className="flex flex-col gap-2 mt-3 mb-2 w-full animate-fadeIn">
+        <Link 
+          href={`/pageMariage?lang=${lang}`} 
+          className="hover:text-gray-400 transition-colors text-center whitespace-nowrap"
+          onClick={handleCloseWithDelay}
+        >
+          {texte[lang].titrePf[0]}
+        </Link>
+        <Link 
+          href={`/pageCouple?lang=${lang}`} 
+          className="hover:text-gray-400 transition-colors text-center whitespace-nowrap"
+          onClick={handleCloseWithDelay}
+        >
+          {texte[lang].titrePf[1]}
+        </Link>
+        <Link 
+          href={`/pageFamille?lang=${lang}`} 
+          className="hover:text-gray-400 transition-colors text-center whitespace-nowrap"
+          onClick={handleCloseWithDelay}
+        >
+          {texte[lang].titrePf[2]}
+        </Link>
+      </div>
+    )}
+  </div>
+
+  <Link href={`/pageContact?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
+    {texte[lang].contact}
+  </Link>
+  
+  <Link href={`/pageFaq?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
+    {texte[lang].infos}
+  </Link>
+
+</nav>
   </div>
 </div>
   );
