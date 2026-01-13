@@ -17,34 +17,24 @@ export default function PageFamille() {
 
   return (
     <main className="min-h-screen bg-white">
-      <section className="pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center">
-        <h2 className="mb-12 font-bodoni" style={{ fontSize: "32px" }}>
+      <section className="mt-6 mb:pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center">
+        <h2 className="mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
           {content.titrePageFamille}
         </h2>
-<div className="flex flex-col items-center w-[75%] mb-20"> 
-  <div className="max-w-[70%]">
+<div className="flex flex-col items-center w-full md:w-[75%] mb-12 md:mb-15"> 
+      <div className="w-full md:max-w-[70%]">
     {content.descPageFamille.map((p, i) => (
       <p 
         key={i} 
-        className="mb-6 last:mb-0 font-assistant text-lg leading-relaxed text-gray-700"
+        className="mb-0 last:mb-0 font-assistant text-center md:text-base md:text-lg leading-relaxed text-gray-700"
       >
         {p}
       </p>
     ))}
   </div>
-</div>
-            {/* <div className="absolute top-350 left-0 z-[0] pointer-events-none">
-            <Image
-              src="/images/design/Vector.png" 
-              alt="Image abstraite 1"
-              width={600}
-              height={600}
-              style={{ objectFit: 'contain' }}
-            />
-          </div> */}
-         
+</div>        
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 w-full max-w-6xl">
           {imagesFamille && imagesFamille.map((image, i) => (
             <div key={i} className="text-center group">
               {/* AJOUT DE RELATIVE ET BLOCK ICI */}

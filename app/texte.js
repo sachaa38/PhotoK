@@ -138,13 +138,29 @@ questionsFaq: [
     evenement: "Event",
     grossesse: "Maternity",
     entreprise: "Corporate",
-    page: ["pageFamille", "pageCouple", "pageMariage"],
+    page: ["pageMariage", "pageCouple", "pageFamille"],
     titrePageFamille: "Family Session",
     descPageFamille: [
   "A family session is a moment of sharing, designed to be experienced simply and at your own pace.",
   "Ahead of time, I take the time to discuss with you and advise on the location—whether at your home, outdoors, or in a studio—as well as on outfits and atmosphere, so that the session truly reflects you. On the day of the shoot, I guide you if necessary, while leaving room for natural interactions, spontaneous gestures, and moments of connection.",
   "I favor soft, natural light and an authentic finish to create sincere images that tell your family story with simplicity."
 ],
+
+
+titrePageCouple: "Couple Session",
+descPageCouple: [
+  "A couple session is, above all, a moment for the two of you—relaxed and designed to reflect who you are.",
+  "Ahead of time, I take the time to chat with you and offer guidance on choosing the location, outfits, and atmosphere, ensuring the session fully aligns with your personality. On the day of the shoot, I guide you if necessary, while leaving space for natural gestures, glances, and spontaneous moments.",
+  "I favor natural light, soft colors, and an authentic look to create sincere images that tell the story of your connection with simplicity."
+],
+
+titrePageMariage: "Weddings",
+descPageMariage: [
+  "I approach every wedding as a new connection. Even before picking up my camera, I take the time to talk with you, to understand what matters most to you and how you envision your day.",
+  "On the big day, I am present with discretion, attentive to emotions, glances, and shared moments, without ever forcing anything. My intention is to let you fully experience your wedding while I focus on preserving its most genuine memories.",
+  "I prefer natural light, soft colors, and an authentic finish, so that your images remain faithful to what you felt. This portfolio gathers true moments, designed to stay with you long after the wedding day."
+],
+
 descContact: [
   "I would be delighted to hear about your project and discuss it with you!",
   "Fill out the form below or contact me directly at ekaterina.cheliadinova@gmail.com",

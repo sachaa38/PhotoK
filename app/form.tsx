@@ -37,16 +37,16 @@ const handleSubmit = (e: React.FormEvent) => {
   const baseInputClass = "peer w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-black text-black font-assistant bg-white/80 backdrop-blur-sm transition-all";
 
   return (
-    <section id="contact" className="relative pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center">
-      <h2 className="mb-12 font-bodoni" style={{ fontSize: "32px" }}>
+    <section id="contact" className="relative my-6 md:pb-20 px-4 bg-white text-black flex flex-col items-center">
+      <h2 className="mb-8 font-bodoni text-2xl md:text-[32px]" >
         {texte[lang].contact}
       </h2>
 {image && ( <div className="absolute bottom-70 left-0 z-[0] pointer-events-none">
                   <Image
                     src="/images/design/Vector.png" 
                     alt="Image abstraite 1"
-                    width={600}
-                    height={600}
+                    width={500}
+                    height={500}
                     style={{ objectFit: 'contain' }}
                   />
                 </div>)}
@@ -55,8 +55,8 @@ const handleSubmit = (e: React.FormEvent) => {
                     <Image
                       src="/images/design/Union.png" 
                       alt="Image abstraite 2"
-                      width={600}
-                      height={600}
+                      width={500}
+                      height={500}
                       style={{ objectFit: 'contain' }}
                     />
                   </div>)}
@@ -65,18 +65,18 @@ const handleSubmit = (e: React.FormEvent) => {
       {/* <p className="relative z-10 font-assistant mb-8 text-gray-700 text-lg">
           {texte.texteIntro}
         </p> */}
-              <div className="relative z-10 max-w-[50%] mx-auto text-center px-40">
+              <div className="relative z-10 md:max-w-[50%] mx-auto text-center md:px-40">
     {texte[lang].descContact.map((p, i) => (
       <p 
         key={i} 
-        className="mb-6 last:mb-0 font-assistant text-lg leading-relaxed text-gray-700"
+        className="mb-4 md:mb-6 last:mb-0 font-assistant text-lg leading-relaxed text-gray-700"
       >
         {p}
       </p>
     ))}
   
 
-      <form ref={formRef} noValidate onSubmit={handleSubmit} className="relative z-20 max-w-2xl mx-auto space-y-4 text-left px-20 mt-15">
+      <form ref={formRef} noValidate onSubmit={handleSubmit} className="relative mt-10 z-20 max-w-2xl mx-auto space-y-4 text-left md:px-10 md:mt-15">
    
         {/* Nom et Prénom */}
         <div className="relative">
@@ -198,7 +198,7 @@ const handleSubmit = (e: React.FormEvent) => {
      <div className="flex flex-col items-center gap-4">
   <button 
     type="submit" 
-    className="w-[60%] hover:cursor-pointer bg-[#F8F8F8] text-black px-12 py-3 mb-8 rounded-lg text-lg uppercase tracking-widest font-assistant border border-black/10 transition-all duration-200 
+    className="md:w-[60%] w-full hover:cursor-pointer bg-[#F8F8F8] text-black px-12 py-3 mb-8 rounded-lg text-lg uppercase tracking-widest font-assistant border border-black/10 transition-all duration-200 
                shadow-md hover:shadow-lg active:shadow-none hover:bg-gray-100"
   >
     {texte[lang].bouton}

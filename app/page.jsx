@@ -11,6 +11,7 @@ import texte from "./texte"
 import FormulaireContact from "./form";
 import FooterSite from "./footer"
 import Link from "next/link";
+import APropos from "./aproposCompo"
 
 
 
@@ -54,22 +55,22 @@ export default function Home() {
   }, [totalSteps, direction]);
 
   return (
-    <div className="relative min-h-screen bg-white text-white font-sans">
+    <div className="my-6 relative min-h-screen bg-white text-white font-sans">
      <div className="absolute top-350 left-0 z-[0] pointer-events-none">
     <Image
       src="/images/design/Vector.png" 
       alt="Image abstraite 1"
-      width={600}
-      height={600}
+      width={500}
+      height={500}
       style={{ objectFit: 'contain' }}
     />
   </div>
    
     {/* ======== HERO CAROUSEL ======== */}
    
- <section className="w-full bg-white px-4 pb-20">
+ <section className="w-full bg-white px-4 md:pb-20">
   {/* Grille de 3 colonnes avec un espacement de 16px (gap-4) */}
-  <div className="grid grid-cols-3 gap-4">
+  <div className="grid md:grid-cols-3 gap-4">
     
     {imagesCaroussel.slice(0, 3).map((img, idx) => (
       <div 
@@ -90,16 +91,14 @@ export default function Home() {
 </section>
 
       {/* ======== A PROPOS ======== */}
-<section id="about" className="py-20 px-6 md:px-20 bg-white text-black flex flex-col items-center">
-  {/* Titre Centré */}
-  <h2 className="text-2xl md:text-3xl font-light mb-12 uppercase tracking-[0.2em] font-bodoni">
+{/* <section id="about" className="py-12 mb:py-20 px-6 md:px-20 bg-white text-black flex flex-col items-center">
+
+  <h2 className="text-2xl md:text-3xl font-light mb-12 uppercase tracking-[0.2em] font-bodoni z-1">
     {texte[lang].apropos}
   </h2>
 
-  {/* Conteneur principal */}
   <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl gap-12 md:gap-20">
     
-    {/* Colonne IMAGE (Maintenant à GAUCHE) : 40% */}
     <div className="w-full md:w-[40%] flex justify-center md:justify-end">
       <div className="relative w-full aspect-[3/4] max-w-[400px]">
         <Image 
@@ -112,7 +111,6 @@ export default function Home() {
       </div>
     </div>
 
-    {/* Colonne TEXTE (Maintenant à DROITE) : 60% */}
     <div className="w-full md:w-[60%] text-left">
       <p className="relative z-10 font-assistant text-lg leading-relaxed text-gray-800 whitespace-pre-line text-justify md:text-left">
         {texte[lang].desc_apropos}
@@ -120,11 +118,13 @@ export default function Home() {
     </div>
 
   </div>
-</section>
+</section> */}
+
+<APropos />
 
     {/* ======== Portfolio ======== */}
-<section id="portfolio" className="py-20 px-6 md:px-20 bg-white text-black flex flex-col items-center">
-  <h2 className="relative z-10 text-2xl md:text-3xl font-light mb-12 uppercase tracking-[0.2em] font-bodoni">
+<section id="portfolio" className="md:pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center">
+  <h2 className="mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
     {texte[lang].portfolio}
   </h2>
 

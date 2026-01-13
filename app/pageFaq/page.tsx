@@ -12,20 +12,21 @@ export default function PageMariage() {
 
 
   return (
-    <main className="min-h-screen bg-white">
-   <section className="pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center w-full">
-      <h2 className="mb-12 font-bodoni" style={{ fontSize: "32px" }}>
+  
+   <section className="mt-6 bg-white text-black flex flex-col items-center">
+      <h2 className="mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
         {texte[lang].titrePageFaq}
       </h2>
 
-      <div className="w-full max-w-3xl">
+      <div className="w-full max-w-3xl px-4 md:pb-20">
         {texte[lang].questionsFaq.map((item, index) => (
           <FaqItem key={index} question={item.q} answer={item.a} />
         ))}
       </div>
+      <FormulaireContact lang={lang} texte={texte} image={true}/>
     </section>
 
-    <FormulaireContact lang={lang} texte={texte} image={true}/>
-    </main>
+    
+  
   );
 }

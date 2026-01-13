@@ -1,32 +1,38 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 
 // Sous-composant pour chaque question
 const FaqItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full pb-12"> {/* py-6 augmente l'espace entre les blocs de questions */}
+    <div className="w-full mb-6 mb:pb-12"> {/* py-6 augmente l'espace entre les blocs de questions */}
       <button
-        onClick={() => setIsOpen(!isOpen)}
-        className="flex w-full items-center justify-center text-center cursor-pointer focus:outline-none group"
-      >
-        <div className="flex items-center">
-          {/* Le triangle à gauche de la question */}
-          <span 
-            className={`transform transition-transform duration-300 text-[10px] mr-4 ${
-              isOpen ? "rotate-180" : "rotate-90"
-            }`}
-          >
-            ▲
-          </span>
+  onClick={() => setIsOpen(!isOpen)}
+  className="flex w-full items-center justify-center cursor-pointer focus:outline-none group"
+>
+  <div className="flex items-start"> 
+    {/* Conteneur de l'image : taille fixe pour ne pas décaler le texte */}
+    <div className="flex-shrink-0 w-[20px] h-[20px] flex items-center justify-center mr-2 pt-1.5">
+      <Image 
+        src="/Polygon 3.png" 
+        alt="Triangle" 
+        width={12} 
+        height={12} 
+        /* La rotation se fait ici, sur l'image elle-même */
+        className={`transform transition-transform duration-300 object-contain scale-110 ${
+          isOpen ? "rotate-[90deg]" : "rotate-[0deg]"
+        }`}
+      />
+    </div>
 
-          {/* Question en GRAS et CENTRÉE */}
-          <span className="text-lg font-assistant font-bold uppercase tracking-wider text-gray-800">
-            {question}
-          </span>
-        </div>
-      </button>
+    {/* Question : parfaitement alignée */}
+    <span className="text-lg font-assistant font-bold uppercase tracking-wider text-gray-800 text-left">
+      {question}
+    </span>
+  </div>
+</button>
 
       {/* La réponse : max-w plus large que la question si nécessaire */}
       <div

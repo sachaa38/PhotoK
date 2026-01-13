@@ -10,57 +10,61 @@ function Header() {
   const { lang, switchLang } = useLang();
 
   return (
-    <div className="w-full z-50 bg-white flex flex-col items-center justify-center px-8 py-6 mb-0 pb-12">
-      <div className="flex flex-col items-center justify-center">
-        <h1 className="font-bodoni text-black" style={{ fontSize: "30px" }}>
-          Ekaterina Cheliadinova
-        </h1>
-        
-        {/* 3. Au clic, on appelle switchLang qui va changer l'URL et l'état global */}
-        <button
-          onClick={switchLang}
-          className="flex items-center gap-2 text-black hover:cursor-pointer group"
-        >
-          <Image 
-            src="/fr.png" 
-            alt="Drapeau Français" 
-            width={20} 
-            height={14} 
-            className={`object-contain ${lang === 'fr' ? 'opacity-100 scale-110' : 'opacity-40'}`}
-          />
-          <span className="font-assistant text-black-600 font-light self-center">|</span> 
-          <Image 
-            src="/gb.png" 
-            alt="Drapeau Anglais" 
-            width={20} 
-            height={14}
-            className={`object-contain ${lang === 'en' ? 'opacity-100 scale-110' : 'opacity-40'}`}
-          />
-        </button>
-      </div>
+   <div className="w-full z-50 bg-white flex flex-col items-center justify-center px-4 md:px-8 py-4 md:py-6 mb-0 pb-0 md:pb-12">
+  <div className="flex flex-col items-center justify-center mb-4">
+    {/* Nom : Ajusté de 22px sur mobile à 30px sur ordi */}
+    <h1 className="font-bodoni text-black text-[22px] md:text-[30px] text-center whitespace-nowrap">
+      Ekaterina Cheliadinova
+    </h1>
+    
+    <button
+      onClick={switchLang}
+      className="flex items-center gap-2 text-black hover:cursor-pointer group mt-2"
+    >
+      <Image 
+        src="/fr.png" 
+        alt="Français" 
+        width={18} 
+        height={12} 
+        className={`object-contain ${lang === 'fr' ? 'opacity-100 scale-110' : 'opacity-40'}`}
+      />
+      <span className="font-assistant text-gray-400 font-light text-sm">|</span> 
+      <Image 
+        src="/gb.png" 
+        alt="English" 
+        width={18} 
+        height={12}
+        className={`object-contain ${lang === 'en' ? 'opacity-100 scale-110' : 'opacity-40'}`}
+      />
+    </button>
+  </div>
 
-      <div className="border-b-[0.5px] border-black/50 px-20 pb-3 shadow-[0_4px_6px_-4px_rgba(0,0,0,0.15)]">
-        <nav className="font-assistant font-light text-black flex space-x-8 text-xl drop-shadow-[0_2px_1px_rgba(0,0,0,0.15)]">
-          {/* 4. On s'assure que les liens gardent la langue dans l'URL */}
-          <Link href={`/?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center">
-            {texte[lang].accueil}
-          </Link>
-          <Link href={`/pageApropos?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center">
-            {texte[lang].apropos}
-          </Link>
-          <Link href={`/?lang=${lang}#portfolio`} className="hover:text-gray-400 transition-colors text-center">
-            {texte[lang].portfolio}
-          </Link>
-          {/* Lien vers ta page famille avec la langue */}
-          <Link href={`/pageContact?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center">
-            {texte[lang].contact}
-          </Link>
-          <Link href={`/pageFaq?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center">
-            {texte[lang].infos}
-          </Link>
-        </nav>
-      </div>
-    </div>
+  {/* Conteneur Navigation : 
+      Mobile : px-4, bordure plus fine
+      Ordi : md:px-20
+  */}
+  <div className="w-full md:w-auto border-b-[0.5px] border-black/50 px-4 md:px-20 pb-3 shadow-[0_4px_6px_-4px_rgba(0,0,0,0.15)]">
+    <nav className="font-assistant font-light text-black flex flex-wrap justify-center gap-x-4 gap-y-2 md:space-x-8 text-base md:text-xl drop-shadow-[0_2px_1px_rgba(0,0,0,0.15)]">
+      
+      <Link href={`/?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
+        {texte[lang].accueil}
+      </Link>
+      <Link href={`/pageApropos?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
+        {texte[lang].apropos}
+      </Link>
+      <Link href={`/?lang=${lang}#portfolio`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
+        {texte[lang].portfolio}
+      </Link>
+      <Link href={`/pageContact?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
+        {texte[lang].contact}
+      </Link>
+      <Link href={`/pageFaq?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
+        {texte[lang].infos}
+      </Link>
+
+    </nav>
+  </div>
+</div>
   );
 }
 
