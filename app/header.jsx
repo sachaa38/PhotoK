@@ -94,8 +94,8 @@ function Header() {
       {texte[lang].titrePf[2]}
     </Link>
   </div>
-)} */}
-  </div>
+)} 
+  </div>*/}
 
   <Link href={`/pageContact?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
     {texte[lang].contact}
