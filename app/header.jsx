@@ -59,18 +59,18 @@ function Header() {
     {texte[lang].apropos}
   </Link>
 
-  {/* BLOC PORTFOLIO EN COLONNE */}
-  <div className="flex flex-col items-center">
+
+  {/* <div className="flex flex-col items-center">
     <button 
       onClick={() => setShowDropdown(!showDropdown)}
       className="hover:text-gray-400 transition-colors text-center whitespace-nowrap flex items-center gap-1 focus:outline-none"
     >
       {texte[lang].portfolio}
       <span className={`text-[10px] transition-transform duration-300 ${showDropdown ? 'rotate-180' : ''}`}>▼</span>
-    </button>
+    </button> */}
 
-    {/* SOUS-MENU EN COLONNE - Décale le contenu du dessous */}
-    {showDropdown && (
+  
+    {/* {showDropdown && (
   <div className="flex flex-col gap-2 mt-3 mb-2 w-full animate-fadeIn">
     <Link 
       href={`/pageMariage?lang=${lang}`} 
@@ -94,7 +94,7 @@ function Header() {
       {texte[lang].titrePf[2]}
     </Link>
   </div>
-)}
+)} */}
   </div>
 
   <Link href={`/pageContact?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
