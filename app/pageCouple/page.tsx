@@ -41,7 +41,7 @@ export default function PageCouple() {
         <div key={i} className="text-center group">
           <Link 
             href={`${texte[lang].urlCouple[i]}`} 
-            className="relative block w-full aspect-[3/4] overflow-hidden group bg-white shadow-sm"
+            className="relative block w-full aspect-[3/4] overflow-hidden group bg-white"
           >
             <Image
               src={`/images/couple/${image}.png`}
