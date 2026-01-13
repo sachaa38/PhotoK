@@ -19,7 +19,7 @@ export default function PageMariage() {
       </h2>
 
       <div className="w-full max-w-3xl px-4 md:pb-20">
-        {texte[lang].questionsFaq.map((item, index) => (
+        {texte[lang].questionsFaq.map((item : string, index: number) => (
           <FaqItem key={index} question={item.q} answer={item.a} />
         ))}
       </div>

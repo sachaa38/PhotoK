@@ -24,7 +24,7 @@ export default function PageCouple() {
 
     <div className="flex flex-col items-center w-full md:w-[75%] mb-12 md:mb-15"> 
       <div className="w-full md:max-w-[70%]">
-        {content.descPageCouple.map((p, i) => (
+        {content.descPageCouple.map((p: string, i: number) => (
           <p 
             key={i} 
             className="mb-0 last:mb-0 font-assistant text-center md:text-base md:text-lg leading-relaxed text-gray-700"
