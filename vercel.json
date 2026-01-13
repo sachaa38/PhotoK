@@ -1,4 +1,9 @@
 {
   "cleanUrls": true,
-  "trailingSlash": true
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/pageMariage", "destination": "/pageMariage.html" },
+    { "source": "/pageCouple", "destination": "/pageCouple.html" },
+    { "source": "/pageFamille", "destination": "/pageFamille.html" }
+  ]
 }
