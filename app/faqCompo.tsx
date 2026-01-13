@@ -3,7 +3,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 // Sous-composant pour chaque question
-const FaqItem = ({ question, answer }: { question: string; answer: string }) => {
+const FaqItem = ({ question, answer }: { question: string; answer: string[] }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
