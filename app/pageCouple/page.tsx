@@ -40,7 +40,7 @@ export default function PageCouple() {
       {imagesCouple && imagesCouple.map((image, i) => (
         <div key={i} className="text-center group">
           <Link 
-            href={`${texte[lang].urlCouple[i]}`} 
+            href={`${texte["fr"].urlCouple[i]}`} 
             className="relative block w-full aspect-[3/4] overflow-hidden group bg-white"
           >
             <Image
@@ -68,7 +68,7 @@ export default function PageCouple() {
           {/* Label de la photo : Un peu plus petit sur mobile */}
           {content.titrePf && (
             <span className="mt-4 block font-assistant text-sm md:text-[18px] text-[#8C7E7E] uppercase tracking-wider">
-              {texte[lang].labelPhotoCouple[i]}
+              {texte["fr"].labelPhotoCouple[i]}
             </span>
           )}
         </div>

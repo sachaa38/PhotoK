@@ -10,7 +10,7 @@ const FaqItem = ({ question, answer }: { question: string; answer: string[] }) =
     <div className="w-full mb-6 mb:pb-12"> {/* py-6 augmente l'espace entre les blocs de questions */}
       <button
   onClick={() => setIsOpen(!isOpen)}
-  className="flex w-full items-center justify-center cursor-pointer focus:outline-none group"
+  className="flex w-full items-center cursor-pointer focus:outline-none group"
 >
   <div className="flex items-start"> 
     {/* Conteneur de l'image : taille fixe pour ne pas décaler le texte */}
