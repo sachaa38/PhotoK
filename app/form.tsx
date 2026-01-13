@@ -3,7 +3,7 @@ import Image from "next/image";
 import emailjs from '@emailjs/browser';
 import { useRef } from 'react';
 
-const FormulaireContact = ({ lang, texte, image }) => {
+const FormulaireContact = ({ lang, texte, image }: { lang: string; texte: any; image: any }) => {
   const [submitted, setSubmitted] = useState(false);
 
 const formRef = useRef<HTMLFormElement>(null);

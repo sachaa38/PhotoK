@@ -21,11 +21,6 @@ const FooterSite = () => {
         E.C.
       </h1>
     </div>
-
-    {/* Navigation : 
-        Mobile : flex-wrap + justify-center + gap-4 (pour éviter que ça sorte de l'écran)
-        Ordi : space-x-8 (ton réglage d'origine)
-    */}
     <nav className="font-assistant font-light text-black flex flex-wrap justify-center gap-4 md:gap-0 md:space-x-8 text-lg md:text-xl drop-shadow-[0_2px_1px_rgba(0,0,0,0.15)]">
       <Link href={`/?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
         {texte[lang].accueil}

@@ -9,7 +9,6 @@ import { useState, useEffect } from "react";
 import imagesCaroussel, {imagesGalerie} from "./data"
 import texte from "./texte"
 import FormulaireContact from "./form";
-import FooterSite from "./footer"
 import Link from "next/link";
 import APropos from "./aproposCompo"
 
@@ -89,36 +88,6 @@ export default function Home() {
 
   </div>
 </section>
-
-      {/* ======== A PROPOS ======== */}
-{/* <section id="about" className="py-12 mb:py-20 px-6 md:px-20 bg-white text-black flex flex-col items-center">
-
-  <h2 className="text-2xl md:text-3xl font-light mb-12 uppercase tracking-[0.2em] font-bodoni z-1">
-    {texte[lang].apropos}
-  </h2>
-
-  <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-6xl gap-12 md:gap-20">
-    
-    <div className="w-full md:w-[40%] flex justify-center md:justify-end">
-      <div className="relative w-full aspect-[3/4] max-w-[400px]">
-        <Image 
-          src="/images/katia/Rectangle 1.png" 
-          alt="Ekaterina Cheliadinova"
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, 40vw"
-        />
-      </div>
-    </div>
-
-    <div className="w-full md:w-[60%] text-left">
-      <p className="relative z-10 font-assistant text-lg leading-relaxed text-gray-800 whitespace-pre-line text-justify md:text-left">
-        {texte[lang].desc_apropos}
-      </p>
-    </div>
-
-  </div>
-</section> */}
 
 <APropos />
 
