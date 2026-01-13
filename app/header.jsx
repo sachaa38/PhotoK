@@ -73,21 +73,21 @@ function Header() {
     {showDropdown && (
   <div className="flex flex-col gap-2 mt-3 mb-2 w-full animate-fadeIn">
     <Link 
-      href={`/pageMariage?lang=${lang}`} 
+      href={`/pageMariage/?lang=${lang}`} 
       className="hover:text-gray-400 transition-colors text-center whitespace-nowrap"
       onClick={handleCloseWithDelay}
     >
       {texte[lang].titrePf[0]}
     </Link>
     <Link 
-      href={`/pageCouple?lang=${lang}`} 
+      href={`/pageCouple/?lang=${lang}`} 
       className="hover:text-gray-400 transition-colors text-center whitespace-nowrap"
       onClick={handleCloseWithDelay}
     >
       {texte[lang].titrePf[1]}
     </Link>
     <Link 
-      href={`/pageFamille?lang=${lang}`} 
+      href={`/pageFamille/?lang=${lang}`} 
       className="hover:text-gray-400 transition-colors text-center whitespace-nowrap"
       onClick={handleCloseWithDelay}
     >
