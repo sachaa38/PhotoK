@@ -1,19 +1,12 @@
-// import type { NextConfig } from "next";
-
-// const nextConfig: NextConfig = {
-//   /* config options here */
-// };
-
-// export default nextConfig;
-
-
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  output: "export",             // export statique
-  // basePath: "/PhotoK",          // nom du repo GitHub
-  // assetPrefix: "/PhotoK/",      // pour que CSS/JS soient trouvés
-  images: { unoptimized: true }, // pour ne pas utiliser le loader Next.js
+/** @type {import('next').Next.Config} */
+const nextConfig = {
+  output: "export",
+  images: { 
+    unoptimized: true 
+  },
+  // Cette ligne permet à Vercel de trouver /pageMariage/index.html 
+  // quand tu tapes /pageMariage dans l'URL
+  trailingSlash: true, 
 };
 
 export default nextConfig;
