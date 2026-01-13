@@ -62,11 +62,9 @@ const handleSubmit = (e: React.FormEvent) => {
                   </div>)}
          
 
-      {/* <p className="relative z-10 font-assistant mb-8 text-gray-700 text-lg">
-          {texte.texteIntro}
-        </p> */}
+      
               <div className="relative z-10 md:max-w-[50%] mx-auto text-center md:px-40">
-    {texte[lang].descContact.map((p, i) => (
+    {texte[lang].descContact.map((p: string, i: number) => (
       <p 
         key={i} 
         className="mb-4 md:mb-6 last:mb-0 font-assistant text-lg leading-relaxed text-gray-700"
