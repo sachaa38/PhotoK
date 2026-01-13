@@ -54,7 +54,7 @@ export default function Home() {
   }, [totalSteps, direction]);
 
   return (
-    <div className="my-6 relative min-h-screen bg-white text-white font-sans">
+    <div className="relative min-h-screen bg-white text-white font-sans">
      <div className="absolute top-350 left-0 z-[0] pointer-events-none">
     <Image
       src="/images/design/Vector.png" 
