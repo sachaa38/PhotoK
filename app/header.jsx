@@ -15,11 +15,11 @@ function Header() {
   const handleCloseWithDelay = () => {
   setTimeout(() => {
     setShowDropdown(false);
-  }, 300); 
+  }, 0); 
   }
 
   return (
-   <div className="w-full z-50 bg-white flex flex-col items-center justify-center px-4 md:px-8 py-4 md:py-6 mb-0 pb-0 md:pb-12">
+   <div className="relative w-full z-[1000] bg-white flex flex-col items-center justify-center px-4 md:px-8 py-4 md:py-6 mb-0 pb-0 md:pb-12">
   <div className="flex flex-col items-center justify-center mb-4">
     {/* Nom : Ajusté de 22px sur mobile à 30px sur ordi */}
     <h1 className="font-bodoni text-black text-[22px] md:text-[30px] text-center whitespace-nowrap">
@@ -62,42 +62,43 @@ function Header() {
         {texte[lang].apropos}
       </Link>
         {/* BLOC PORTFOLIO EN COLONNE */}
-  <div className="flex flex-col items-center">
-    <button 
-      onClick={() => setShowDropdown(!showDropdown)}
-      className="hover:text-gray-400 transition-colors text-center whitespace-nowrap flex items-center gap-1 focus:outline-none"
-    >
-      {texte[lang].portfolio}
-      <span className={`text-[10px] transition-transform duration-300 ${showDropdown ? 'rotate-180' : ''}`}>▼</span>
-    </button>
+  {/* BLOC PORTFOLIO */}
+<div className="relative flex flex-col items-center">
+  <button 
+    onClick={() => setShowDropdown(!showDropdown)}
+    className="hover:text-gray-400 transition-colors text-center whitespace-nowrap flex items-center gap-1 focus:outline-none"
+  >
+    {texte[lang].portfolio}
+    <span className={`text-[10px] transition-transform duration-300 ${showDropdown ? 'rotate-180' : ''}`}>▼</span>
+  </button>
 
-    {/* SOUS-MENU EN COLONNE - Décale le contenu du dessous */}
-    {showDropdown && (
-      <div className="flex flex-col gap-2 mt-3 mb-2 w-full animate-fadeIn">
-        <Link 
-          href={`/pageMariage?lang=${lang}`} 
-          className="hover:text-gray-400 transition-colors text-center whitespace-nowrap"
-          onClick={handleCloseWithDelay}
-        >
-          {texte[lang].titrePf[0]}
-        </Link>
-        <Link 
-          href={`/pageCouple?lang=${lang}`} 
-          className="hover:text-gray-400 transition-colors text-center whitespace-nowrap"
-          onClick={handleCloseWithDelay}
-        >
-          {texte[lang].titrePf[1]}
-        </Link>
-        <Link 
-          href={`/pageFamille?lang=${lang}`} 
-          className="hover:text-gray-400 transition-colors text-center whitespace-nowrap"
-          onClick={handleCloseWithDelay}
-        >
-          {texte[lang].titrePf[2]}
-        </Link>
-      </div>
-    )}
+  {/* SOUS-MENU - On force le Z-50 et on met un fond bien opaque */}
+  {showDropdown && (
+    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 bg-white shadow-2xl py-4 flex flex-col gap-4 z-[9999] animate-fadeIn border border-gray-100">
+      <Link 
+        href={`/pageMariage?lang=${lang}`} 
+        className="text-black hover:text-gray-400 transition-colors text-center whitespace-nowrap px-4"
+        onClick={handleCloseWithDelay}
+      >
+        {texte[lang].titrePf[0]}
+      </Link>
+      <Link 
+        href={`/pageCouple?lang=${lang}`} 
+        className="text-black hover:text-gray-400 transition-colors text-center whitespace-nowrap px-4"
+        onClick={handleCloseWithDelay}
+      >
+        {texte[lang].titrePf[1]}
+      </Link>
+      <Link 
+        href={`/pageFamille?lang=${lang}`} 
+        className="text-black hover:text-gray-400 transition-colors text-center whitespace-nowrap px-4"
+        onClick={handleCloseWithDelay}
+      >
+        {texte[lang].titrePf[2]}
+      </Link>
     </div>
+  )}
+</div>
 
       <Link href={`/pageContact?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
         {texte[lang].contact}

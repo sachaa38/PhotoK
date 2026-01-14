@@ -74,7 +74,7 @@ export default function Home() {
     {imagesCaroussel.slice(0, 3).map((img, idx) => (
       <div 
         key={idx} 
-        className="relative w-full aspect-[2/3] overflow-hidden"
+        className="relative w-full aspect-square overflow-hidden"
       >
         <Image
           src={`/images/caroussel/${img}.png`}
