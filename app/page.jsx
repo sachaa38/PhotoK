@@ -67,7 +67,7 @@ export default function Home() {
    
     {/* ======== HERO CAROUSEL ======== */}
    
- <section className="w-full bg-white px-4 md:pb-20">
+ <section className="pt-6 md:pt-0 w-full bg-white px-4 md:pb-20">
   {/* Grille de 3 colonnes avec un espacement de 16px (gap-4) */}
   <div className="grid md:grid-cols-3 gap-4">
     
@@ -93,7 +93,7 @@ export default function Home() {
 
     {/* ======== Portfolio ======== */}
 <section id="portfolio" className="md:pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center">
-  <h2 className="mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
+  <h2 className="pt-6 md:pt-0 mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
     {texte[lang].portfolio}
   </h2>
 

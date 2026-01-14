@@ -18,7 +18,7 @@ export default function PageMariage() {
   return (
     <main className="min-h-screen bg-white">
       <section className="md:pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center">
-        <h2 className="mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
+        <h2 className="pt-6 md:pt-0 mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
           {content.titrePageMariage}
         </h2>
 <div className="flex flex-col items-center w-full md:w-[75%] mb-12 md:mb-15"> 

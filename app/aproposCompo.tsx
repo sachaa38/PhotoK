@@ -11,7 +11,7 @@ function APropos() {
   return (
      <section id="about" className="md:pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center z-1">
        {/* Titre Centré */}
-       <h2 className="mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
+       <h2 className="pt-6 md:pt-0 mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
         {/* @ts-ignore */}
          {texte[lang].apropos}
        </h2>

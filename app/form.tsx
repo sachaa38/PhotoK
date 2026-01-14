@@ -38,7 +38,7 @@ const handleSubmit = (e: React.FormEvent) => {
 
   return (
     <section id="contact" className="relative md:pb-20 px-4 bg-white text-black flex flex-col items-center">
-      <h2 className="mb-8 font-bodoni text-2xl md:text-[32px]" >
+      <h2 className="pt-6 md:pt-0 mb-8 font-bodoni text-2xl md:text-[32px]" >
         {texte[lang].contact}
       </h2>
 {image && ( <div className="hidden md:block absolute bottom-70 left-0 z-[0] pointer-events-none">
