@@ -17,7 +17,7 @@ export default function PageFamille() {
 
   return (
     <main className="min-h-screen bg-white">
-      <section className="mt-6 mb:pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center">
+      <section className="mb:pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center">
         <h2 className="mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
           {content.titrePageFamille}
         </h2>

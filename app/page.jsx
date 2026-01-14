@@ -55,7 +55,7 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-white text-white font-sans">
-     <div className="absolute top-350 left-0 z-[0] pointer-events-none">
+     <div className="hidden md:block absolute top-300 left-0 z-[0] pointer-events-none">
     <Image
       src="/images/design/Vector.png" 
       alt="Image abstraite 1"

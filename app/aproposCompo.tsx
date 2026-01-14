@@ -9,7 +9,7 @@ function APropos() {
   const { lang, switchLang } = useLang();
 
   return (
-     <section id="about" className="my-6 md:pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center z-1">
+     <section id="about" className="md:pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center z-1">
        {/* Titre Centré */}
        <h2 className="mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
         {/* @ts-ignore */}

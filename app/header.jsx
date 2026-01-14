@@ -19,7 +19,7 @@ function Header() {
   }
 
   return (
-   <div className="relative w-full z-[1000] bg-white flex flex-col items-center justify-center px-4 md:px-8 py-4 md:py-6 mb-0 pb-0 md:pb-12">
+   <div className="relative w-full z-[1000] bg-white flex flex-col items-center justify-center px-4 md:px-8 py-4 md:py-6 mb-0 pb-6 md:pb-12">
   <div className="flex flex-col items-center justify-center mb-4">
     {/* Nom : Ajusté de 22px sur mobile à 30px sur ordi */}
     <h1 className="font-bodoni text-black text-[22px] md:text-[30px] text-center whitespace-nowrap">
