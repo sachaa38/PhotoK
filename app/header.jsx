@@ -52,8 +52,8 @@ function Header() {
       Mobile : px-4, bordure plus fine
       Ordi : md:px-20
   */}
-  <div className="w-full md:w-auto border-b-[0.5px] border-black/50 px-4 md:px-20 pb-3 shadow-[0_4px_6px_-4px_rgba(0,0,0,0.15)]">
-    <nav className="font-assistant font-light text-black flex flex-wrap justify-center gap-x-4 gap-y-2 md:space-x-8 text-base md:text-xl drop-shadow-[0_2px_1px_rgba(0,0,0,0.15)]">
+  <div className="w-full md:w-auto border-b-[0.5px] border-black/50 px-4 md:px-20 pb-3">
+    <nav className="font-assistant font-light text-black flex flex-wrap justify-center gap-x-4 gap-y-2 md:space-x-8 text-base md:text-xl">
       
       <Link href={`/?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
         {texte[lang].accueil}

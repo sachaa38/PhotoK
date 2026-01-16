@@ -27,7 +27,7 @@ export default function PageCouple() {
         {content.descPageCouple.map((p: string, i: number) => (
           <p 
             key={i} 
-            className="mb-0 last:mb-0 font-assistant text-center md:text-base md:text-lg leading-relaxed text-gray-700"
+            className="mb-0 last:mb-0 font-assistant text-justify md:text-base md:text-lg leading-relaxed text-gray-700"
           >
             {p}
           </p>

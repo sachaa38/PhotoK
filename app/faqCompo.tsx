@@ -46,7 +46,7 @@ const FaqItem = ({ question, answer }: { question: string; answer: string[] }) =
         {answer.map((p, i) => (
           <p 
             key={i} 
-            className="mb-4 last:mb-0 font-assistant text-gray-600 leading-relaxed"
+            className="mb-4 last:mb-0 font-assistant text-gray-600 leading-relaxed text-justify"
           >
             {p}
           </p>

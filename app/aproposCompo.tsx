@@ -17,7 +17,7 @@ function APropos() {
        </h2>
      
        {/* Conteneur principal */}
-      <div className="flex flex-col md:flex-row items-start justify-center w-full max-w-6xl gap-6 md:gap-12 md:gap-20">
+      <div className="flex flex-col md:flex-row items-stretch justify-center w-full max-w-6xl gap-6 md:gap-12 md:gap-20">
   
   {/* Colonne IMAGE */}
   <div className="w-full md:w-[40%] flex justify-center md:justify-end">
@@ -34,9 +34,9 @@ function APropos() {
   </div>
 
   {/* Colonne TEXTE */}
-  <div className="w-full md:w-[60%] text-center md:text-left">
+  <div className="w-full md:w-[60%] text-justify h-full flex flex-col">
     {/* 2. On s'assure que le premier paragraphe n'a pas de marge supérieure parasite */}
-    <div className="pt-0"> 
+    <div className="pt-0 h-full flex flex-col"> 
       {/* @ts-ignore */}
       {texte[lang].descApropos.map((p, i) => (
         <p 

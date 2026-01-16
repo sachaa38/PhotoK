@@ -67,7 +67,7 @@ const handleSubmit = (e: React.FormEvent) => {
     {texte[lang].descContact.map((p: string, i: number) => (
       <p 
         key={i} 
-        className="mb-4 md:mb-6 last:mb-0 font-assistant text-lg leading-relaxed text-gray-700"
+        className="mb-4 md:mb-6 last:mb-0 font-assistant text-lg leading-relaxed text-gray-700 text-justify"
       >
         {p}
       </p>

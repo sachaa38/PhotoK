@@ -1,4 +1,3 @@
-
 "use client"
 import Link from "next/link";
 import { useLang } from "./LanguageContext";
@@ -21,7 +20,7 @@ const FooterSite = () => {
         E.C.
       </h1>
     </div>
-    <nav className="font-assistant font-light text-black flex flex-wrap justify-center gap-4 md:gap-0 md:space-x-8 text-lg md:text-xl drop-shadow-[0_2px_1px_rgba(0,0,0,0.15)]">
+    <nav className="font-assistant font-light text-black flex flex-wrap justify-center gap-4 md:gap-0 md:space-x-8 text-lg md:text-xl">
       <Link href={`/?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
         {texte[lang].accueil}
       </Link>
