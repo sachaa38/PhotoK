@@ -55,7 +55,7 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-white text-white font-sans">
-     <div className="absolute top-350 left-0 z-[0] pointer-events-none">
+     <div className="hidden md:block absolute top-300 left-0 z-[0] pointer-events-none">
     <Image
       src="/images/design/Vector.png" 
       alt="Image abstraite 1"
@@ -67,23 +67,23 @@ export default function Home() {
    
     {/* ======== HERO CAROUSEL ======== */}
    
- <section className="w-full bg-white px-4 md:pb-20">
+ <section className="pt-6 md:pt-0 w-full bg-white px-4 md:pb-20">
   {/* Grille de 3 colonnes avec un espacement de 16px (gap-4) */}
   <div className="grid md:grid-cols-3 gap-4">
     
     {imagesCaroussel.slice(0, 3).map((img, idx) => (
       <div 
-        key={idx} 
-        className="relative w-full aspect-[2/3] overflow-hidden"
-      >
-        <Image
-          src={`/images/caroussel/${img}.png`}
-          alt={`Photo ${idx}`}
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 33vw, 30vw"
-        />
-      </div>
+  key={idx} 
+  className="relative w-full aspect-[4/5] overflow-hidden" // 4/5 est un bon compromis
+>
+  <Image
+    src={`/images/caroussel/${img}.png`}
+    alt={`Photo ${idx}`}
+    fill
+    className="object-cover"
+    sizes="(max-width: 768px) 33vw, 30vw"
+  />
+</div>
     ))}
 
   </div>
@@ -93,7 +93,7 @@ export default function Home() {
 
     {/* ======== Portfolio ======== */}
 <section id="portfolio" className="md:pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center">
-  <h2 className="mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
+  <h2 className="pt-6 md:pt-0 mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
     {texte[lang].portfolio}
   </h2>
 

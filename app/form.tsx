@@ -37,11 +37,11 @@ const handleSubmit = (e: React.FormEvent) => {
   const baseInputClass = "peer w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-black text-black font-assistant bg-white/80 backdrop-blur-sm transition-all";
 
   return (
-    <section id="contact" className="relative my-6 md:pb-20 px-4 bg-white text-black flex flex-col items-center">
-      <h2 className="mb-8 font-bodoni text-2xl md:text-[32px]" >
+    <section id="contact" className="relative md:pb-20 px-4 bg-white text-black flex flex-col items-center">
+      <h2 className="pt-6 md:pt-0 mb-8 font-bodoni text-2xl md:text-[32px]" >
         {texte[lang].contact}
       </h2>
-{image && ( <div className="absolute bottom-70 left-0 z-[0] pointer-events-none">
+{image && ( <div className="hidden md:block absolute bottom-70 left-0 z-[0] pointer-events-none">
                   <Image
                     src="/images/design/Vector.png" 
                     alt="Image abstraite 1"
@@ -51,7 +51,7 @@ const handleSubmit = (e: React.FormEvent) => {
                   />
                 </div>)}
 
-                 {!image && (<div className="absolute bottom-130 right-0 z-[0] pointer-events-none">
+                 {!image && (<div className="hidden md:block absolute bottom-130 right-0 z-[0] pointer-events-none">
                     <Image
                       src="/images/design/Union.png" 
                       alt="Image abstraite 2"
@@ -67,7 +67,7 @@ const handleSubmit = (e: React.FormEvent) => {
     {texte[lang].descContact.map((p: string, i: number) => (
       <p 
         key={i} 
-        className="mb-4 md:mb-6 last:mb-0 font-assistant text-lg leading-relaxed text-gray-700"
+        className="mb-4 md:mb-6 last:mb-0 font-assistant text-lg leading-relaxed text-gray-700 text-justify"
       >
         {p}
       </p>

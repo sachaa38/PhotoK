@@ -14,7 +14,7 @@ const FaqItem = ({ question, answer }: { question: string; answer: string[] }) =
 >
   <div className="flex items-start"> 
     {/* Conteneur de l'image : taille fixe pour ne pas décaler le texte */}
-    <div className="flex-shrink-0 w-[20px] h-[20px] flex items-center  justify-center mr-2 pt-1.5">
+    <div className="flex-shrink-0 w-[20px] h-[20px] flex items-center justify-center mr-2 pt-1.5">
       <Image 
         src="/Polygon 3.png" 
         alt="Triangle" 
@@ -46,7 +46,7 @@ const FaqItem = ({ question, answer }: { question: string; answer: string[] }) =
         {answer.map((p, i) => (
           <p 
             key={i} 
-            className="mb-4 last:mb-0 font-assistant text-gray-600 leading-relaxed"
+            className="mb-4 last:mb-0 font-assistant text-gray-600 leading-relaxed text-justify"
           >
             {p}
           </p>

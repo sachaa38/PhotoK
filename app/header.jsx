@@ -17,8 +17,16 @@ function Header() {
   }, 300); 
 };
 
+    const [showDropdown, setShowDropdown] = useState(false);
+
+  const handleCloseWithDelay = () => {
+  setTimeout(() => {
+    setShowDropdown(false);
+  }, 0); 
+  }
+
   return (
-   <div className="w-full z-50 bg-white flex flex-col items-center justify-center px-4 md:px-8 py-4 md:py-6 mb-0 pb-0 md:pb-12">
+   <div className="relative w-full z-[1000] bg-white flex flex-col items-center justify-center px-4 md:px-8 pt-4 md:py-6 md:pb-12">
   <div className="flex flex-col items-center justify-center mb-4">
  
     <h1 className="font-bodoni text-black text-[22px] md:text-[30px] text-center whitespace-nowrap">
@@ -47,63 +55,64 @@ function Header() {
     </button>
   </div>
 
+  {/* Conteneur Navigation : 
+      Mobile : px-4, bordure plus fine
+      Ordi : md:px-20
+  */}
+  <div className="w-full md:w-auto border-b-[0.5px] border-black/50 px-4 md:px-20 pb-3">
+    <nav className="font-assistant font-light text-black flex flex-wrap justify-center gap-x-4 gap-y-2 md:space-x-8 text-base md:text-xl">
+      
+      <Link href={`/?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
+        {texte[lang].accueil}
+      </Link>
+      <Link href={`/pageApropos?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
+        {texte[lang].apropos}
+      </Link>
+        {/* BLOC PORTFOLIO EN COLONNE */}
+  {/* BLOC PORTFOLIO */}
+<div className="relative flex flex-col items-center">
+  <button 
+    onClick={() => setShowDropdown(!showDropdown)}
+    className="hover:text-gray-400 transition-colors text-center whitespace-nowrap flex items-center gap-1 focus:outline-none"
+  >
+    {texte[lang].portfolio}
+    <span className={`text-[10px] transition-transform duration-300 ${showDropdown ? 'rotate-180' : ''}`}>▼</span>
+  </button>
 
-  <div className="w-full md:w-auto border-b-[0.5px] border-black/50 px-4 md:px-20 pb-3 shadow-[0_4px_6px_-4px_rgba(0,0,0,0.15)]">
-   <nav className="font-assistant font-light text-black flex flex-wrap justify-center gap-x-4 gap-y-2 md:space-x-8 text-base md:text-xl drop-shadow-[0_2px_1px_rgba(0,0,0,0.15)] w-full">
-  
-  <Link href={`/?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
-    {texte[lang].accueil}
-  </Link>
+  {/* SOUS-MENU - On force le Z-50 et on met un fond bien opaque */}
+  {showDropdown && (
+    <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-48 bg-white shadow-2xl py-4 flex flex-col gap-4 z-[9999] animate-fadeIn border border-gray-100">
+      <Link 
+        href={`/pageMariage?lang=${lang}`} 
+        className="text-black hover:text-gray-400 transition-colors text-center whitespace-nowrap px-4"
+        onClick={handleCloseWithDelay}
+      >
+        {texte[lang].titrePf[0]}
+      </Link>
+      <Link 
+        href={`/pageCouple?lang=${lang}`} 
+        className="text-black hover:text-gray-400 transition-colors text-center whitespace-nowrap px-4"
+        onClick={handleCloseWithDelay}
+      >
+        {texte[lang].titrePf[1]}
+      </Link>
+      <Link 
+        href={`/pageFamille?lang=${lang}`} 
+        className="text-black hover:text-gray-400 transition-colors text-center whitespace-nowrap px-4"
+        onClick={handleCloseWithDelay}
+      >
+        {texte[lang].titrePf[2]}
+      </Link>
+    </div>
+  )}
+</div>
 
-  <Link href={`/pageApropos?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
-    {texte[lang].apropos}
-  </Link>
-
-
-  {/* <div className="flex flex-col items-center">
-    <button 
-      onClick={() => setShowDropdown(!showDropdown)}
-      className="hover:text-gray-400 transition-colors text-center whitespace-nowrap flex items-center gap-1 focus:outline-none"
-    >
-      {texte[lang].portfolio}
-      <span className={`text-[10px] transition-transform duration-300 ${showDropdown ? 'rotate-180' : ''}`}>▼</span>
-    </button> */}
-
-  
-    {/* {showDropdown && (
-  <div className="flex flex-col gap-2 mt-3 mb-2 w-full animate-fadeIn">
-    <Link 
-      href={`/pageMariage?lang=${lang}`} 
-      className="hover:text-gray-400 transition-colors text-center whitespace-nowrap"
-      onClick={handleCloseWithDelay}
-    >
-      {texte[lang].titrePf[0]}
-    </Link>
-    <Link 
-      href={`/pageCouple?lang=${lang}`} 
-      className="hover:text-gray-400 transition-colors text-center whitespace-nowrap"
-      onClick={handleCloseWithDelay}
-    >
-      {texte[lang].titrePf[1]}
-    </Link>
-    <Link 
-      href={`/pageFamille?lang=${lang}`} 
-      className="hover:text-gray-400 transition-colors text-center whitespace-nowrap"
-      onClick={handleCloseWithDelay}
-    >
-      {texte[lang].titrePf[2]}
-    </Link>
-  </div>
-)} 
-  </div>*/}
-
-  <Link href={`/pageContact?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
-    {texte[lang].contact}
-  </Link>
-  
-  <Link href={`/pageFaq?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
-    {texte[lang].infos}
-  </Link>
+      <Link href={`/pageContact?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
+        {texte[lang].contact}
+      </Link>
+      <Link href={`/pageFaq?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
+        {texte[lang].infos}
+      </Link>
 
 </nav>
   </div>

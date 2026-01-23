@@ -17,8 +17,8 @@ export default function PageCouple() {
 
   return (
     <main className="min-h-screen bg-white">
-  <section className="mt-6 mb:pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center">
-    <h2 className="mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
+  <section className="mb:pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center">
+    <h2 className="pt-6 md:pt-0 mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
       {content.titrePageCouple}
     </h2>
 
@@ -27,7 +27,7 @@ export default function PageCouple() {
         {content.descPageCouple.map((p: string, i: number) => (
           <p 
             key={i} 
-            className="mb-0 last:mb-0 font-assistant text-center md:text-base md:text-lg leading-relaxed text-gray-700"
+            className="mb-0 last:mb-0 font-assistant text-justify md:text-base md:text-lg leading-relaxed text-gray-700"
           >
             {p}
           </p>

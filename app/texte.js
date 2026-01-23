@@ -75,22 +75,22 @@ questionsFaq: [
       {
         q: "Comment se déroule un reportage de mariage avec vous ?",
         a: [
-          "J’aborde chaque mariage comme une rencontre. Avant même de prendre l’appareil photo, je prends le temps d’échanger avec vous, de comprendre ce qui compte pour vous et la manière dont vous imaginez votre journée.",
-          "Le jour J, je suis présente avec discrétion, attentive aux émotions, aux regards et aux moments partagés, sans jamais forcer les choses. Mon intention est de vous laisser vivre pleinement votre mariage, pendant que je m’attache à en conserver les souvenirs les plus justes.",
+          "J'aborde chaque mariage comme une rencontre. Avant même de prendre l'appareil photo, je prends le temps d'échanger avec vous, de comprendre ce qui compte pour vous et la manière dont vous imaginez votre journée.",
+          "Le jour J, je suis présente avec discrétion, attentive aux émotions, aux regards et aux moments partagés, sans jamais forcer les choses. Mon intention est de vous laisser vivre pleinement votre mariage, pendant que je m'attache à en conserver les souvenirs les plus justes.",
           "Je privilégie une lumière naturelle, des couleurs douces et un rendu authentique, afin que vos images restent fidèles à ce que vous avez ressenti."
         ]
       },
       {
-        q: "Aidez-vous à poser, même si nous ne sommes pas à l’aise devant l’objectif ?",
-        a: ["Oui, bien sûr. Je vous accompagne et vous guide lorsque vous en ressentez le besoin, notamment pour les portraits. Mon objectif est que vous vous sentiez à l’aise et naturels, sans poses figées ni mises en scène forcées."]
+        q: "Aidez-vous à poser, même si nous ne sommes pas à l'aise devant l'objectif ?",
+        a: ["Oui, bien sûr. Je vous accompagne et vous guide lorsque vous en ressentez le besoin, notamment pour les portraits. Mon objectif est que vous vous sentiez à l'aise et naturels, sans poses figées ni mises en scène forcées."]
       },
       {
-        q: "Proposez-vous de l’aide pour le choix du lieu et des tenues ?",
-        a: ["Oui. Je vous conseille sur le choix du lieu, des tenues et de l’ambiance afin d’obtenir une harmonie visuelle et un rendu qui vous ressemble. Ces échanges font partie intégrante de mon accompagnement."]
+        q: "Proposez-vous de l'aide pour le choix du lieu et des tenues ?",
+        a: ["Oui. Je vous conseille sur le choix du lieu, des tenues et de l'ambiance afin d'obtenir une harmonie visuelle et un rendu qui vous ressemble. Ces échanges font partie intégrante de mon accompagnement."]
       },
       {
         q: "Vous déplacez-vous pour les séances et les mariages ?",
-        a: ["Oui. Je me déplace à votre domicile, en extérieur ou en studio pour les séances famille et couple. Pour les mariages, je me déplace en France et à l’étranger selon les projets. Les frais de déplacement sont précisés dans le devis."]
+        a: ["Oui. Je me déplace à votre domicile, en extérieur ou en studio pour les séances famille et couple. Pour les mariages, je me déplace en France et à l'étranger selon les projets. Les frais de déplacement sont précisés dans le devis."]
       },
       {
         q: "Combien de photos livrez-vous et sous quel format ?",
@@ -103,6 +103,49 @@ questionsFaq: [
       {
         q: "Comment réserver une séance ou un mariage ?",
         a: ["Il vous suffit de me contacter via le formulaire du site en précisant votre projet, la date et le lieu. Je vous répondrai rapidement pour échanger ensemble et vous proposer une offre adaptée."]
+      }
+    ],
+    titrePageConfidentialite: "Politique de confidentialité",
+    politiqueConfidentialite: [
+      {
+        titre: "1. Collecte des informations",
+        contenu: "Nous collectons des informations lorsque vous remplissez le formulaire de contact sur notre site. Les informations recueillies incluent votre nom, votre adresse e-mail, votre numéro de téléphone, votre ville et les détails de votre projet photographique. Ces informations sont nécessaires pour répondre à votre demande et vous proposer une prestation personnalisée."
+      },
+      {
+        titre: "2. Utilisation des informations",
+        contenu: "Les informations que nous collectons auprès de vous sont utilisées pour : répondre à vos demandes de renseignements et de devis, personnaliser votre expérience et répondre à vos besoins individuels, améliorer notre service client et vos demandes de prise en charge, vous contacter par e-mail ou téléphone. Vos informations, qu'elles soient publiques ou privées, ne seront pas vendues, échangées, transférées ou données à une autre société pour quelque raison que ce soit, sans votre consentement."
+      },
+      {
+        titre: "3. Protection des informations",
+        contenu: "Nous mettons en œuvre une variété de mesures de sécurité pour préserver la sécurité de vos informations personnelles. Nous utilisons un cryptage à la pointe de la technologie pour protéger les informations sensibles transmises en ligne. Vos informations personnelles sont contenues dans des réseaux sécurisés et ne sont accessibles que par un nombre limité de personnes ayant des droits d'accès spéciaux à ces systèmes."
+      },
+      {
+        titre: "4. Divulgation à des tiers",
+        contenu: "Nous ne vendons, n'échangeons et ne transférons pas vos informations personnelles identifiables à des tiers. Cela ne comprend pas les tierces parties de confiance qui nous aident à exploiter notre site web ou à mener nos affaires, tant que ces parties conviennent de garder ces informations confidentielles. Nous pouvons également divulguer vos informations lorsque nous croyons que la divulgation est appropriée pour se conformer à la loi, appliquer nos politiques du site, ou protéger nos droits, notre propriété ou notre sécurité ou ceux d'autrui."
+      },
+      {
+        titre: "5. Cookies",
+        contenu: "Notre site peut utiliser des cookies pour améliorer l'expérience utilisateur. Les cookies sont de petits fichiers qu'un site ou son fournisseur de services transfère sur le disque dur de votre ordinateur par l'intermédiaire de votre navigateur Web (si vous l'autorisez) qui permet au site ou au système du fournisseur de services de reconnaître votre navigateur et de capturer et de mémoriser certaines informations."
+      },
+      {
+        titre: "6. Photographies et droit à l'image",
+        contenu: "Dans le cadre de nos prestations photographiques, nous sommes amenés à réaliser des photographies vous représentant. L'utilisation de ces photographies à des fins de portfolio, de communication ou de publication sur notre site web et nos réseaux sociaux fait l'objet d'une autorisation spécifique de votre part. Vous disposez d'un droit de regard sur les images vous concernant avant toute publication et pouvez à tout moment demander le retrait d'une photographie."
+      },
+      {
+        titre: "7. Vos droits",
+        contenu: "Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification, de suppression et de portabilité de vos données personnelles. Vous pouvez également vous opposer au traitement de vos données ou demander la limitation de ce traitement. Pour exercer ces droits, vous pouvez nous contacter à l'adresse : ekaterina.cheliadinova@gmail.com"
+      },
+      {
+        titre: "8. Conservation des données",
+        contenu: "Vos données personnelles sont conservées pendant la durée nécessaire à la gestion de votre demande et à l'exécution de nos prestations. Au-delà de cette période, vos données pourront être conservées à des fins d'archivage dans l'intérêt légitime de notre entreprise ou pour respecter nos obligations légales."
+      },
+      {
+        titre: "9. Modifications de la politique de confidentialité",
+        contenu: "Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Les modifications et les clarifications prendront effet immédiatement après leur publication sur le site web. Si nous apportons des modifications importantes à cette politique, nous vous en informerons ici qu'elle a été mise à jour, afin que vous sachiez quelles informations nous recueillons, comment nous les utilisons, et dans quelles circonstances nous les divulguons."
+      },
+      {
+        titre: "10. Contact",
+        contenu: "Si vous avez des questions concernant cette politique de confidentialité, vous pouvez nous contacter à l'adresse suivante : ekaterina.cheliadinova@gmail.com"
       }
     ]
 },
@@ -209,7 +252,51 @@ descApropos: [
         q: "How do I book a session or a wedding?",
         a: ["Simply contact me via the website form, specifying your project, the date, and the location. I will get back to you quickly to discuss it together and offer you a tailored proposal."]
       }
+    ],
+    titrePageConfidentialite: "Privacy Policy",
+    politiqueConfidentialite: [
+      {
+        titre: "1. Information Collection",
+        contenu: "We collect information when you fill out the contact form on our site. The information collected includes your name, email address, phone number, city, and details of your photography project. This information is necessary to respond to your request and offer you a personalized service."
+      },
+      {
+        titre: "2. Use of Information",
+        contenu: "The information we collect from you is used to: respond to your inquiries and quote requests, personalize your experience and meet your individual needs, improve our customer service and support requests, contact you by email or phone. Your information, whether public or private, will not be sold, exchanged, transferred, or given to any other company for any reason whatsoever, without your consent."
+      },
+      {
+        titre: "3. Information Protection",
+        contenu: "We implement a variety of security measures to maintain the safety of your personal information. We use state-of-the-art encryption to protect sensitive information transmitted online. Your personal information is contained within secured networks and is only accessible by a limited number of persons who have special access rights to such systems."
+      },
+      {
+        titre: "4. Third-Party Disclosure",
+        contenu: "We do not sell, trade, or otherwise transfer your personally identifiable information to third parties. This does not include trusted third parties who assist us in operating our website or conducting our business, so long as those parties agree to keep this information confidential. We may also release your information when we believe release is appropriate to comply with the law, enforce our site policies, or protect our or others' rights, property, or safety."
+      },
+      {
+        titre: "5. Cookies",
+        contenu: "Our site may use cookies to enhance user experience. Cookies are small files that a site or its service provider transfers to your computer's hard drive through your web browser (if you allow) that enables the site's or service provider's systems to recognize your browser and capture and remember certain information."
+      },
+      {
+        titre: "6. Photographs and Image Rights",
+        contenu: "As part of our photography services, we take photographs representing you. The use of these photographs for portfolio purposes, communication, or publication on our website and social media is subject to your specific authorization. You have the right to review images concerning you before any publication and may request the removal of a photograph at any time."
+      },
+      {
+        titre: "7. Your Rights",
+        contenu: "In accordance with the General Data Protection Regulation (GDPR), you have the right to access, rectify, delete, and port your personal data. You may also object to the processing of your data or request limitation of such processing. To exercise these rights, you may contact us at: ekaterina.cheliadinova@gmail.com"
+      },
+      {
+        titre: "8. Data Retention",
+        contenu: "Your personal data is retained for the duration necessary to manage your request and perform our services. Beyond this period, your data may be retained for archiving purposes in the legitimate interest of our business or to comply with our legal obligations."
+      },
+      {
+        titre: "9. Privacy Policy Modifications",
+        contenu: "We reserve the right to modify this privacy policy at any time. Changes and clarifications will take effect immediately upon their publication on the website. If we make significant changes to this policy, we will notify you here that it has been updated, so you know what information we collect, how we use it, and under what circumstances we disclose it."
+      },
+      {
+        titre: "10. Contact",
+        contenu: "If you have any questions regarding this privacy policy, you may contact us at: ekaterina.cheliadinova@gmail.com"
+      }
     ]
       },
 };
+export default texte;
 export default texte;
