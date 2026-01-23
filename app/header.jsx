@@ -3,12 +3,19 @@ import { useState } from 'react';
 import texte from "./texte";
 import Image from "next/image";
 import Link from "next/link";
-// 1. On importe le Hook qu'on a créé
+
 import { useLang } from "./LanguageContext"; 
 
 function Header() {
-  // 2. On récupère lang et switchLang depuis le Context global
+
   const { lang, switchLang } = useLang();
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const handleCloseWithDelay = () => {
+  setTimeout(() => {
+    setShowDropdown(false);
+  }, 300); 
+};
 
     const [showDropdown, setShowDropdown] = useState(false);
 
@@ -21,7 +28,7 @@ function Header() {
   return (
    <div className="relative w-full z-[1000] bg-white flex flex-col items-center justify-center px-4 md:px-8 pt-4 md:py-6 md:pb-12">
   <div className="flex flex-col items-center justify-center mb-4">
-    {/* Nom : Ajusté de 22px sur mobile à 30px sur ordi */}
+ 
     <h1 className="font-bodoni text-black text-[22px] md:text-[30px] text-center whitespace-nowrap">
       Ekaterina Cheliadinova
     </h1>
@@ -107,7 +114,7 @@ function Header() {
         {texte[lang].infos}
       </Link>
 
-    </nav>
+</nav>
   </div>
 </div>
   );
