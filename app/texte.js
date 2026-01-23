@@ -299,4 +299,3 @@ descApropos: [
       },
 };
 export default texte;
-export default texte;

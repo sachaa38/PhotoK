@@ -12,18 +12,10 @@ function Header() {
   const [showDropdown, setShowDropdown] = useState(false);
 
   const handleCloseWithDelay = () => {
-  setTimeout(() => {
-    setShowDropdown(false);
-  }, 300); 
-};
-
-    const [showDropdown, setShowDropdown] = useState(false);
-
-  const handleCloseWithDelay = () => {
-  setTimeout(() => {
-    setShowDropdown(false);
-  }, 0); 
-  }
+    setTimeout(() => {
+      setShowDropdown(false);
+    }, 300);
+  };
 
   return (
    <div className="relative w-full z-[1000] bg-white flex flex-col items-center justify-center px-4 md:px-8 pt-4 md:py-6 md:pb-12">
