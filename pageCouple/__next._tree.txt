@@ -1,0 +1,9 @@
+:HL["/_next/static/chunks/d1790ab98ab8fdee.css","style"]
+:HL["/_next/static/media/1a072933b891bea6-s.p.5b1e0e00.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/47fe1b7cd6e6ed85-s.p.855a563b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/515e0384fea67bdd-s.p.db125b9a.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/68019c21ced96fa9-s.p.7b4581b3.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/7a514bda021b6b92-s.p.b628dbda.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/a218039a3287bcfd-s.p.4a23d71b.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/_next/static/media/e2334d715941921e-s.p.d82a9aff.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+0:{"buildId":"kvp-esA3VE20-PdU7FveS","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"pageCouple","paramType":null,"paramKey":"pageCouple","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
