@@ -1,6 +1,5 @@
 "use client";
 
-import "../app/globals.css"
 
 import Image from "next/image";
 
@@ -16,8 +15,9 @@ import APropos from "./aproposCompo"
 
 export default function Home() {
 
-  const { lang } = useLang("fr");
+  const { lang } = useLang();
 
+  const [scrolled, setScrolled] = useState(false);
    const [startIndex, setStartIndex] = useState(0);
   const [direction, setDirection] = useState(1); // 1 = droite, -1 = gauche
   const visibleCount = 3;
