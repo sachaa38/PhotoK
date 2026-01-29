@@ -17,7 +17,7 @@ export default function PageCouple() {
 
   return (
     <main className="min-h-screen bg-white">
-  <section className="mb:pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center">
+  <section className="md:pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center">
     <h2 className="pt-6 md:pt-0 mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
       {content.titrePageCouple}
     </h2>
@@ -59,7 +59,7 @@ export default function PageCouple() {
                 Visible au hover (ordi) et au clic (mobile)
              */}
             <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-              <span className="text-white font-assistant text-xl tracking-[0.2em] uppercase border-b border-white pb-1">
+              <span className="text-white font-assistant text-[40] tracking-[0.2em] ">
                 {lang === 'fr' ? 'Voir la galerie' : 'View Gallery'}
               </span>
             </div>
@@ -67,7 +67,7 @@ export default function PageCouple() {
           
           {/* Label de la photo : Un peu plus petit sur mobile */}
           {content.titrePf && (
-            <span className="mt-4 block font-assistant text-sm md:text-[18px] text-[#8C7E7E] uppercase tracking-wider">
+            <span className="mt-4 block font-assistant text-[18px] text-[#8C7E7E]">
               {texte["fr"].labelPhotoCouple[i]}
             </span>
           )}
