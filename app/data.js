@@ -1,11 +1,12 @@
-const imagesCarousselA = [
+// CAROUSEL IMAGES
+// Add or remove image names here (without .png extension)
+// Images must be placed in: public/images/caroussel/
+const imagesCaroussel = [
+  "Frame 4",
   "Frame 3",
   "Frame 5",
-  "Frame 4",
-
-  
 ];
-export default imagesCarousselA;
+export default imagesCaroussel;
 
 export const imagesGalerie = [
   "Frame 24",

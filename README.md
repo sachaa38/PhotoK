@@ -1,5 +1,25 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Managing Images
+
+### Carousel Images (Home Page)
+
+To add or remove images from the carousel on the home page:
+
+1. Place your `.png` images in `public/images/caroussel/`
+2. Edit `app/data.js` and update the `imagesCaroussel` array:
+
+```js
+const imagesCaroussel = [
+  "Frame 4",
+  "Frame 3",
+  "Frame 5",
+  // Add new images here (filename without .png extension)
+];
+```
+
+The carousel displays 3 images at a time. If you add more than 3 images, it will auto-scroll through them.
+
 ## Getting Started
 
 First, run the development server:

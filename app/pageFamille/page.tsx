@@ -64,7 +64,7 @@ export default function PageFamille() {
               
               {/* CORRECTION DU CHEMIN DU TITRE */}
               {content.titrePf && (
-                <span className="mt-4 block font-assistant text-[18px] text-[#8C7E7E]">
+                <span className="mt-4 block font-assistant font-light text-[20px] text-[#8C7E7E]">
                   {texte["fr"].labelPhotoFamille[i]}
                 </span>
               )}

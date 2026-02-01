@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__claude_ai_Figma_Console__figma_get_file_data",
+      "mcp__claude_ai_Figma_Console__figma_navigate",
+      "mcp__claude_ai_Figma_Console__figma_take_screenshot",
+      "mcp__claude_ai_Figma_Console__figma_get_component_image",
+      "mcp__figma-remote-mcp__get_screenshot",
+      "mcp__figma-remote-mcp__get_design_context",
+      "Bash(git ls-tree:*)",
+      "Bash(npm run build:*)"
+    ]
+  }
+}

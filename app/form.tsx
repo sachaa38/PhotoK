@@ -1,208 +1,183 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Image from "next/image";
 import emailjs from '@emailjs/browser';
-import { useRef } from 'react';
 
 const FormulaireContact = ({ lang, texte, image }: { lang: string; texte: any; image: any }) => {
   const [submitted, setSubmitted] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
-const formRef = useRef<HTMLFormElement>(null);
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
 
-const handleSubmit = (e: React.FormEvent) => {
-  e.preventDefault();
-  setSubmitted(true);
+    if (!formRef.current?.checkValidity()) {
+      return;
+    }
 
-  // Vérification de la validité du formulaire HTML5
-  if (!formRef.current?.checkValidity()) {
-    return;
-  }
-
-  // Envoi de l'e-mail
-  emailjs.sendForm(
-    'service_6hs0nto', 
-    'template_p3lkxus', 
-    formRef.current, 
-    'zE9bIRzXYvWQriraN'
-  )
-  .then((result) => {
+    emailjs.sendForm(
+      'service_6hs0nto',
+      'template_p3lkxus',
+      formRef.current,
+      'zE9bIRzXYvWQriraN'
+    )
+    .then((result) => {
       alert(lang === 'fr' ? "Message envoyé avec succès !" : "Message sent successfully!");
-      formRef.current?.reset(); // Réinitialise le formulaire
+      formRef.current?.reset();
       setSubmitted(false);
-  }, (error) => {
+    }, (error) => {
       alert(lang === 'fr' ? "Erreur lors de l'envoi." : "Error during sending.");
-  });
-};
+    });
+  };
 
-  // Classe de base pour les inputs
-  const baseInputClass = "peer w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-black text-black font-assistant bg-white/80 backdrop-blur-sm transition-all";
+  // Consistent input styling
+  const inputClass = "w-full border border-gray-200 rounded-[14px] px-4 py-3 focus:outline-none focus:ring-1 focus:ring-black text-black text-[18px] font-assistant font-light bg-white placeholder:text-black/50";
 
   return (
-    <section id="contact" className="relative md:pb-20 px-4 bg-white text-black flex flex-col items-center">
-      <h2 className="pt-6 md:pt-0 mb-8 font-bodoni text-2xl md:text-[32px]" >
+    <section id="contact" className="relative py-16 md:pb-20 px-6 bg-white text-black flex flex-col items-center">
+      <h2 className="pt-6 md:pt-0 mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
         {texte[lang].contact}
       </h2>
-{image && ( <div className="hidden md:block absolute bottom-70 left-0 z-[0] pointer-events-none">
-                  <Image
-                    src="/images/design/Vector.png" 
-                    alt="Image abstraite 1"
-                    width={500}
-                    height={500}
-                    style={{ objectFit: 'contain' }}
-                  />
-                </div>)}
 
-                 {!image && (<div className="hidden md:block absolute bottom-130 right-0 z-[0] pointer-events-none">
-                    <Image
-                      src="/images/design/Union.png" 
-                      alt="Image abstraite 2"
-                      width={500}
-                      height={500}
-                      style={{ objectFit: 'contain' }}
-                    />
-                  </div>)}
-         
+      {image && (
+        <div className="hidden md:block absolute bottom-70 left-0 z-[0] pointer-events-none">
+          <Image
+            src="/images/design/Vector.png"
+            alt="Image abstraite 1"
+            width={500}
+            height={500}
+            style={{ objectFit: 'contain' }}
+          />
+        </div>
+      )}
 
-      
-              <div className="relative z-10 md:max-w-[50%] mx-auto text-center md:px-40">
-    {texte[lang].descContact.map((p: string, i: number) => (
-      <p 
-        key={i} 
-        className="mb-4 md:mb-6 last:mb-0 font-assistant text-lg leading-relaxed text-gray-700 text-justify"
-      >
-        {p}
-      </p>
-    ))}
-  
+      {!image && (
+        <div className="hidden md:block absolute bottom-130 right-0 z-[0] pointer-events-none">
+          <Image
+            src="/images/design/Union.png"
+            alt="Image abstraite 2"
+            width={500}
+            height={500}
+            style={{ objectFit: 'contain' }}
+          />
+        </div>
+      )}
 
-      <form ref={formRef} noValidate onSubmit={handleSubmit} className="relative mt-10 z-20 max-w-2xl mx-auto space-y-4 text-left md:px-10 md:mt-15">
-   
-        {/* Nom et Prénom */}
-        <div className="relative">
+      <div className="relative z-10 w-full max-w-[300px] md:max-w-[500px] mx-auto text-center">
+        {/* Mobile: Short text */}
+        <div className="md:hidden">
+          <p className="mb-3 font-assistant font-light text-[18px] leading-[29px] text-[#1e2939] text-center">
+            {texte[lang].descContact[0]}
+          </p>
+          <p className="mb-3 font-assistant font-light text-[18px] leading-[29px] text-black text-center">
+            ekaterina.cheliadinova@gmail.com
+          </p>
+          <p className="font-assistant font-light text-[14px] leading-[20px] text-[#1e2939] text-center">
+            {lang === 'fr'
+              ? "Je vous invite à me décrire votre projet, la date envisagée et le lieu."
+              : "Please describe your project, planned date, and location."}
+          </p>
+        </div>
+
+        {/* Desktop: Full text */}
+        <div className="hidden md:block">
+          {texte[lang].descContact.map((p: string, i: number) => (
+            <p
+              key={i}
+              className="mb-3 font-assistant font-light text-[18px] leading-[29px] text-[#1e2939] text-center"
+            >
+              {p}
+            </p>
+          ))}
+        </div>
+
+        <form ref={formRef} noValidate onSubmit={handleSubmit} className="relative mt-8 z-20 mx-auto space-y-3 text-left">
+
+          {/* Nom et Prénom */}
           <input
             type="text"
             required
             id="netp"
             name="netp"
-            placeholder=" " 
-            className={`${baseInputClass} ${submitted ? "invalid:border-red-500" : "border-black/50"}`}
+            placeholder={`${texte[lang].netp} *`}
+            className={`${inputClass} ${submitted ? "invalid:border-red-500" : ""}`}
           />
-          <label htmlFor="netp" className="absolute left-4 top-3 pointer-events-none transition-all peer-placeholder-shown:block hidden text-gray-500 font-assistant">
-            {texte[lang].netp} <span className="text-red-500">*</span>
-          </label>
-          {submitted && (
-            <span className="absolute right-4 top-4 text-red-500 text-[10px] font-assistant pointer-events-none peer-invalid:opacity-100 opacity-0">
-              {lang === 'fr' ? 'Ce champ est requis' : 'This field is required'}
-            </span>
-          )}
-        </div>
 
-        {/* Email */}
-        <div className="relative">
+          {/* Email */}
           <input
             type="email"
             required
             id="email"
             name="email"
-            placeholder=" "
-            className={`${baseInputClass} ${submitted ? "invalid:border-red-500" : "border-black/50"}`}
+            placeholder={`${texte[lang].email} *`}
+            className={`${inputClass} ${submitted ? "invalid:border-red-500" : ""}`}
           />
-          <label htmlFor="email" className="absolute left-4 top-3 pointer-events-none transition-all peer-placeholder-shown:block hidden text-gray-500 font-assistant">
-            {texte[lang].email} <span className="text-red-500">*</span>
-          </label>
-          {submitted && (
-            <span className="absolute right-4 top-4 text-red-500 text-[10px] font-assistant pointer-events-none peer-invalid:opacity-100 opacity-0">
-              {lang === 'fr' ? 'Email invalide' : 'Invalid email'}
-            </span>
-          )}
-        </div>
 
-        {/* Téléphone (Non requis) */}
-        <div>
+          {/* Téléphone */}
           <input
             type="tel"
+            name="tel"
             placeholder={texte[lang].tel}
-            className="w-full border border-black/50 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-black text-black font-assistant bg-white/80 backdrop-blur-sm"
+            className={inputClass}
           />
-        </div>
 
-        {/* Ville (Non requis) */}
-        <div>
+          {/* Ville */}
           <input
             type="text"
+            name="ville"
             placeholder={texte[lang].ville}
-            className="w-full border border-black/50 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-black text-black font-assistant bg-white/80 backdrop-blur-sm"
+            className={inputClass}
           />
-        </div>
 
-        {/* Type de prestation */}
-        <div className="relative">
-          <select
-            required
-            id="presta"
-            name="presta"
-            defaultValue=""
-            className={`peer w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-black bg-white/80 font-assistant appearance-none text-gray-500 valid:text-black transition-all ${submitted ? "invalid:border-red-500" : "border-black/50"}`}
-          >
-            <option value="" disabled hidden></option>
-            <option value="mariage">{texte[lang].mariage}</option>
-            <option value="couple">{texte[lang].couple}</option>
-            <option value="famille">{texte[lang].famille}</option>
-            <option value="portrait">{texte[lang].portrait}</option>
-            <option value="evenement">{texte[lang].evenement}</option>
-            <option value="grossesse">{texte[lang].grossesse}</option>
-            <option value="entreprise">{texte[lang].entreprise}</option>
-          </select>
-          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-black/50">
-            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          {/* Type de prestation */}
+          <div className="relative">
+            <select
+              required
+              id="presta"
+              name="presta"
+              defaultValue=""
+              className={`w-full border border-gray-200 rounded-[14px] px-4 py-3 focus:outline-none focus:ring-1 focus:ring-black bg-white font-assistant font-light text-[18px] appearance-none text-black/50 valid:text-black ${submitted ? "invalid:border-red-500" : ""}`}
+            >
+              <option value="" disabled>{texte[lang].presta} *</option>
+              <option value="mariage">{texte[lang].mariage}</option>
+              <option value="couple">{texte[lang].couple}</option>
+              <option value="famille">{texte[lang].famille}</option>
+              <option value="portrait">{texte[lang].portrait}</option>
+              <option value="evenement">{texte[lang].evenement}</option>
+              <option value="grossesse">{texte[lang].grossesse}</option>
+              <option value="entreprise">{texte[lang].entreprise}</option>
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-black/50">
+              <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </div>
           </div>
-          <label htmlFor="presta" className="absolute left-4 top-3 pointer-events-none text-gray-500 font-assistant peer-focus:hidden peer-valid:hidden transition-all">
-            {texte[lang].presta} <span className="text-red-500">*</span>
-          </label>
-          {submitted && (
-            <span className="absolute right-10 top-4 text-red-500 text-[10px] font-assistant pointer-events-none peer-invalid:opacity-100 opacity-0">
-               {lang === 'fr' ? 'Requis' : 'Required'}
-            </span>
-          )}
-        </div>
 
-        {/* Message */}
-        <div className="relative mb-0">
+          {/* Message */}
           <textarea
             required
             id="message"
             name="message"
             rows={5}
-            placeholder=" "
-            className={`${baseInputClass} ${submitted ? "invalid:border-red-500" : "border-black/50"}`}
-          ></textarea>
-          <label htmlFor="message" className="absolute left-4 top-3 pointer-events-none transition-all peer-placeholder-shown:block hidden text-gray-500 font-assistant">
-            {texte[lang].message} <span className="text-red-500">*</span>
-          </label>
-          {submitted && (
-            <span className="absolute right-4 top-4 text-red-500 text-[10px] font-assistant pointer-events-none peer-invalid:opacity-100 opacity-0">
-               {lang === 'fr' ? 'Message requis' : 'Message required'}
+            placeholder={`${texte[lang].message} *`}
+            className={`${inputClass} ${submitted ? "invalid:border-red-500" : ""}`}
+          />
+
+          {/* Mention Champs Obligatoires */}
+          <div className="w-full text-right">
+            <span className="text-[12px] text-red-500 font-assistant">
+              * {texte[lang].champsObligatoires}
             </span>
-          )}
-        </div>
+          </div>
 
-        {/* Mention Champs Obligatoires */}
-        <div className="w-full text-right px-4">
-          <span className="text-sm text-gray-500 font-assistant italic">
-            <span className="text-red-500">*</span> {texte[lang].champsObligatoires}
-          </span>
-        </div>
-
-        {/* Bouton Envoyer */}
-     <div className="flex flex-col items-center gap-4">
-  <button 
-    type="submit" 
-    className="md:w-[60%] w-full hover:cursor-pointer bg-[#F8F8F8] text-black px-12 py-3 mb-8 rounded-lg text-lg uppercase tracking-widest font-assistant border border-black/10 transition-all duration-200 
-               shadow-md hover:shadow-lg active:shadow-none hover:bg-gray-100"
-  >
-    {texte[lang].bouton}
-  </button>
-</div>
-      </form>
+          {/* Bouton Envoyer */}
+          <button
+            type="submit"
+            className="w-full hover:cursor-pointer bg-[#f5f5f5] text-black px-12 py-3 rounded-[14px] text-[18px] font-assistant font-light border border-gray-300 transition-all duration-200 shadow-md hover:shadow-lg active:shadow-none hover:bg-gray-100"
+          >
+            {texte[lang].bouton}
+          </button>
+        </form>
       </div>
     </section>
   );
