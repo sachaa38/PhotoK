@@ -35,7 +35,9 @@ export default function PageFamille() {
 </div>        
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 w-full max-w-6xl">
-          {imagesFamille && imagesFamille.map((image, i) => (
+          {imagesFamille && imagesFamille.map((image, i) => {
+            const imageFile = image.includes(".") ? image : `${image}.png`;
+            return (
             <div key={i} className="text-center group">
               {/* AJOUT DE RELATIVE ET BLOCK ICI */}
 <Link 
@@ -44,7 +46,7 @@ export default function PageFamille() {
 >
   {/* L'image qui scale et devient grise */}
   <Image
-    src={`/images/famille/${image}.png`}
+    src={`/images/famille/${imageFile}`}
     alt={`Photo ${i}`}
     fill
     className="object-cover transition-all duration-700 
@@ -69,7 +71,8 @@ export default function PageFamille() {
                 </span>
               )}
             </div>
-          ))}
+          );
+        })}
         </div>
       </section>
 

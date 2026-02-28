@@ -36,7 +36,7 @@ const texte = {
   titrePageFamille : "Séance Famille",
   descPageFamille : ["Une séance famille est un moment de partage, pensé pour être vécu simplement, à votre rythme.",
 "En amont, je prends le temps d’échanger avec vous et de vous conseiller sur le lieu, à votre domicile, en extérieur ou en studio, ainsi que sur les tenues et l’ambiance, afin que la séance vous ressemble. Le jour de la séance, je vous guide si nécessaire, tout en laissant place aux interactions naturelles, aux gestes spontanés et aux moments de complicité.",
-"Je privilégie une lumière douce et naturelle, ainsi qu’un rendu authentique, pou r créer des images sincères qui racontent votre histoire familiale avec simplicité."],
+"Je privilégie une lumière douce et naturelle, ainsi qu’un rendu authentique, pour créer des images sincères qui racontent votre histoire familiale avec simplicité."],
   labelPhotoFamille : ["Yvonne","Feddaoui","Metz"],
   urlFamille: [
   "https://cheliadinovaekaterina.passgallery.com/-yvonne/gallery",

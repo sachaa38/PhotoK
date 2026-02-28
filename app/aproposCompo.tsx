@@ -6,15 +6,20 @@ import { useLang } from "./LanguageContext";
 
 function APropos() {
   // 2. On récupère lang et switchLang depuis le Context global
-  const { lang, switchLang } = useLang();
+  const { lang } = useLang();
 
   return (
      <section id="about" className="md:pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center z-1">
        {/* Titre Centré */}
        <h2 className="pt-6 md:pt-0 mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
-        {/* @ts-ignore */}
+        {/* @ts-expect-error dynamic dictionary key */}
          {texte[lang].apropos}
        </h2>
+
+       <p className="md:hidden mb-6 font-assistant text-lg leading-relaxed text-gray-700 text-justify">
+        {/* @ts-expect-error dynamic dictionary key */}
+        {texte[lang].descApropos[0]}
+       </p>
      
        {/* Conteneur principal */}
       <div className="flex flex-col md:flex-row items-stretch justify-center w-full max-w-6xl gap-6 md:gap-12 md:gap-20">
@@ -37,11 +42,11 @@ function APropos() {
   <div className="w-full md:w-[60%] text-justify h-full flex flex-col">
     {/* 2. On s'assure que le premier paragraphe n'a pas de marge supérieure parasite */}
     <div className="pt-0 h-full flex flex-col"> 
-      {/* @ts-ignore */}
+      {/* @ts-expect-error dynamic dictionary key */}
       {texte[lang].descApropos.map((p, i) => (
         <p 
           key={i} 
-          className="mb-4 md:mb-6 last:mb-0 font-assistant text-lg leading-relaxed text-gray-700"
+          className={`mb-4 md:mb-6 last:mb-0 font-assistant text-lg leading-relaxed text-gray-700 ${i === 0 || i === 3 ? "hidden md:block" : ""}`}
         >
           {p}
         </p>

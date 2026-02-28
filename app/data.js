@@ -1,7 +1,10 @@
 const imagesCarousselA = [
-  "Frame 3",
-  "Frame 5",
   "Frame 4",
+  "Frame 5",
+  "Frame 3",
+  "BO1A5963_websize.jpg",
+  "IMG_2298_websize.jpg",
+  "IMG_7647_websize.jpg",
 
   
 ];
@@ -34,5 +37,3 @@ export const imagesMariage = [
   "Frame 12",
   "Frame 11",
 ]
-
-

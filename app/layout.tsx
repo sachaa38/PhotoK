@@ -3,7 +3,6 @@ import "./globals.css";
 import Header from "./header";
 import FooterSite from "./footer"; // Assure-toi que l'import est correct
 import { LanguageProvider } from "./LanguageContext";
-import texte from "./texte";
 
 // --- Configuration des polices ---
 export const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600", "700"], variable: "--font-poppins" });
@@ -15,7 +14,7 @@ export const assistant = Assistant({ subsets: ["latin"], variable: "--font-assis
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html className={`${poppins.variable} ${prata.variable} ${spartan.variable} ${bodoni.variable} ${assistant.variable}`}>
-      <body className="font-poppins">
+      <body className="font-poppins bg-white text-[#171717]">
         <LanguageProvider>
           <Header /> 
           <main>{children}</main>
