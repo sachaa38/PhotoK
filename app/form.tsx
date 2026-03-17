@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Image from "next/image";
 import emailjs from '@emailjs/browser';
 import { useRef } from 'react';
+import { useRouter } from 'next/navigation';
 
 type ContactContent = {
   contact: string;
@@ -27,6 +28,7 @@ type TexteByLang = Record<string, ContactContent>;
 
 const FormulaireContact = ({ lang, texte, image }: { lang: string; texte: TexteByLang; image: boolean }) => {
   const [submitted, setSubmitted] = useState(false);
+  const router = useRouter();
 const formRef = useRef<HTMLFormElement>(null);
 const content = texte[lang];
 if (!content) return null;
@@ -74,9 +76,7 @@ const handleSubmit = (e: React.FormEvent) => {
     'zE9bIRzXYvWQriraN'
   )
   .then(() => {
-      alert(lang === 'fr' ? "Message envoyé avec succès !" : "Message sent successfully!");
-      formRef.current?.reset(); // Réinitialise le formulaire
-      setSubmitted(false);
+      router.push(`/pagemerci?lang=${lang}`);
   }, () => {
       alert(lang === 'fr' ? "Erreur lors de l'envoi." : "Error during sending.");
   });

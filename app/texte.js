@@ -105,6 +105,9 @@ questionsFaq: [
         a: ["Il vous suffit de me contacter via le formulaire du site en précisant votre projet, la date et le lieu. Je vous répondrai rapidement pour échanger ensemble et vous proposer une offre adaptée."]
       }
     ],
+    titrePageMerci: "Merci pour votre message !",
+    descPageMerci: ["Votre message a bien été envoyé.", "Je vous répondrai dans les meilleurs délais pour discuter de votre projet ensemble.", "À très bientôt !"],
+    retourAccueil: "Retour à l'accueil",
     titrePageConfidentialite: "Politique de confidentialité",
     politiqueConfidentialite: [
       {
@@ -253,6 +256,9 @@ descApropos: [
         a: ["Simply contact me via the website form, specifying your project, the date, and the location. I will get back to you quickly to discuss it together and offer you a tailored proposal."]
       }
     ],
+    titrePageMerci: "Thank you for your message!",
+    descPageMerci: ["Your message has been sent successfully.", "I will get back to you as soon as possible to discuss your project together.", "See you soon!"],
+    retourAccueil: "Back to home",
     titrePageConfidentialite: "Privacy Policy",
     politiqueConfidentialite: [
       {
