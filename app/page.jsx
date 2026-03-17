@@ -8,6 +8,7 @@ import texte from "./texte";
 import FormulaireContact from "./form";
 import Link from "next/link";
 import APropos from "./aproposCompo";
+import FaqItem from "./faqCompo";
 
 export default function Home() {
 
@@ -84,7 +85,7 @@ export default function Home() {
   return (
     <div className="relative min-h-screen bg-white text-white font-sans">
       {/* ======== HERO CAROUSEL — MOBILE (1 image at a time) ======== */}
-      <section className="md:hidden relative w-full bg-white pt-4 overflow-hidden">
+      <section className="md:hidden relative w-full bg-white pt-4 overflow-hidden" aria-label="Hero">
         <div
           className="flex transition-transform duration-1000 ease-in-out"
           style={{ transform: `translateX(-${mobileIndex * 100}%)`, touchAction: 'pan-y' }}
@@ -100,6 +101,7 @@ export default function Home() {
                 className="object-cover"
                 sizes="100vw"
                 priority={idx === 0}
+                loading={idx === 0 ? undefined : "eager"}
               />
             </div>
           ))}
@@ -157,6 +159,7 @@ export default function Home() {
                   className="object-cover"
                   sizes="33vw"
                   priority={idx < 3}
+                  loading={idx < 3 ? undefined : "eager"}
                 />
               </div>
             </div>
@@ -182,6 +185,10 @@ export default function Home() {
           </button>
         )}
       </section>
+
+      <h2 className="w-full text-center font-bodoni text-xl md:text-2xl italic text-gray-500 tracking-wide py-6 md:py-8 bg-white">
+        {texte[lang].titre1}
+      </h2>
 
       <APropos />
 
@@ -223,6 +230,18 @@ export default function Home() {
                 <div className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-colors duration-500" />
               </div>
             </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ======== FAQ ======== */}
+      <section className="bg-white text-black flex flex-col items-center px-6 md:px-20 md:pb-20">
+        <h2 className="pt-6 md:pt-0 mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center">
+          {texte[lang].titrePageFaq}
+        </h2>
+        <div className="w-full max-w-3xl">
+          {texte[lang].questionsFaq.map((item, index) => (
+            <FaqItem key={index} question={item.q} answer={item.a} />
           ))}
         </div>
       </section>

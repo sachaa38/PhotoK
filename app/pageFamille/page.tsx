@@ -34,6 +34,10 @@ export default function PageFamille() {
   </div>
 </div>        
 
+        <h2 className="font-assistant font-extralight text-sm uppercase tracking-[0.45em] text-gray-400 mb-10 pb-3 border-b border-dotted border-gray-300 w-fit mx-auto">
+          {content.sousTitreGaleries}
+        </h2>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 w-full max-w-6xl">
           {imagesFamille && imagesFamille.map((image, i) => {
             const imageFile = image.includes(".") ? image : `${image}.png`;

@@ -24,6 +24,8 @@ const texte = {
   bouton: "Envoyer",
   champsObligatoires: "champs obligatoires",
 
+  sousTitreGaleries: "Galeries",
+
   // Options du menu déroulant
   mariage: "Mariage",
   couple: "Couple",
@@ -177,6 +179,8 @@ questionsFaq: [
     message: "Message",
     bouton: "Send",
     champsObligatoires: "required fields",
+
+    sousTitreGaleries: "Galleries",
 
     // Dropdown options
     mariage: "Wedding",

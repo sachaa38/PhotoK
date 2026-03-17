@@ -36,6 +36,14 @@ export default function PageMariage() {
           
          
 
+        <div className="flex items-center gap-4 w-full max-w-xs mx-auto mb-10">
+          <span className="flex-1 h-px bg-[#8C7E7E]/40" />
+          <h2 className="font-spartan text-[10px] uppercase tracking-[0.4em] text-[#8C7E7E] font-light whitespace-nowrap">
+            {content.sousTitreGaleries}
+          </h2>
+          <span className="flex-1 h-px bg-[#8C7E7E]/40" />
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 w-full max-w-6xl">
           {imagesMariage && imagesMariage.map((image, i) => (
             <div key={i} className="text-center group">

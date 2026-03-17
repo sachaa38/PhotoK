@@ -35,6 +35,10 @@ export default function PageCouple() {
       </div>
     </div>        
 
+    <h2 className="font-prata italic text-lg text-gray-400 mb-10 text-center">
+      {content.sousTitreGaleries}
+    </h2>
+
     {/* Grille : gap plus important sur mobile pour séparer les images empilées */}
     <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 w-full max-w-6xl">
       {imagesCouple && imagesCouple.map((image, i) => (
