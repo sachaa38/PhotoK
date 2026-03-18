@@ -152,7 +152,35 @@ questionsFaq: [
         titre: "10. Contact",
         contenu: "Si vous avez des questions concernant cette politique de confidentialité, vous pouvez nous contacter à l'adresse suivante : ekaterina.cheliadinova@gmail.com"
       }
-    ]
+    ],
+    labelFaq: "FAQ",
+    labelTarifs: "Tarifs",
+    titrePageTarifs: "Tarifs",
+    sousTitreTarifs: "Formules Mariage",
+    tarifsInclus: {
+      titre: "Ce qui est inclus dans chaque formule",
+      items: [
+        "Couverture complète de la durée choisie",
+        "Sélection et retouche professionnelle de toutes les meilleures photos",
+        "Galerie privée en ligne (téléchargement & partage avec vos invités)",
+        "Accompagnement avant votre mariage (planning, organisation)",
+        "Déplacements inclus en Rhône-Alpes",
+        "Je livre toutes les images qui ont du sens — pas un nombre limité."
+      ]
+    },
+    tarifsFormules: [
+      { nom: "Essentiel", prix: "600€", duree: "≈ 4 heures", items: ["Idéal pour les petits mariages", "Cérémonie (civile / religieuse / symbolique)", "Moments spontanés", "Photos de groupe"] },
+      { nom: "Élégance", prix: "780€", duree: "≈ 6 heures", items: ["Cérémonie", "Moments spontanés", "Photos de groupe", "Séance couple"] },
+      { nom: "Signature", prix: "1 050€", duree: "≈ 8 heures", populaire: true, items: ["Cérémonie (civile + religieuse ou symbolique)", "Moments spontanés", "Photos de groupe", "Séance couple", "Préparatifs ou cocktail"] },
+      { nom: "Prestige", prix: "1 300€", duree: "≈ 10 heures", items: ["Préparatifs de la mariée", "Cérémonie", "Séance couple", "Photos de groupe", "Cocktail", "Reportage complet de la journée", "1 supplément offert"] },
+      { nom: "Luxe", prix: "1 450€", duree: "≈ 12 heures", items: ["Cérémonie", "Séance couple", "Photos de groupe", "Cocktail", "Dîner", "Soirée / fête", "Découpe du gâteau", "Reportage complet", "1 supplément offert"] },
+      { nom: "Signature+", prix: "1 600€", duree: "≈ 13–14 heures", items: ["Couverture complète : préparatifs → soirée", "Cérémonie", "Séance couple", "Photos de groupe", "Cocktail", "Dîner", "Fête & gâteau", "Récit complet de votre journée", "1 supplément premium"] }
+    ],
+    tarifsHeureSupp: { titre: "Heure supplémentaire", prix: "+120€ / heure" },
+    tarifsSupplements: {
+      titre: "Suppléments (en option ou inclus dans les formules supérieures)",
+      items: ["Séance engagement", "Lendemain / \"Trash the dress\"", "Séance essayage de robe", "Création d'album photo premium", "Impressions instantanées / Polaroid", "Atelier photo demi-journée"]
+    }
 },
 
 
@@ -305,7 +333,35 @@ descApropos: [
         titre: "10. Contact",
         contenu: "If you have any questions regarding this privacy policy, you may contact us at: ekaterina.cheliadinova@gmail.com"
       }
-    ]
+    ],
+    labelFaq: "FAQ",
+    labelTarifs: "Pricing",
+    titrePageTarifs: "Pricing",
+    sousTitreTarifs: "Wedding Packages",
+    tarifsInclus: {
+      titre: "What's included in every package",
+      items: [
+        "Full coverage of your selected time",
+        "Careful selection + professional editing of all best photos",
+        "Private online gallery (download & share with guests)",
+        "Guidance before your wedding (timeline, organization)",
+        "Travel included within Rhône-Alpes",
+        "I deliver all meaningful images — not a limited number."
+      ]
+    },
+    tarifsFormules: [
+      { nom: "Essentiel", prix: "600€", duree: "≈ 4 hours", items: ["Perfect for small weddings", "Ceremony (civil / religious / symbolic)", "Candid moments", "Group photos"] },
+      { nom: "Élégance", prix: "780€", duree: "≈ 6 hours", items: ["Ceremony", "Candid moments", "Group photos", "Couple session"] },
+      { nom: "Signature", prix: "1,050€", duree: "≈ 8 hours", populaire: true, items: ["Ceremony (civil + religious or symbolic)", "Candid moments", "Group photos", "Couple session", "Preparation or cocktail"] },
+      { nom: "Prestige", prix: "1,300€", duree: "≈ 10 hours", items: ["Bride preparation", "Ceremony", "Couple session", "Group photos", "Cocktail", "Full reportage throughout the day", "1 complimentary extra"] },
+      { nom: "Luxe", prix: "1,450€", duree: "≈ 12 hours", items: ["Ceremony", "Couple session", "Group photos", "Cocktail", "Dinner", "Evening / party", "Cake moment", "Full reportage", "1 complimentary extra"] },
+      { nom: "Signature+", prix: "1,600€", duree: "≈ 13–14 hours", items: ["Full day coverage: preparation → evening", "Ceremony", "Couple session", "Group photos", "Cocktail", "Dinner", "Party & cake", "Complete storytelling", "1 premium extra"] }
+    ],
+    tarifsHeureSupp: { titre: "Additional time", prix: "+120€ / hour" },
+    tarifsSupplements: {
+      titre: "Extras (optional or included in higher packages)",
+      items: ["Engagement session", "Day-after / \"Trash the dress\"", "Bridal fitting session", "Premium photo album design", "Instant prints / Polaroid", "Half-day photography workshop"]
+    }
       },
 };
 export default texte;

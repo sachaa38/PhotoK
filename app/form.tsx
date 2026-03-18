@@ -132,7 +132,7 @@ const handleSubmit = (e: React.FormEvent) => {
          
 
       
-              <div className="relative z-10 md:max-w-[50%] mx-auto text-center md:px-40">
+              <div className="relative z-10 w-full max-w-2xl mx-auto text-center px-4 md:px-8">
     {content.descContact.map((p: string, i: number) => (
       <p 
         key={i} 
@@ -143,7 +143,7 @@ const handleSubmit = (e: React.FormEvent) => {
     ))}
   
 
-      <form ref={formRef} noValidate onSubmit={handleSubmit} className="relative mt-10 z-20 max-w-2xl mx-auto space-y-4 text-left md:px-10 md:mt-15">
+      <form ref={formRef} noValidate onSubmit={handleSubmit} className="relative mt-10 z-20 w-full max-w-2xl mx-auto space-y-4 text-left px-4 md:px-8 md:mt-15">
    
         {/* Nom et Prénom */}
         <div className="relative">

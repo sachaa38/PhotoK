@@ -35,7 +35,10 @@ function Header() {
 
   const { lang, switchLang } = useLang();
   const [showDropdown, setShowDropdown] = useState(false);
+  const [showInfosDropdown, setShowInfosDropdown] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobilePortfolioOpen, setMobilePortfolioOpen] = useState(false);
+  const [mobileInfosOpen, setMobileInfosOpen] = useState(false);
 
   const openDropdown = () => setShowDropdown(true);
   const closeDropdown = () => setShowDropdown(false);
@@ -47,9 +50,19 @@ function Header() {
     closeDropdown();
   };
 
+  const handleInfosDropdownMouseLeave = (event) => {
+    if (event.relatedTarget && event.currentTarget.contains(event.relatedTarget)) {
+      return;
+    }
+    setShowInfosDropdown(false);
+  };
+
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
     setShowDropdown(false);
+    setShowInfosDropdown(false);
+    setMobilePortfolioOpen(false);
+    setMobileInfosOpen(false);
   };
 
   return (
@@ -78,26 +91,50 @@ function Header() {
           <Link href={`/pageApropos?lang=${lang}`} onClick={closeMobileMenu} className="hover:text-gray-400 transition-colors">
             {texte[lang].apropos}
           </Link>
-          <div className="flex flex-col items-center gap-4">
-            <span className="font-assistant font-light text-black text-xl">{texte[lang].portfolio}</span>
-            <div className="flex flex-col items-center gap-3 text-base text-gray-500">
-              <Link href={`/pageMariage?lang=${lang}`} onClick={closeMobileMenu} className="hover:text-gray-700 transition-colors">
-                {texte[lang].titrePf[0]}
-              </Link>
-              <Link href={`/pageCouple?lang=${lang}`} onClick={closeMobileMenu} className="hover:text-gray-700 transition-colors">
-                {texte[lang].titrePf[1]}
-              </Link>
-              <Link href={`/pageFamille?lang=${lang}`} onClick={closeMobileMenu} className="hover:text-gray-700 transition-colors">
-                {texte[lang].titrePf[2]}
-              </Link>
+          <div className="flex flex-col items-center gap-0 w-full px-8">
+            <button
+              onClick={() => setMobilePortfolioOpen(o => !o)}
+              className="flex items-center justify-center gap-2 font-assistant font-light text-black text-xl w-full py-1"
+            >
+              {texte[lang].portfolio}
+              <span className={`text-[10px] transition-transform duration-300 ${mobilePortfolioOpen ? 'rotate-180' : ''}`}>▼</span>
+            </button>
+            <div className={`overflow-hidden transition-all duration-300 ${mobilePortfolioOpen ? 'max-h-40 mt-3' : 'max-h-0'}`}>
+              <div className="flex flex-col items-center gap-3 text-base text-gray-500">
+                <Link href={`/pageMariage?lang=${lang}`} onClick={closeMobileMenu} className="hover:text-gray-700 transition-colors">
+                  {texte[lang].titrePf[0]}
+                </Link>
+                <Link href={`/pageCouple?lang=${lang}`} onClick={closeMobileMenu} className="hover:text-gray-700 transition-colors">
+                  {texte[lang].titrePf[1]}
+                </Link>
+                <Link href={`/pageFamille?lang=${lang}`} onClick={closeMobileMenu} className="hover:text-gray-700 transition-colors">
+                  {texte[lang].titrePf[2]}
+                </Link>
+              </div>
             </div>
           </div>
           <Link href={`/pageContact?lang=${lang}`} onClick={closeMobileMenu} className="hover:text-gray-400 transition-colors">
             {texte[lang].contact}
           </Link>
-          <Link href={`/pageFaq?lang=${lang}`} onClick={closeMobileMenu} className="hover:text-gray-400 transition-colors">
-            {texte[lang].infos}
-          </Link>
+          <div className="flex flex-col items-center gap-0 w-full px-8">
+            <button
+              onClick={() => setMobileInfosOpen(o => !o)}
+              className="flex items-center justify-center gap-2 font-assistant font-light text-black text-xl w-full py-1"
+            >
+              {texte[lang].infos}
+              <span className={`text-[10px] transition-transform duration-300 ${mobileInfosOpen ? 'rotate-180' : ''}`}>▼</span>
+            </button>
+            <div className={`overflow-hidden transition-all duration-300 ${mobileInfosOpen ? 'max-h-28 mt-3' : 'max-h-0'}`}>
+              <div className="flex flex-col items-center gap-3 text-base text-gray-500">
+                <Link href={`/pageFaq?lang=${lang}`} onClick={closeMobileMenu} className="hover:text-gray-700 transition-colors">
+                  {texte[lang].labelFaq}
+                </Link>
+                <Link href={`/pageTarifs?lang=${lang}`} onClick={closeMobileMenu} className="hover:text-gray-700 transition-colors">
+                  {texte[lang].labelTarifs}
+                </Link>
+              </div>
+            </div>
+          </div>
           <LangSwitcher lang={lang} switchLang={switchLang} />
         </nav>
       </div>
@@ -173,9 +210,30 @@ function Header() {
             <Link href={`/pageContact?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
               {texte[lang].contact}
             </Link>
-            <Link href={`/pageFaq?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
-              {texte[lang].infos}
-            </Link>
+            <div
+              className="relative flex items-center"
+              onMouseEnter={() => setShowInfosDropdown(true)}
+              onMouseLeave={handleInfosDropdownMouseLeave}
+            >
+              <button
+                type="button"
+                className="hover:text-gray-400 transition-colors text-center whitespace-nowrap flex items-center justify-center gap-1 focus:outline-none w-full"
+              >
+                {texte[lang].infos}
+                <span className={`text-[10px] transition-transform duration-300 ${showInfosDropdown ? 'rotate-180' : ''}`}>▼</span>
+              </button>
+
+              {showInfosDropdown && (
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-40 bg-white shadow-2xl py-4 flex flex-col gap-4 z-[9999] animate-fadeIn border border-gray-100">
+                  <Link href={`/pageFaq?lang=${lang}`} className="text-black hover:text-gray-400 transition-colors text-center whitespace-nowrap px-4" onClick={() => setShowInfosDropdown(false)}>
+                    {texte[lang].labelFaq}
+                  </Link>
+                  <Link href={`/pageTarifs?lang=${lang}`} className="text-black hover:text-gray-400 transition-colors text-center whitespace-nowrap px-4" onClick={() => setShowInfosDropdown(false)}>
+                    {texte[lang].labelTarifs}
+                  </Link>
+                </div>
+              )}
+            </div>
 
           </nav>
         </div>
