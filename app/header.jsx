@@ -124,8 +124,11 @@ function Header() {
               {texte[lang].infos}
               <span className={`text-[10px] transition-transform duration-300 ${mobileInfosOpen ? 'rotate-180' : ''}`}>▼</span>
             </button>
-            <div className={`overflow-hidden transition-all duration-300 ${mobileInfosOpen ? 'max-h-28 mt-3' : 'max-h-0'}`}>
+            <div className={`overflow-hidden transition-all duration-300 ${mobileInfosOpen ? 'max-h-40 mt-3' : 'max-h-0'}`}>
               <div className="flex flex-col items-center gap-3 text-base text-gray-500">
+                <Link href={`/pageProcess?lang=${lang}`} onClick={closeMobileMenu} className="hover:text-gray-700 transition-colors">
+                  {texte[lang].labelProcess}
+                </Link>
                 <Link href={`/pageFaq?lang=${lang}`} onClick={closeMobileMenu} className="hover:text-gray-700 transition-colors">
                   {texte[lang].labelFaq}
                 </Link>
@@ -224,7 +227,10 @@ function Header() {
               </button>
 
               {showInfosDropdown && (
-                <div className="absolute top-full left-1/2 -translate-x-1/2 w-40 bg-white shadow-2xl py-4 flex flex-col gap-4 z-[9999] animate-fadeIn border border-gray-100">
+                <div className="absolute top-full left-1/2 -translate-x-1/2 w-48 bg-white shadow-2xl py-4 flex flex-col gap-4 z-[9999] animate-fadeIn border border-gray-100">
+                  <Link href={`/pageProcess?lang=${lang}`} className="text-black hover:text-gray-400 transition-colors text-center whitespace-nowrap px-4" onClick={() => setShowInfosDropdown(false)}>
+                    {texte[lang].labelProcess}
+                  </Link>
                   <Link href={`/pageFaq?lang=${lang}`} className="text-black hover:text-gray-400 transition-colors text-center whitespace-nowrap px-4" onClick={() => setShowInfosDropdown(false)}>
                     {texte[lang].labelFaq}
                   </Link>

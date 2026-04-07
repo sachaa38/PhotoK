@@ -33,10 +33,29 @@ const FooterSite = () => {
       <Link href={`/pageContact?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
         {texte[lang].contact}
       </Link>
+      <Link href={`/pageProcess?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
+        {texte[lang].labelProcess}
+      </Link>
       <Link href={`/pageFaq?lang=${lang}`} className="hover:text-gray-400 transition-colors text-center whitespace-nowrap">
         {texte[lang].infos}
       </Link>
     </nav>
+
+    <div className="mt-6 flex flex-col items-center gap-1 font-assistant font-light text-gray-500 text-sm text-center">
+      <span>Grenoble &amp; Rhône-Alpes</span>
+      <a
+        href="tel:+33780704461"
+        className="hover:text-gray-700 transition-colors"
+      >
+        +33 7 80 70 44 61
+      </a>
+      <a
+        href="mailto:ekaterina.cheliadinova@gmail.com"
+        className="hover:text-gray-700 transition-colors"
+      >
+        ekaterina.cheliadinova@gmail.com
+      </a>
+    </div>
   </div>
 </div>
    

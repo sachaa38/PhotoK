@@ -7,7 +7,7 @@ const FaqItem = ({ question, answer }: { question: string; answer: string[] }) =
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="w-full mb-6 mb:pb-12"> {/* py-6 augmente l'espace entre les blocs de questions */}
+    <div className="w-full mb-3 rounded-[24px] border border-stone-200 bg-white px-4 py-4 shadow-sm md:px-6"> {/* py-6 augmente l'espace entre les blocs de questions */}
       <button
   onClick={() => setIsOpen(!isOpen)}
   className="flex w-full items-center cursor-pointer focus:outline-none group"
@@ -28,7 +28,7 @@ const FaqItem = ({ question, answer }: { question: string; answer: string[] }) =
     </div>
 
     {/* Question : parfaitement alignée */}
-    <span className="text-lg font-assistant font-bold uppercase tracking-wider text-gray-800 text-left">
+    <span className="text-lg font-assistant font-bold tracking-wide text-gray-800 text-left">
       {question}
     </span>
   </div>
@@ -38,7 +38,7 @@ const FaqItem = ({ question, answer }: { question: string; answer: string[] }) =
       <div
         className={`overflow-hidden transition-all duration-500 ease-in-out mx-auto ${
           isOpen 
-            ? "max-h-[800px] opacity-100 mt-8 mb-4" // mt-8 augmente l'espace entre question et réponse
+            ? "max-h-[800px] opacity-100 mt-6"
             : "max-h-0 opacity-0"
         }`}
         style={{ maxWidth: "900px" }} // Ici tu peux définir une largeur plus grande pour la réponse
@@ -46,7 +46,7 @@ const FaqItem = ({ question, answer }: { question: string; answer: string[] }) =
         {answer.map((p, i) => (
           <p 
             key={i} 
-            className="mb-4 last:mb-0 font-assistant text-gray-600 leading-relaxed text-justify"
+            className="mb-4 last:mb-0 font-assistant text-gray-600 leading-relaxed text-left"
           >
             {p}
           </p>

@@ -27,7 +27,7 @@ export default function PageMerci() {
 
   return (
     <main className="min-h-screen bg-white flex flex-col items-center justify-start pt-24 md:pt-32 px-4 text-center">
-      <h1 className="font-bodoni text-3xl md:text-4xl mb-8 text-black">
+      <h1 className="font-bodoni italic text-gray-500 tracking-wide text-3xl md:text-4xl mb-8">
         {t.titrePageMerci}
       </h1>
       <div className="max-w-xl space-y-4 mb-10">

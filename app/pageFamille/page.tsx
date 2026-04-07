@@ -17,26 +17,36 @@ export default function PageFamille() {
 
   return (
     <main className="min-h-screen bg-white">
-      <section className="md:pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center">
-        <h2 className="pt-6 md:pt-0 mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
-          {content.titrePageFamille}
-        </h2>
-<div className="flex flex-col items-center w-full md:w-[75%] mb-12 md:mb-15"> 
-      <div className="w-full md:max-w-[70%]">
-    {content.descPageFamille.map((p: string, i: number) => (
-      <p 
-        key={i} 
-        className="mb-0 last:mb-0 font-assistant text-justify md:text-base md:text-lg leading-relaxed text-gray-700"
-      >
-        {p}
-      </p>
-    ))}
-  </div>
-</div>        
+      <section className="px-6 pb-20 md:px-20 bg-white text-black flex flex-col items-center">
+        <div className="w-full max-w-4xl pt-8 md:pt-10 text-center">
+          <h1 className="font-bodoni italic text-gray-500 tracking-wide text-center">
+            <span className="block text-2xl md:text-[32px] leading-tight">
+              {content.sousTitreSeoFamille}
+            </span>
+            <span className="mt-2 block font-assistant text-sm uppercase tracking-[0.22em] text-white md:text-base">
+              {content.titreSeoFamille}
+            </span>
+          </h1>
 
-        <h2 className="font-assistant font-extralight text-sm uppercase tracking-[0.45em] text-gray-400 mb-10 pb-3 border-b border-dotted border-gray-300 w-fit mx-auto">
-          {content.sousTitreGaleries}
-        </h2>
+          <div className="mt-14 max-w-3xl mx-auto text-justify">
+            {content.descPageFamille.map((p: string, i: number) => (
+              <p
+                key={i}
+                className="mb-5 last:mb-0 font-assistant text-base leading-8 text-gray-700 md:text-lg"
+              >
+                {p}
+              </p>
+            ))}
+          </div>
+        </div>
+
+        <div className="mt-16 flex items-center gap-4 w-full max-w-xs mx-auto mb-10">
+          <span className="flex-1 h-px bg-[#8C7E7E]/30" />
+          <h2 className="font-assistant text-[11px] uppercase tracking-[0.38em] text-[#8C7E7E] whitespace-nowrap">
+            {content.sousTitreGaleries}
+          </h2>
+          <span className="flex-1 h-px bg-[#8C7E7E]/30" />
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 w-full max-w-6xl">
           {imagesFamille && imagesFamille.map((image, i) => {
@@ -50,7 +60,7 @@ export default function PageFamille() {
 >
   {/* L'image qui scale et devient grise */}
   <Image
-    src={`/images/famille/${imageFile}`}
+    src={`/optimized-images/images/famille/${imageFile}`}
     alt={`Photo ${i}`}
     fill
     className="object-cover transition-all duration-700 

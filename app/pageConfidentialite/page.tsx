@@ -13,7 +13,7 @@ export default function PageConfidentialite() {
   return (
     <section className="mt-6 bg-white text-black flex flex-col items-center min-h-screen">
       <div className="w-full max-w-4xl px-4 md:px-8 py-12">
-        <h1 className="mb-8 md:mb-12 font-bodoni text-3xl md:text-[40px] text-center">
+        <h1 className="mb-8 md:mb-12 font-bodoni italic text-gray-500 tracking-wide text-3xl md:text-[40px] text-center">
           {content.titrePageConfidentialite}
         </h1>
 

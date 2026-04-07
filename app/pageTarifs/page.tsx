@@ -17,7 +17,7 @@ export default function PageTarifs() {
       {/* ── Hero ── */}
       <section className="relative h-[45vh] md:h-[55vh] overflow-hidden flex items-end justify-center">
         <Image
-          src="/images/design/IMG_2322.jpg"
+          src="/optimized-images/images/design/IMG_2322.jpg"
           alt={t.titrePageTarifs}
           fill
           priority
@@ -37,7 +37,7 @@ export default function PageTarifs() {
       {/* ── Ce qui est inclus ── */}
       <section className="bg-stone-50 py-14 md:py-20 px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-bodoni text-2xl md:text-3xl text-center italic mb-10 md:mb-14 tracking-wide">
+          <h2 className="font-bodoni italic text-gray-500 tracking-wide text-2xl md:text-3xl text-center mb-10 md:mb-14">
             {t.tarifsInclus.titre}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
@@ -54,7 +54,7 @@ export default function PageTarifs() {
       {/* ── Packages ── */}
       <section className="bg-white py-14 md:py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="font-bodoni text-2xl md:text-3xl text-center italic mb-12 md:mb-16 tracking-wide">
+          <h2 className="font-bodoni italic text-gray-500 tracking-wide text-2xl md:text-3xl text-center mb-12 md:mb-16">
             {lang === "fr" ? "Formules" : "Packages"}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
@@ -117,7 +117,7 @@ export default function PageTarifs() {
       {/* ── Extra hour ── */}
       <section className="bg-stone-50 py-10 md:py-14 px-6">
         <div className="max-w-2xl mx-auto text-center">
-          <h2 className="font-bodoni text-xl md:text-2xl italic mb-3 tracking-wide">
+          <h2 className="font-bodoni italic text-gray-500 tracking-wide text-xl md:text-2xl mb-3">
             {t.tarifsHeureSupp.titre}
           </h2>
           <p className="font-assistant text-2xl md:text-3xl font-light text-stone-600">
@@ -129,7 +129,7 @@ export default function PageTarifs() {
       {/* ── Supplements ── */}
       <section className="bg-white py-14 md:py-20 px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="font-bodoni text-2xl md:text-3xl italic text-center mb-10 tracking-wide">
+          <h2 className="font-bodoni italic text-gray-500 tracking-wide text-2xl md:text-3xl text-center mb-10">
             {t.tarifsSupplements.titre}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
@@ -143,20 +143,55 @@ export default function PageTarifs() {
         </div>
       </section>
 
+      <section className="bg-stone-50 py-14 md:py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="max-w-2xl mx-auto text-center">
+            <h2 className="font-bodoni italic text-gray-500 tracking-wide text-2xl md:text-3xl">
+              {t.tarifsAutresPrestations.titre}
+            </h2>
+            <p className="mt-4 font-assistant text-gray-600 leading-relaxed">
+              {t.tarifsAutresPrestations.intro}
+            </p>
+          </div>
+
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
+            {t.tarifsAutresPrestations.formules.map((item: any) => (
+              <div key={item.nom} className="rounded-[28px] border border-stone-200 bg-white p-6 shadow-sm">
+                <p className="font-bodoni italic text-2xl text-black">{item.nom}</p>
+                <p className="mt-3 font-assistant text-2xl font-light text-stone-600">{item.prix}</p>
+                <p className="mt-4 font-assistant text-sm leading-relaxed text-gray-600">{item.details}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <p className="font-assistant text-gray-600 leading-relaxed">
+              {t.tarifsAutresPrestations.note}
+            </p>
+            <Link
+              href={`/pageContact?lang=${lang}`}
+              className="inline-block mt-6 border border-black/20 px-8 py-3 font-assistant text-xs tracking-widest uppercase transition-colors duration-200 hover:bg-black hover:text-white"
+            >
+              {t.tarifsAutresPrestations.cta}
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── Decorative quote ── */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         <Image
-          src="/images/design/IMG_2322.jpg"
+          src="/optimized-images/images/design/IMG_2322.jpg"
           alt=""
           fill
           className="object-cover object-center"
         />
         <div className="absolute inset-0 bg-black/50" />
         <div className="relative z-10 max-w-2xl mx-auto px-6 text-center">
-          <p className="font-bodoni text-white text-xl md:text-2xl italic leading-relaxed drop-shadow">
+          <p className="font-bodoni text-white text-xl md:text-2xl italic leading-relaxed">
             {lang === "fr"
-              ? "Chaque formule est un point de départ — je m'adapte à votre projet et à vos envies."
-              : "Every package is a starting point — I adapt to your project and your vision."}
+              ? "Racontez-moi votre journée, vos envies et l'atmosphère que vous imaginez : je vous aiderai à choisir la formule la plus juste."
+              : "Tell me about your day, your wishes, and the atmosphere you imagine: I will help you choose the package that fits best."}
           </p>
           <Link
             href={`/pageContact?lang=${lang}`}

@@ -13,6 +13,7 @@ import FaqItem from "./faqCompo";
 export default function Home() {
 
   const { lang } = useLang();
+  const t = texte[lang];
 
   const [mobileIndex, setMobileIndex] = useState(0);
   const [desktopIndex, setDesktopIndex] = useState(0);
@@ -82,6 +83,20 @@ export default function Home() {
     touchStartX.current = null;
   };
 
+  const scrollToContact = (event) => {
+    event.preventDefault();
+    const contactSection = document.getElementById("contact");
+    if (!contactSection) return;
+
+    const headerOffset = 110;
+    const targetTop = contactSection.getBoundingClientRect().top + window.scrollY - headerOffset;
+
+    window.scrollTo({
+      top: targetTop,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="relative min-h-screen bg-white text-white font-sans">
       {/* ======== HERO CAROUSEL — MOBILE (1 image at a time) ======== */}
@@ -95,7 +110,7 @@ export default function Home() {
           {imagesCaroussel.map((img, idx) => (
             <div key={idx} className="relative flex-none w-full aspect-[4/5]">
               <Image
-                src={`/images/caroussel/${getCarouselImageFile(img)}`}
+                src={`/optimized-images/images/caroussel/${getCarouselImageFile(img)}`}
                 alt={`Photo ${idx + 1}`}
                 fill
                 className="object-cover"
@@ -137,6 +152,16 @@ export default function Home() {
             />
           ))}
         </div>
+
+        <div className="pb-6 text-center">
+          <Link
+            href="#about"
+            className="inline-flex items-center gap-3 rounded-full border border-black/10 px-5 py-2 font-assistant text-xs uppercase tracking-[0.28em] text-gray-500 transition-colors hover:border-black/30 hover:text-black"
+          >
+            <span className="h-2 w-2 rounded-full bg-stone-300" />
+            {t.heroScroll}
+          </Link>
+        </div>
       </section>
 
       {/* ======== HERO CAROUSEL — DESKTOP (3 images, scrollable) ======== */}
@@ -153,7 +178,7 @@ export default function Home() {
             >
               <div className="relative w-full h-full">
                 <Image
-                  src={`/images/caroussel/${getCarouselImageFile(img)}`}
+                  src={`/optimized-images/images/caroussel/${getCarouselImageFile(img)}`}
                   alt={`Photo ${idx + 1}`}
                   fill
                   className="object-cover"
@@ -186,9 +211,32 @@ export default function Home() {
         )}
       </section>
 
-      <h2 className="w-full text-center font-bodoni text-xl md:text-2xl italic text-gray-500 tracking-wide py-6 md:py-8 bg-white">
-        {texte[lang].titre1}
-      </h2>
+      <div className="w-full flex flex-col items-center gap-6 pt-8 pb-10 md:pt-10 md:pb-32 bg-white px-4">
+        <h2 className="text-center font-bodoni italic text-gray-500 tracking-wide">
+          <span className="block text-2xl md:text-[32px]">
+            <span className="md:hidden">{t.titre1Mobile}</span>
+            <span className="hidden md:inline">{t.titre1}</span>
+          </span>
+          <span className="mt-2 block font-assistant text-sm uppercase tracking-[0.22em] text-gray-400 md:text-base">
+            {t.titre1Location}
+          </span>
+        </h2>
+
+        <div className="max-w-3xl text-center">
+          <p className="font-assistant text-base leading-relaxed text-gray-600 md:text-lg">
+            {t.zonesTexte}
+          </p>
+        </div>
+
+        <div className="flex items-center gap-3 font-assistant font-light text-sm text-gray-600">
+          <Link href="#contact" onClick={scrollToContact} className="border border-gray-400 rounded-full px-6 py-2 md:text-base whitespace-nowrap hover:border-gray-700 hover:text-gray-800 transition-colors">
+            {t.ctaContact}
+          </Link>
+          <Link href={`/pageMariage?lang=${lang}`} className="border border-gray-400 rounded-full px-6 py-2 md:text-base whitespace-nowrap hover:border-gray-700 hover:text-gray-800 transition-colors">
+            {t.ctaMariages}
+          </Link>
+        </div>
+      </div>
 
       <APropos />
 
@@ -196,7 +244,7 @@ export default function Home() {
       <section id="portfolio" className="relative md:pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center overflow-hidden">
         <div className="hidden md:block absolute -top-10 left-0 z-0 pointer-events-none">
           <Image
-            src="/images/design/Vector.png"
+            src="/optimized-images/images/design/Vector.png"
             alt=""
             width={500}
             height={500}
@@ -205,23 +253,23 @@ export default function Home() {
           />
         </div>
 
-        <h2 className="relative z-10 pt-6 md:pt-0 mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
-          {texte[lang].portfolio}
+        <h2 className="relative z-10 pt-6 md:pt-0 mb-8 md:mb-12 font-bodoni italic text-gray-500 tracking-wide text-2xl md:text-[32px] text-center">
+          {t.portfolio}
         </h2>
 
         <div className="relative z-10 grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl">
           {imagesGalerie.map((image, i) => (
             <Link
-              href={`/${texte[lang].page[i]}?lang=${lang}`}
+              href={`/${t.page[i]}?lang=${lang}`}
               key={i}
               className="text-center group cursor-pointer block"
             >
               <span className="mb-4 block font-assistant text-[22px] md:text-[26px] text-[#8C7E7E]">
-                {texte[lang].titrePf[i]}
+                {t.titrePf[i]}
               </span>
               <div className="relative w-full aspect-[3/4] overflow-hidden group shadow-sm bg-gray-100">
                 <Image
-                  src={`/images/galerie/${image}.png`}
+                  src={`/optimized-images/images/galerie/${image}.png`}
                   alt={`Galerie photo ${i + 1}`}
                   fill
                   className="object-cover transition-transform duration-1000 ease-in-out group-hover:scale-105"
@@ -234,13 +282,49 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="bg-stone-50 px-6 py-14 md:px-20 md:py-20 text-black">
+        <div className="mx-auto max-w-6xl">
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="font-bodoni italic text-2xl tracking-wide text-gray-500 md:text-[32px]">
+              {t.temoignagesTitre}
+            </h2>
+            <p className="mt-4 font-assistant text-base leading-relaxed text-gray-600">
+              {t.temoignagesIntro}
+            </p>
+          </div>
+
+          <div className="mt-10 grid grid-cols-1 gap-6 md:mt-12 md:grid-cols-3">
+            {t.temoignages.map((item, index) => (
+              <article
+                key={`${item.auteur}-${index}`}
+                className="flex h-full flex-col justify-between rounded-[28px] border border-stone-200 bg-white p-6 shadow-sm"
+              >
+                <div className="mb-4 flex gap-1 text-[#C7A76C]" aria-label="5 stars">
+                  {[...Array(5)].map((_, starIndex) => (
+                    <span key={starIndex} aria-hidden="true" className="text-lg leading-none">
+                      ★
+                    </span>
+                  ))}
+                </div>
+                <p className="font-assistant text-[15px] leading-7 text-gray-700">
+                  “{item.citation}”
+                </p>
+                <p className="mt-6 font-assistant text-xs uppercase tracking-[0.28em] text-stone-500">
+                  {item.auteur}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ======== FAQ ======== */}
-      <section className="bg-white text-black flex flex-col items-center px-6 md:px-20 md:pb-20">
-        <h2 className="pt-6 md:pt-0 mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center">
-          {texte[lang].titrePageFaq}
+      <section className="bg-white text-black flex flex-col items-center px-6 pt-12 md:px-20 md:pt-20 md:pb-20">
+        <h2 className="mb-8 md:mb-12 font-bodoni italic text-gray-500 tracking-wide text-2xl md:text-[32px] text-center">
+          {t.titrePageFaq}
         </h2>
         <div className="w-full max-w-3xl">
-          {texte[lang].questionsFaq.map((item, index) => (
+          {t.questionsFaq.map((item, index) => (
             <FaqItem key={index} question={item.q} answer={item.a} />
           ))}
         </div>

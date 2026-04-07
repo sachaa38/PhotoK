@@ -10,24 +10,19 @@ function APropos() {
 
   return (
      <section id="about" className="md:pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center z-1">
-       {/* Titre Centré */}
-       <h2 className="pt-6 md:pt-0 mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
-          {texte[lang].apropos}
-       </h2>
 
        <p className="md:hidden mb-6 font-assistant text-lg leading-relaxed text-gray-700 text-justify">
         {texte[lang].descApropos[0]}
        </p>
-     
+
        {/* Conteneur principal */}
-      <div className="flex flex-col md:flex-row items-stretch justify-center w-full max-w-6xl gap-6 md:gap-12 md:gap-20">
-  
+      <div className="flex flex-col md:flex-row items-start justify-center w-full max-w-6xl gap-6 md:gap-12 md:gap-20">
+
   {/* Colonne IMAGE */}
   <div className="w-full md:w-[40%] flex justify-center md:justify-end">
-    {/* On s'assure qu'il n'y a pas de marge en haut de l'image */}
     <div className="relative w-full aspect-[3/4] max-w-[400px]">
-      <Image 
-        src="/images/katia/Rectangle 1.png" 
+      <Image
+        src="/optimized-images/images/katia/Rectangle 1.png"
         alt="Ekaterina"
         fill
         className="object-cover"
@@ -38,11 +33,13 @@ function APropos() {
 
   {/* Colonne TEXTE */}
   <div className="w-full md:w-[60%] text-justify h-full flex flex-col">
-    {/* 2. On s'assure que le premier paragraphe n'a pas de marge supérieure parasite */}
-    <div className="pt-0 h-full flex flex-col"> 
+    <h2 className="mb-6 md:mb-8 font-bodoni italic text-gray-500 tracking-wide text-2xl md:text-[32px]">
+      {texte[lang].apropos}
+    </h2>
+    <div className="pt-0 h-full flex flex-col">
       {texte[lang].descApropos.map((p: string, i: number) => (
-        <p 
-          key={i} 
+        <p
+          key={i}
           className={`mb-4 md:mb-6 last:mb-0 font-assistant text-lg leading-relaxed text-gray-700 ${i === 0 || i === 3 ? "hidden md:block" : ""}`}
         >
           {p}

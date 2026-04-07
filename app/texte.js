@@ -7,10 +7,19 @@ const texte = {
     infos: "Infos",
     portfolio: "Portfolio",
     contact: "Contact",
-    titre1: "Photographe de mariage",
+    titre1: "Photographe de mariage & couple",
+    titre1Mobile: "Photographe de mariage",
+    titre1Location: "Grenoble, Rhône-Alpes",
+    zonesTitre: "Basée à Grenoble, disponible en Rhône-Alpes et partout en France",
+    zonesTexte:
+      "J'accompagne des couples et des familles à Grenoble, Lyon, Annecy, Chambéry et dans toute la région Rhône-Alpes, avec des images naturelles, élégantes et lumineuses.",
+    heroIntro: "Des images douces, sincères et intemporelles pour les couples qui veulent profiter pleinement de chaque instant.",
+    heroScroll: "Découvrir l'univers",
     desc_titre1: "Je fais des supers photos, promis !",
     desc_apropos:
       "Je m’appelle Ekaterina, je suis photographe d’origine russe et installée en France depuis plus de cinq ans. Je photographie depuis une dizaine d’années. Mon travail s’est naturellement tourné vers les mariages et les moments heureux, parce que ce sont des instants chargés de joie, de liens et d’émotions sincères, que l’on souhaite garder toute une vie. Mon rôle ne se limite pas à prendre des photos. J’attache beaucoup d’importance à apprendre à vous connaître, à comprendre ce qui compte vraiment pour vous et à vous accompagner tout au long de votre projet. Avant le mariage, j’échange avec vous, je vous conseille et je vous aide à anticiper les moments clés afin que tout se déroule avec fluidité le jour J. Le jour de votre mariage, je travaille avec discrétion, en restant attentive aux émotions, aux regards et aux gestes spontanés. Mon objectif est que, dans vingt ans, vos images aient toujours du sens, qu’elles racontent fidèlement votre histoire et vous rappellent à quel point cette journée était précieuse.",
+    ctaContact: "Me contacter",
+    ctaMariages: "Galeries mariages",
     afficherPlus: "Afficher plus",
     afficherMoins: "Afficher moins",
     titrePf : ["Mariages", "Couples", "Famille"],
@@ -36,9 +45,12 @@ const texte = {
   entreprise: "Entreprise",
   page: ["pageMariage", "pageCouple", "pageFamille"],
   titrePageFamille : "Séance Famille",
+  titreSeoFamille: "Photographe famille Grenoble & Rhône-Alpes",
+  sousTitreSeoFamille: "Séances famille à Grenoble, Lyon, Annecy, Chambéry et dans toute la région.",
   descPageFamille : ["Une séance famille est un moment de partage, pensé pour être vécu simplement, à votre rythme.",
 "En amont, je prends le temps d’échanger avec vous et de vous conseiller sur le lieu, à votre domicile, en extérieur ou en studio, ainsi que sur les tenues et l’ambiance, afin que la séance vous ressemble. Le jour de la séance, je vous guide si nécessaire, tout en laissant place aux interactions naturelles, aux gestes spontanés et aux moments de complicité.",
-"Je privilégie une lumière douce et naturelle, ainsi qu’un rendu authentique, pour créer des images sincères qui racontent votre histoire familiale avec simplicité."],
+"Je privilégie une lumière douce et naturelle, ainsi qu’un rendu authentique, pour créer des images sincères qui racontent votre histoire familiale avec simplicité.",
+"Je me déplace régulièrement à Grenoble, Lyon, Annecy, Chambéry et ailleurs en Rhône-Alpes pour des séances famille en extérieur, à domicile ou dans des lieux qui vous sont chers."],
   labelPhotoFamille : ["Yvonne","Feddaoui","Metz"],
   urlFamille: [
   "https://cheliadinovaekaterina.passgallery.com/-yvonne/gallery",
@@ -46,23 +58,30 @@ const texte = {
   "https://cheliadinovaekaterina.passgallery.com/-sancefamille1/gallery"
 ],
   titrePageCouple : "Séance Couple",
+  titreSeoCouple: "Photographe couple Rhône-Alpes",
+  sousTitreSeoCouple: "Séances couple à Grenoble, Lyon, Annecy, Chambéry et partout en Rhône-Alpes.",
   descPageCouple : ["Une séance couple est avant tout un moment à deux, sans pression, pensé pour vous ressembler.",
 "En amont, je prends le temps d’échanger avec vous et de vous conseiller sur le choix du lieu, des tenues et de l’ambiance, afin que la séance corresponde pleinement à votre personnalité. Le jour de la séance, je vous guide si nécessaire, tout en laissant place aux gestes naturels, aux regards et aux instants spontanés.",
-"Je privilégie la lumière naturelle, des couleurs douces et un rendu authentique, pour créer des images sincères qui racontent votre complicité avec simplicité."],
+"Je privilégie la lumière naturelle, des couleurs douces et un rendu authentique, pour créer des images sincères qui racontent votre complicité avec simplicité.",
+"Je photographie régulièrement des couples à Grenoble, Lyon, Annecy, Chambéry et dans toute la région Rhône-Alpes, en ville comme en pleine nature."],
   labelPhotoCouple : ["Pyotr & Yuhan","Kirill & Daria","Leo & Cibelly"],
   urlCouple : ["https://cheliadinovaekaterina.passgallery.com/-petryuhan/gallery",
     "https://cheliadinovaekaterina.passgallery.com/-kirilldaria/gallery",
 "https://cheliadinovaekaterina.passgallery.com/-cibellyleo/gallery"],
    titrePageMariage : "Mariages",
+  titreSeoMariage: "Photographe mariage Grenoble & Rhône-Alpes",
+  sousTitreSeoMariage: "Reportages de mariage à Grenoble, Lyon, Annecy, Chambéry et partout en France.",
   descPageMariage : ["J’aborde chaque mariage comme une rencontre. Avant même de prendre l’appareil photo, je prends le temps d’échanger avec vous, de comprendre ce qui compte pour vous et la manière dont vous imaginez votre journée.",
 "Le jour J, je suis présente avec discrétion, attentive aux émotions, aux regards et aux moments partagés, sans jamais forcer les choses. Mon intention est de vous laisser vivre pleinement votre mariage, pendant que je m’attache à en conserver les souvenirs les plus justes.",
-"Je privilégie une lumière naturelle, des couleurs douces et un rendu authentique, afin que vos images restent fidèles à ce que vous avez ressenti. Ce portfolio rassemble des instants vrais, pensés pour vous accompagner bien au-delà du jour du mariage."],
+"Je privilégie une lumière naturelle, des couleurs douces et un rendu authentique, afin que vos images restent fidèles à ce que vous avez ressenti. Ce portfolio rassemble des instants vrais, pensés pour vous accompagner bien au-delà du jour du mariage.",
+"Basée à Grenoble, je photographie des mariages en Rhône-Alpes, notamment à Lyon, Annecy et Chambéry, ainsi que partout en France selon votre projet."],
   labelPhotoMariage : ["Zino & Maiia","Paulo & Carole","Loïc & Naomi"],
   urlMariage : ["https://cheliadinovaekaterina.passgallery.com/-zinomaiia/gallery",
     "https://cheliadinovaekaterina.passgallery.com/-paulocarole/gallery",
 "https://cheliadinovaekaterina.passgallery.com/-locnaomi/gallery"],
   descContact : ["Je serais ravie de découvrir votre projet et d’échanger avec vous !", 
 "Remplissez le formulaire ci-dessous ou contactez-moi directement à ekaterina.cheliadinova@gmail.com",
+"Vous pouvez aussi me joindre par téléphone au +33 7 80 70 44 61.",
 "Je vous invite à me décrire votre projet, la date envisagée et le lieu, ainsi que l’atmosphère que vous souhaitez pour vos images. Chaque demande est étudiée avec soin afin de vous proposer un accompagnement personnalisé, en accord avec votre histoire et vos attentes.",
 "Je vous répondrai dans les meilleurs délais pour envisager ensemble la suite."],
 descApropos : ["Je m’appelle Ekaterina, je suis photographe d’origine russe et installée en France depuis plus de cinq ans.",
@@ -155,6 +174,26 @@ questionsFaq: [
     ],
     labelFaq: "FAQ",
     labelTarifs: "Tarifs",
+    labelProcess: "Déroulement",
+    temoignagesTitre: "Mots doux",
+    temoignagesIntro: "Quelques retours de couples et familles qui m'ont confié leurs souvenirs.",
+    temoignages: [
+      {
+        citation:
+          "Nous avons fait appel à Ekaterina pour notre mariage, et nous en sommes ravis. Avant le grand jour, elle a pris le temps d'échanger plusieurs fois avec nous pour bien comprendre nos envies, nos attentes et notre budget. Nous souhaitions des photos dynamiques et pleines de vie, et le résultat a dépassé nos espérances. Les clichés sont magnifiques et reflètent parfaitement l'émotion de cette journée. Un grand plus : la rapidité avec laquelle les photos ont été livrées après l'événement.",
+        auteur: "Maiia & Zino",
+      },
+      {
+        citation:
+          "Nous sommes très heureux du professionnalisme d'Ekaterina. Elle est très à l'écoute et s'est très bien adaptée à nos demandes. Elle nous a très bien conseillé pour toutes les prises, par rapport au soleil, la lumière, les poses. Dès le lendemain du mariage nous avons reçu 4 photos pour nous mettre l'eau à la bouche et le lundi nous avions le reste des photos. Super rapide ! La qualité est magnifique, nous sommes ravis de son travail. Merci beaucoup Katia, nous ferons de nouveau appel à toi si besoin.",
+        auteur: "Carole & Paulo",
+      },
+      {
+        citation:
+          "Première séance photo pour nous à l'occasion des 1 an de notre fils. Nous sommes vraiment ravis du résultat. Merci encore à Katia pour son professionnalisme, sa patience avec un petit garçon d'un an et ses idées créatives. Le prix est aussi plus que correct pour un photographe professionnel et nous avons même eu quelques photos en plus de ce qui était prévu. Merci infiniment ! Je recommande.",
+        auteur: "Jade Brouche",
+      },
+    ],
     titrePageTarifs: "Tarifs",
     sousTitreTarifs: "Formules Mariage",
     tarifsInclus: {
@@ -180,20 +219,90 @@ questionsFaq: [
     tarifsSupplements: {
       titre: "Suppléments (en option ou inclus dans les formules supérieures)",
       items: ["Séance engagement", "Lendemain / \"Trash the dress\"", "Séance essayage de robe", "Création d'album photo premium", "Impressions instantanées / Polaroid", "Atelier photo demi-journée"]
-    }
+    },
+    tarifsAutresPrestations: {
+      titre: "Autres séances",
+      intro:
+        "Je photographie aussi les couples, les familles, les portraits, la grossesse, les événements et les projets professionnels. Voici une base indicative avant d'échanger ensemble.",
+      formules: [
+        {
+          nom: "Couple",
+          prix: "150€",
+          details: "Séance en extérieur ou à domicile, préparation en amont, galerie privée en ligne.",
+        },
+        {
+          nom: "Famille",
+          prix: "170€",
+          details: "Séance douce et spontanée, à votre rythme, avec des images naturelles et vivantes.",
+        },
+        {
+          nom: "Portrait / maternité / événement / entreprise",
+          prix: "sur devis",
+          details: "Chaque projet est construit sur mesure selon le lieu, la durée, les besoins et les usages des images.",
+        },
+      ],
+      note:
+        "Si vous avez un projet particulier, je vous propose un devis personnalisé avec une formule adaptée.",
+      cta: "Parler de mon projet",
+    },
+    processPageTitle: "Déroulement",
+    processPageHeading: "Le déroulement de votre mariage",
+    processPageIntro:
+      "Pour que vous sachiez à quoi vous attendre, voici ma manière de vous accompagner avant, pendant et après votre mariage. Mon objectif est de vous offrir une expérience douce, claire et fluide, avec des images fidèles à votre journée.",
+    processSteps: [
+      {
+        title: "1. Premier contact",
+        body:
+          "Vous m'écrivez avec la date, le lieu et quelques mots sur votre mariage. Je vous réponds rapidement pour vérifier ma disponibilité, comprendre vos envies et vous orienter vers la formule la plus adaptée. Si cela vous convient, je préfère faire un appel vidéo avec vous : cela permet de mieux faire connaissance, de comprendre votre énergie et de vous montrer aussi mes inspirations.",
+      },
+      {
+        title: "2. Préparation ensemble",
+        body:
+          "Dans le mois qui précède le mariage, nous faisons un appel vidéo pour revoir le déroulé de la journée, les moments importants, les photos de groupe souhaitées, le style d'images que vous aimez et vos références éventuelles. Nous pouvons aussi parler des lieux, de la lumière et des meilleurs moments pour les portraits.",
+      },
+      {
+        title: "3. Le jour J",
+        body:
+          "Le jour du mariage, je travaille avec discrétion tout en restant présente lorsque vous avez besoin d'être guidés. Je peux vous accompagner pour les photos de groupe et les photos de couple si vous en souhaitez, afin que tout reste naturel, fluide et sans stress.",
+      },
+      {
+        title: "4. Livraison",
+        body:
+          "Je vous envoie quelques sneak peeks dès le lendemain pour vous permettre de revivre les premières émotions rapidement. La galerie complète est ensuite livrée en général sous quelques semaines, soigneusement triée et retouchée dans mon univers.",
+      },
+    ],
+    processExtrasTitle: "Ce que j'ajoute toujours",
+    processExtras: [
+      "Des échanges simples et rassurants avant le mariage",
+      "Des conseils sur le timing photo si vous en avez besoin",
+      "Une approche naturelle, avec juste ce qu'il faut de direction",
+      "Une galerie en ligne facile à consulter et à partager",
+    ],
+    processClosing:
+      "Si vous aimez les images sincères, lumineuses et élégantes, je serai ravie de vous accompagner pour raconter votre journée.",
+    processCta: "Me contacter",
 },
 
 
   en: {
     accueil: "Home",
     apropos: "About me",
-    infos: "About",
+    infos: "Info & Pricing",
     portfolio: "Portfolio",
     contact: "Contact",
-    titre1: "Wedding Photographer",
+    titre1: "Wedding & Couples Photographer",
+    titre1Mobile: "Wedding Photographer",
+    titre1Location: "Grenoble, Rhône-Alpes",
+    zonesTitre: "Based in Grenoble, available across Rhône-Alpes and throughout France",
+    zonesTexte:
+      "I work with couples and families in Grenoble, Lyon, Annecy, Chambéry, and across the Rhône-Alpes region, creating natural, elegant, light-filled imagery.",
+    heroIntro: "Soft, sincere, timeless imagery for couples who want to fully live each moment.",
+    heroScroll: "Discover more",
     desc_titre1: "I take amazing photos, I promise!",
     desc_apropos:
       "Here I am, in the flesh — you won’t see me, but you’ll hear the clicks of my brand new Sonny Flash XXXL Carbon Gun XV pif paf pow!",
+    ctaContact: "Contact me",
+    ctaMariages: "Wedding gallery",
     afficherPlus: "Show more",
     afficherMoins: "Show less",
     titrePf : ["Weddings", "Couples", "Family"],
@@ -220,30 +329,40 @@ questionsFaq: [
     entreprise: "Corporate",
     page: ["pageMariage", "pageCouple", "pageFamille"],
     titrePageFamille: "Family Session",
+    titreSeoFamille: "Family Photographer Grenoble & Rhône-Alpes",
+    sousTitreSeoFamille: "Family sessions in Grenoble, Lyon, Annecy, Chambéry, and across the region.",
     descPageFamille: [
   "A family session is a moment of sharing, designed to be experienced simply and at your own pace.",
   "Ahead of time, I take the time to discuss with you and advise on the location—whether at your home, outdoors, or in a studio—as well as on outfits and atmosphere, so that the session truly reflects you. On the day of the shoot, I guide you if necessary, while leaving room for natural interactions, spontaneous gestures, and moments of connection.",
-  "I favor soft, natural light and an authentic finish to create sincere images that tell your family story with simplicity."
+  "I favor soft, natural light and an authentic finish to create sincere images that tell your family story with simplicity.",
+  "I regularly travel to Grenoble, Lyon, Annecy, Chambéry, and elsewhere in Rhône-Alpes for family sessions outdoors, at home, or in places that matter to you."
 ],
 
 
 titrePageCouple: "Couple Session",
+titreSeoCouple: "Couple Photographer Rhône-Alpes",
+sousTitreSeoCouple: "Couple sessions in Grenoble, Lyon, Annecy, Chambéry, and across Rhône-Alpes.",
 descPageCouple: [
   "A couple session is, above all, a moment for the two of you—relaxed and designed to reflect who you are.",
   "Ahead of time, I take the time to chat with you and offer guidance on choosing the location, outfits, and atmosphere, ensuring the session fully aligns with your personality. On the day of the shoot, I guide you if necessary, while leaving space for natural gestures, glances, and spontaneous moments.",
-  "I favor natural light, soft colors, and an authentic look to create sincere images that tell the story of your connection with simplicity."
+  "I favor natural light, soft colors, and an authentic look to create sincere images that tell the story of your connection with simplicity.",
+  "I regularly photograph couples in Grenoble, Lyon, Annecy, Chambéry, and across the Rhône-Alpes region, both in the city and in nature."
 ],
 
 titrePageMariage: "Weddings",
+titreSeoMariage: "Wedding Photographer Grenoble & Rhône-Alpes",
+sousTitreSeoMariage: "Wedding coverage in Grenoble, Lyon, Annecy, Chambéry, and throughout France.",
 descPageMariage: [
   "I approach every wedding as a new connection. Even before picking up my camera, I take the time to talk with you, to understand what matters most to you and how you envision your day.",
   "On the big day, I am present with discretion, attentive to emotions, glances, and shared moments, without ever forcing anything. My intention is to let you fully experience your wedding while I focus on preserving its most genuine memories.",
-  "I prefer natural light, soft colors, and an authentic finish, so that your images remain faithful to what you felt. This portfolio gathers true moments, designed to stay with you long after the wedding day."
+  "I prefer natural light, soft colors, and an authentic finish, so that your images remain faithful to what you felt. This portfolio gathers true moments, designed to stay with you long after the wedding day.",
+  "Based in Grenoble, I photograph weddings across Rhône-Alpes, especially in Lyon, Annecy, and Chambéry, as well as anywhere in France depending on your plans."
 ],
 
 descContact: [
   "I would be delighted to hear about your project and discuss it with you!",
   "Fill out the form below or contact me directly at ekaterina.cheliadinova@gmail.com",
+  "You can also reach me by phone at +33 7 80 70 44 61.",
   "I invite you to describe your project, including the planned date, location, and the atmosphere you envision for your images. Each request is carefully studied to offer you a personalized experience that aligns with your story and expectations.",
   "I will get back to you as soon as possible to discuss the next steps together."
 ],
@@ -336,6 +455,26 @@ descApropos: [
     ],
     labelFaq: "FAQ",
     labelTarifs: "Pricing",
+    labelProcess: "Process",
+    temoignagesTitre: "Kind Words",
+    temoignagesIntro: "A few words from couples and families who trusted me with their memories.",
+    temoignages: [
+      {
+        citation:
+          "We chose Ekaterina for our wedding and we are absolutely delighted. Before the day, she took the time to speak with us several times to understand our wishes, expectations, and budget. We wanted lively, natural images, and the result exceeded everything we hoped for. The photographs are beautiful and perfectly reflect the emotion of the day. Another huge plus was how quickly the gallery was delivered afterward.",
+        auteur: "Maiia & Zino",
+      },
+      {
+        citation:
+          "We are so happy with Ekaterina's professionalism. She listened carefully to what we wanted and adapted beautifully to our requests. She guided us wonderfully with the sun, the light, and the poses. The very next day after the wedding we received a few preview photos, and by Monday we had the full gallery. So fast, and the quality is stunning. Thank you so much, Katia.",
+        auteur: "Carole & Paulo",
+      },
+      {
+        citation:
+          "This was our first photo session, for our son's first birthday, and we are truly thrilled with the result. Thank you to Katia for her professionalism, her patience with a one-year-old, and her creative ideas. The price was more than fair for a professional photographer, and we even received a few extra images. I highly recommend her.",
+        auteur: "Jade Brouche",
+      },
+    ],
     titrePageTarifs: "Pricing",
     sousTitreTarifs: "Wedding Packages",
     tarifsInclus: {
@@ -361,7 +500,69 @@ descApropos: [
     tarifsSupplements: {
       titre: "Extras (optional or included in higher packages)",
       items: ["Engagement session", "Day-after / \"Trash the dress\"", "Bridal fitting session", "Premium photo album design", "Instant prints / Polaroid", "Half-day photography workshop"]
-    }
+    },
+    tarifsAutresPrestations: {
+      titre: "Other sessions",
+      intro:
+        "I also photograph couples, families, portraits, maternity, events, and professional projects. Here is a simple starting point before we talk.",
+      formules: [
+        {
+          nom: "Couple",
+          prix: "150€",
+          details: "Outdoor or at-home session, guidance before the shoot, and a private online gallery.",
+        },
+        {
+          nom: "Family",
+          prix: "170€",
+          details: "A relaxed session at your pace, with natural and heartfelt images.",
+        },
+        {
+          nom: "Portrait / maternity / event / corporate",
+          prix: "custom quote",
+          details: "Each project is tailored to the location, duration, needs, and intended use of the images.",
+        },
+      ],
+      note:
+        "If you have a specific project in mind, I can prepare a personalized quote with the right package for you.",
+      cta: "Tell me about your project",
+    },
+    processPageTitle: "Process",
+    processPageHeading: "How your wedding experience unfolds",
+    processPageIntro:
+      "So you know exactly what to expect, here is how I accompany you before, during, and after your wedding. My goal is to offer you a calm, clear, and seamless experience, with images that stay true to your day.",
+    processSteps: [
+      {
+        title: "1. First contact",
+        body:
+          "You write to me with the date, the location, and a few words about your wedding. I get back to you quickly to confirm availability, understand what you want, and guide you toward the most suitable package. If it feels convenient for you, I prefer doing a video call together: it helps us get to know each other better, understand your energy, and lets me share some of my inspirations with you as well.",
+      },
+      {
+        title: "2. Planning together",
+        body:
+          "Within the month before the wedding, we schedule a video call to go over the flow of the day, the key moments, any group photos you want, the visual style you love, and any references you may have. We can also talk about locations, light, and the best timing for portraits.",
+      },
+      {
+        title: "3. On the day",
+        body:
+          "On the wedding day, I work discreetly while staying present whenever you need guidance. I can gently guide you for group portraits and couple portraits if you want them, so everything feels natural, fluid, and stress-free.",
+      },
+      {
+        title: "4. Delivery",
+        body:
+          "I send a few sneak peeks the day after, so you can relive those first emotions quickly. The full gallery is then usually delivered within a few weeks, carefully selected and edited in my style.",
+      },
+    ],
+    processExtrasTitle: "What I always bring",
+    processExtras: [
+      "Simple, reassuring communication before the wedding",
+      "Advice on the photo timeline if you need it",
+      "A natural approach, with just the right amount of guidance",
+      "An online gallery that is easy to view and share",
+    ],
+    processClosing:
+      "If you love sincere, luminous, elegant imagery, I would be delighted to accompany you and tell the story of your day.",
+    processCta: "Contact me",
+    responseWithin: "Reply within 48h",
       },
 };
 export default texte;

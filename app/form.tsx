@@ -35,25 +35,25 @@ if (!content) return null;
 const contactLinks = [
   {
     href: "https://www.instagram.com/katyousha.pho/",
-    icon: "/images/icons/instagram-6338392_640.png",
+    icon: "/optimized-images/images/icons/instagram-6338392_640.png",
     alt: "Instagram",
     external: true,
   },
   {
     href: "https://t.me/ekatyousha",
-    icon: "/images/icons/Telegram-icon-on-transparent-background-PNG.png",
+    icon: "/optimized-images/images/icons/Telegram-icon-on-transparent-background-PNG.png",
     alt: "Telegram",
     external: true,
   },
   {
     href: "https://wa.me/33780704461",
-    icon: "/images/icons/whatsapp-873316_640.png",
+    icon: "/optimized-images/images/icons/whatsapp-873316_640.png",
     alt: "WhatsApp",
     external: true,
   },
   {
     href: "mailto:ekaterina.cheliadinova@gmail.com",
-    icon: "/images/icons/gmail-4561841_640.png",
+    icon: "/optimized-images/images/icons/gmail-4561841_640.png",
     alt: "Email",
     external: false,
   },
@@ -87,7 +87,7 @@ const handleSubmit = (e: React.FormEvent) => {
 
   return (
     <section id="contact" className="relative md:pb-20 px-4 bg-white text-black flex flex-col items-center">
-      <h2 className="pt-12 md:pt-0 mb-4 font-bodoni text-2xl md:text-[32px]" >
+      <h2 className="pt-12 md:pt-0 mb-4 font-bodoni italic text-gray-500 tracking-wide text-2xl md:text-[32px]">
         {content.contact}
       </h2>
       <div className="relative z-10 mb-8 flex items-center justify-center gap-4">
@@ -112,7 +112,7 @@ const handleSubmit = (e: React.FormEvent) => {
       </div>
 {image && ( <div className="hidden md:block absolute bottom-70 left-0 z-[0] pointer-events-none">
                   <Image
-                    src="/images/design/Vector.png" 
+                    src="/optimized-images/images/design/Vector.png" 
                     alt="Image abstraite 1"
                     width={500}
                     height={500}
@@ -122,7 +122,7 @@ const handleSubmit = (e: React.FormEvent) => {
 
                  {!image && (<div className="hidden md:block absolute bottom-130 right-0 z-[0] pointer-events-none">
                     <Image
-                      src="/images/design/Union.png" 
+                      src="/optimized-images/images/design/Union.png" 
                       alt="Image abstraite 2"
                       width={500}
                       height={500}
@@ -185,13 +185,24 @@ const handleSubmit = (e: React.FormEvent) => {
           )}
         </div>
 
-        {/* Téléphone (Non requis) */}
-        <div>
+        {/* Téléphone */}
+        <div className="relative">
           <input
             type="tel"
-            placeholder={content.tel}
-            className="w-full border border-black/50 rounded-lg px-4 py-3 focus:outline-none focus:ring-1 focus:ring-black text-black font-assistant bg-white/80 backdrop-blur-sm"
+            required
+            id="tel"
+            name="tel"
+            placeholder=" "
+            className={`${baseInputClass} ${submitted ? "invalid:border-red-500" : "border-black/50"}`}
           />
+          <label htmlFor="tel" className="absolute left-4 top-3 pointer-events-none transition-all peer-placeholder-shown:block hidden text-gray-500 font-assistant">
+            {content.tel} <span className="text-red-500">*</span>
+          </label>
+          {submitted && (
+            <span className="absolute right-4 top-4 text-red-500 text-[10px] font-assistant pointer-events-none peer-invalid:opacity-100 opacity-0">
+              {lang === 'fr' ? 'Ce champ est requis' : 'This field is required'}
+            </span>
+          )}
         </div>
 
         {/* Ville (Non requis) */}

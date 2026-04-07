@@ -14,7 +14,7 @@ export default function PageMariage() {
   return (
   
    <section className="bg-white text-black flex flex-col items-center">
-      <h2 className="pt-6 md:pt-0 mb-8 md:mb-12 font-bodoni text-2xl md:text-[32px] text-center z-1">
+      <h2 className="pt-6 md:pt-0 mb-8 md:mb-12 font-bodoni italic text-gray-500 tracking-wide text-2xl md:text-[32px] text-center">
         {texte[lang].titrePageFaq}
       </h2>
 
