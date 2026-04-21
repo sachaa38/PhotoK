@@ -23,7 +23,7 @@ build:
 	npm run build
 
 start:
-	npm run start
+	python3 scripts/serve_static_export.py
 
 lint:
 	npm run lint

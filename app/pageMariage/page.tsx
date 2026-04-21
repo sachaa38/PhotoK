@@ -14,6 +14,7 @@ export default function PageMariage() {
   // Sécurité pour éviter les erreurs si la langue n'est pas chargée
   const content = texte[lang];
   if (!content) return null;
+  const getMariageImageFile = (image: string) => (image.includes(".") ? image : `${image}.png`);
 
   return (
     <main className="min-h-screen bg-white">
@@ -50,7 +51,7 @@ export default function PageMariage() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 w-full max-w-6xl">
           {imagesMariage && imagesMariage.map((image, i) => (
-            <div key={i} className="text-center group">
+            <div key={i} className={`text-center group ${i === 1 ? "order-first md:order-none" : ""}`}>
               {/* AJOUT DE RELATIVE ET BLOCK ICI */}
 <Link 
   href={`${texte["fr"].urlMariage[i]}`} 
@@ -58,7 +59,7 @@ export default function PageMariage() {
 >
   {/* L'image qui scale et devient grise */}
   <Image
-    src={`/optimized-images/images/mariage/${image}.png`}
+    src={`/optimized-images/images/mariage/${getMariageImageFile(image)}`}
     alt={`Photo ${i}`}
     fill
     className="object-cover transition-all duration-700 
