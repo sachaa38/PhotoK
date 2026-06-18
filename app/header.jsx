@@ -132,9 +132,6 @@ function Header() {
                 <Link href={`/pageFaq?lang=${lang}`} onClick={closeMobileMenu} className="hover:text-gray-700 transition-colors">
                   {texte[lang].labelFaq}
                 </Link>
-                <Link href={`/pageTarifs?lang=${lang}`} onClick={closeMobileMenu} className="hover:text-gray-700 transition-colors">
-                  {texte[lang].labelTarifs}
-                </Link>
               </div>
             </div>
           </div>
@@ -233,9 +230,6 @@ function Header() {
                   </Link>
                   <Link href={`/pageFaq?lang=${lang}`} className="text-black hover:text-gray-400 transition-colors text-center whitespace-nowrap px-4" onClick={() => setShowInfosDropdown(false)}>
                     {texte[lang].labelFaq}
-                  </Link>
-                  <Link href={`/pageTarifs?lang=${lang}`} className="text-black hover:text-gray-400 transition-colors text-center whitespace-nowrap px-4" onClick={() => setShowInfosDropdown(false)}>
-                    {texte[lang].labelTarifs}
                   </Link>
                 </div>
               )}
