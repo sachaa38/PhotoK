@@ -244,7 +244,7 @@ export default function Home() {
       <section id="portfolio" className="relative md:pb-20 px-6 md:px-20 bg-white text-black flex flex-col items-center overflow-hidden">
         <div className="hidden md:block absolute -top-10 left-0 z-0 pointer-events-none">
           <Image
-            src="/optimized-images/images/design/Vector.png"
+            src="/optimized-images/images/design/Vector.webp"
             alt=""
             width={500}
             height={500}
@@ -269,7 +269,7 @@ export default function Home() {
               </span>
               <div className="relative w-full aspect-[3/4] overflow-hidden group shadow-sm bg-gray-100">
                 <Image
-                  src={`/optimized-images/images/galerie/${image}.png`}
+                  src={`/optimized-images/images/galerie/${image}.webp`}
                   alt={`Galerie photo ${i + 1}`}
                   fill
                   className="object-cover transition-transform duration-1000 ease-in-out group-hover:scale-105"

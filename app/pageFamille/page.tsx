@@ -50,7 +50,7 @@ export default function PageFamille() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-6 w-full max-w-6xl">
           {imagesFamille && imagesFamille.map((image, i) => {
-            const imageFile = image.includes(".") ? image : `${image}.png`;
+            const imageFile = image.includes(".") ? image : `${image}.webp`;
             return (
             <div key={i} className="text-center group">
               {/* AJOUT DE RELATIVE ET BLOCK ICI */}

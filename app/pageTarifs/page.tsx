@@ -17,7 +17,7 @@ export default function PageTarifs() {
       {/* ── Hero ── */}
       <section className="relative h-[45vh] md:h-[55vh] overflow-hidden flex items-end justify-center">
         <Image
-          src="/optimized-images/images/design/IMG_2322.jpg"
+          src="/optimized-images/images/design/IMG_2322.webp"
           alt={t.titrePageTarifs}
           fill
           priority
@@ -181,7 +181,7 @@ export default function PageTarifs() {
       {/* ── Decorative quote ── */}
       <section className="relative py-16 md:py-24 overflow-hidden">
         <Image
-          src="/optimized-images/images/design/IMG_2322.jpg"
+          src="/optimized-images/images/design/IMG_2322.webp"
           alt=""
           fill
           className="object-cover object-center"

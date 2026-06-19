@@ -57,7 +57,7 @@ export default function PageCouple() {
             className="relative block w-full aspect-[3/4] overflow-hidden group bg-white"
           >
             <Image
-              src={`/optimized-images/images/couple/${image}.png`}
+              src={`/optimized-images/images/couple/${image}.webp`}
               alt={`Photo ${i}`}
               fill
               className="object-cover transition-all duration-700 

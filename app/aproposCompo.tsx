@@ -22,7 +22,7 @@ function APropos() {
   <div className="w-full md:w-[40%] flex justify-center md:justify-end">
     <div className="relative w-full aspect-[3/4] max-w-[400px]">
       <Image
-        src="/optimized-images/images/katia/Rectangle 1.png"
+        src="/optimized-images/images/katia/Rectangle 1.webp"
         alt="Ekaterina"
         fill
         className="object-cover"

@@ -1,12 +1,11 @@
 const imagesCarousselA = [
-  "IMG_1691.jpg",
-  "Frame 5",
-  "BO1A5963_websize.jpg",
-  "Frame 4",
-  "IMG_2298_websize.jpg",
-  "IMG_7647_websize.jpg",
-
-  
+  "1.webp",
+  "2.webp",
+  "3.webp",
+  "4.webp",
+  "5.webp",
+  "6.webp",
+  "7.webp",
 ];
 export default imagesCarousselA;
 
@@ -34,6 +33,6 @@ export const imagesCouple = [
 export const imagesMariage = [
   
   "Frame 10",
-  "IMG_1691.jpg",
+  "IMG_1691.webp",
   "Frame 11",
 ]

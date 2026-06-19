@@ -14,7 +14,7 @@ export default function PageMariage() {
   // Sécurité pour éviter les erreurs si la langue n'est pas chargée
   const content = texte[lang];
   if (!content) return null;
-  const getMariageImageFile = (image: string) => (image.includes(".") ? image : `${image}.png`);
+  const getMariageImageFile = (image: string) => (image.includes(".") ? image : `${image}.webp`);
 
   return (
     <main className="min-h-screen bg-white">

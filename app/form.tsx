@@ -112,7 +112,7 @@ const handleSubmit = (e: React.FormEvent) => {
       </div>
 {image && ( <div className="hidden md:block absolute bottom-70 left-0 z-[0] pointer-events-none">
                   <Image
-                    src="/optimized-images/images/design/Vector.png" 
+                    src="/optimized-images/images/design/Vector.webp" 
                     alt="Image abstraite 1"
                     width={500}
                     height={500}
@@ -122,7 +122,7 @@ const handleSubmit = (e: React.FormEvent) => {
 
                  {!image && (<div className="hidden md:block absolute bottom-130 right-0 z-[0] pointer-events-none">
                     <Image
-                      src="/optimized-images/images/design/Union.png" 
+                      src="/optimized-images/images/design/Union.webp" 
                       alt="Image abstraite 2"
                       width={500}
                       height={500}
