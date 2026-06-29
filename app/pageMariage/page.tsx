@@ -19,7 +19,7 @@ export default function PageMariage() {
   return (
     <main className="min-h-screen bg-white">
       <section className="px-6 pb-20 md:px-20 bg-white text-black flex flex-col items-center">
-        <div className="w-full max-w-4xl pt-8 md:pt-10 text-center">
+        <div className="w-full max-w-4xl pt-2 md:pt-4 text-center">
           <h1 className="font-bodoni italic text-gray-500 tracking-wide text-center">
             <span className="block text-2xl md:text-[32px] leading-tight">
               {content.sousTitreSeoMariage}
@@ -29,19 +29,14 @@ export default function PageMariage() {
             </span>
           </h1>
 
-          <div className="mt-14 max-w-3xl mx-auto text-justify">
-            {content.descPageMariage.map((p: string, i: number) => (
-              <p
-                key={i}
-                className="mb-5 last:mb-0 font-assistant text-base leading-8 text-gray-700 md:text-lg"
-              >
-                {p}
-              </p>
-            ))}
+          <div className="mt-6 max-w-3xl mx-auto text-justify">
+            <p className="font-assistant text-base leading-8 text-gray-700 md:text-lg">
+              {content.descPageMariage[0]}
+            </p>
           </div>
         </div>
 
-        <div className="mt-16 flex items-center gap-4 w-full max-w-xs mx-auto mb-10">
+        <div className="mt-8 flex items-center gap-4 w-full max-w-xs mx-auto mb-10">
           <span className="flex-1 h-px bg-[#8C7E7E]/30" />
           <h2 className="font-assistant text-[11px] uppercase tracking-[0.38em] text-[#8C7E7E] whitespace-nowrap">
             {content.sousTitreGaleries}
@@ -86,6 +81,16 @@ export default function PageMariage() {
             </div>
           ))}
         </div>
+
+        {content.descPageMariage.length > 1 && (
+          <div className="mt-12 max-w-3xl mx-auto text-justify">
+            {(content.descPageMariage as string[]).slice(1).map((p: string, i: number) => (
+              <p key={i} className="mb-5 last:mb-0 font-assistant text-base leading-8 text-gray-700 md:text-lg">
+                {p}
+              </p>
+            ))}
+          </div>
+        )}
       </section>
 
       <FormulaireContact lang={lang} texte={texte} image={true}/>

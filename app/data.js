@@ -31,8 +31,8 @@ export const imagesCouple = [
 ]
 
 export const imagesMariage = [
-  
-  "Frame 10",
+
+  "baptiste-kejsi.webp",
   "IMG_1691.webp",
-  "Frame 11",
+  "alexandre-laurene.webp",
 ]

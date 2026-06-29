@@ -184,13 +184,14 @@ function Header() {
               onMouseEnter={openDropdown}
               onMouseLeave={handleDropdownMouseLeave}
             >
-              <button
-                type="button"
-                className="hover:text-gray-400 transition-colors text-center whitespace-nowrap flex items-center justify-center gap-1 focus:outline-none w-full"
+              <Link
+                href={`/pagePortfolio?lang=${lang}`}
+                className="hover:text-gray-400 transition-colors text-center whitespace-nowrap flex items-center justify-center gap-1"
+                onClick={closeDropdown}
               >
                 {texte[lang].portfolio}
                 <span className={`text-[10px] transition-transform duration-300 ${showDropdown ? 'rotate-180' : ''}`}>▼</span>
-              </button>
+              </Link>
 
               {showDropdown && (
                 <div className="absolute top-full left-1/2 -translate-x-1/2 w-48 bg-white shadow-2xl py-4 flex flex-col gap-4 z-[9999] animate-fadeIn border border-gray-100">
@@ -241,7 +242,7 @@ function Header() {
       </div>
 
       {/* Desktop bottom spacer — outside sticky, just page space */}
-      <div className="hidden md:block h-12" />
+      <div className="hidden md:block h-3" />
     </>
   );
 }
